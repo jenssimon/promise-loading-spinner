@@ -10,8 +10,8 @@
   "private": false,
   "scripts": {
     "lint": "eslint ./",
-    "test": "jest",
-    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+    "test": "jest --coverage",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
