@@ -8,8 +8,13 @@
   "author": "Jens Simon <https://github.com/jenssimon>",
   "license": "MIT",
   "private": false,
+  "main": "dist/promise-loading-spinner.cjs.js",
+  "module": "dist/promise-loading-spinner.esm.js",
+  "browser": "dist/promise-loading-spinner.umd.js",
   "scripts": {
     "lint": "eslint ./",
+    "build": "rollup -c",
+    "prepublishOnly": "yarn build",
     "test": "jest --coverage",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
@@ -36,6 +41,10 @@
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.6.0",
     "eslint-plugin-you-dont-need-lodash-underscore": "^6.4.0",
-    "jest": "^24.5.0"
+    "jest": "^24.5.0",
+    "rollup": "^1.7.3",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.2.2",
+    "rollup-plugin-node-resolve": "^4.0.1"
   }
 }

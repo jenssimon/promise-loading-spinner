@@ -1,0 +1,21 @@
+{
+  "presets": [
+    ["@babel/preset-env", {
+      "modules": false,
+      "targets": {
+        "browsers": "ie >= 11",
+      },
+    }],
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "@babel/transform-modules-commonjs",
+        "@babel/plugin-transform-runtime",
+      ],
+    },
+  },
+}
