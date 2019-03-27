@@ -81,7 +81,7 @@ export default class Loader {
 
   loaderFnc(fnc) {
     const loaderCtx = this;
-    return async function (...args) {
+    return function (...args) {
       return loaderCtx.loader(fnc.apply(this, args));
     };
   }
