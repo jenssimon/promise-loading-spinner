@@ -2,7 +2,7 @@ import Loader from './loader';
 
 jest.useFakeTimers();
 
-describe('Vanilla Promise Loader', () => {
+describe('promise-loading-spinner', () => {
   beforeEach(() => {
     document.body.innerHTML = '<div id="js-page-loader"></div><div id="alternativeElement"></div>';
   });
@@ -614,7 +614,7 @@ describe('Vanilla Promise Loader', () => {
         return promise;
       });
 
-      const loaderFunction = loader.loaderFnc(fn.bind('Hello'));
+      const loaderFunction = loader.wrapFunction(fn.bind('Hello'));
 
       expect(fn.mock.calls).toHaveLength(0);
 
