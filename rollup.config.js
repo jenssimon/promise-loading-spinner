@@ -8,7 +8,7 @@ export default [
   {
     input: 'src/loader.js',
     output: {
-      name: 'rollupJestBoilerplate',
+      name: 'PromiseLoadingSpinner',
       file: pkg.browser,
       format: 'umd',
     },
