@@ -79,7 +79,7 @@ export default class Loader {
     return promise;
   }
 
-  loaderFnc(fnc) {
+  wrapFunction(fnc) {
     const loaderCtx = this;
     return function (...args) {
       return loaderCtx.loader(fnc.apply(this, args));
