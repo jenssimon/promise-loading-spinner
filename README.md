@@ -11,6 +11,8 @@
 - **Support of multiple promises** Spinner will disappear when the last unresolved promise is resolved
 - **Operations in a sequence** If there are multiple operations in a sequence the spinner will disappear when the last operation is finished
 
+See this [Codepen](https://codepen.io/jenssimon/pen/NJmmJe).
+
 ## Install
 
 ```sh
