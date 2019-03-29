@@ -1,10 +1,21 @@
 {
   "name": "promise-loading-spinner",
   "version": "0.0.1",
+  "description": "Advanced handling of loaders/spinners based on one or multiple Promises",
   "repository": {
     "type": "git",
     "url": "https://github.com/jenssimon/promise-loading-spinner"
   },
+  "keywords": [
+    "loader",
+    "spinner",
+    "promise",
+    "loading-indicator",
+    "loading-spinner",
+    "loading-animation",
+    "vanilla-js",
+    "await-async"
+  ],
   "author": "Jens Simon <https://github.com/jenssimon>",
   "license": "MIT",
   "private": false,
@@ -46,5 +57,8 @@
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.2.2",
     "rollup-plugin-node-resolve": "^4.0.1"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
