@@ -7,6 +7,7 @@
       resolve('finished working');
     }, workingTime);
   });
+
   const waitFor = time => new Promise((resolve) => {
     setTimeout(() => {
       resolve();
@@ -14,6 +15,8 @@
   });
 
   const demo = async () => {
+    await waitFor(2000);
+
     const loader = new this.PromiseLoadingSpinner();
 
     // in init delay
