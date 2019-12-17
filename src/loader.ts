@@ -1,3 +1,11 @@
+interface LoaderConfig {
+  delay?: number;
+  closeDelay?: number;
+  initDelay?: number;
+  loaderElement?: HTMLElement | string;
+  classActive?: string;
+}
+
 const defaults = {
   delay: 300, // delay before the loader is shown
   closeDelay: 10, // delay before the loader closes
@@ -7,14 +15,30 @@ const defaults = {
 };
 
 export default class Loader {
-  loaderPromises = []
+  private loaderPromises: Promise<any>[] // eslint-disable-line @typescript-eslint/no-explicit-any
 
-  constructor(cfg = {}) {
+  private config: LoaderConfig
+
+  private el: HTMLElement
+
+  private suppressOnInit: boolean
+
+  private timeout: NodeJS.Timeout | null
+
+  private closingTimeout: NodeJS.Timeout | null
+
+  constructor(cfg: LoaderConfig = {}) {
+    this.loaderPromises = [];
+    this.suppressOnInit = false;
+    this.timeout = null;
+    this.closingTimeout = null;
+
     const config = { ...defaults, ...cfg };
     const { loaderElement, initDelay } = config;
     this.config = config;
 
-    this.el = loaderElement instanceof HTMLElement ? loaderElement : document.querySelector(loaderElement);
+    this.el = loaderElement instanceof HTMLElement
+      ? loaderElement : document.querySelector(loaderElement) as HTMLElement;
     if (initDelay) {
       this.suppressOnInit = true;
       setTimeout(() => {
@@ -23,7 +47,7 @@ export default class Loader {
     }
   }
 
-  loader(promise) {
+  loader(promise: Promise<any>): Promise<any> { // eslint-disable-line @typescript-eslint/no-explicit-any
     const {
       el, suppressOnInit, loaderPromises, config,
     } = this;
@@ -32,8 +56,8 @@ export default class Loader {
       const isFirstLoader = !loaderPromises.length;
       loaderPromises.push(promise);
 
-      const showLoader = () => {
-        el.classList.add(classActive);
+      const showLoader = (): void => {
+        el.classList.add(classActive as string);
       };
 
       if (isFirstLoader) { // Only the first loader needs to initialize the show functionality
@@ -54,7 +78,7 @@ export default class Loader {
           this.closingTimeout = null;
         }
       }
-      const finished = () => {
+      const finished = (): void => {
         if (this.timeout && loaderPromises.length === 1) {
           // We close the last operation before the loader was shown. There is no need anymore to show it.
           clearTimeout(this.timeout);
@@ -66,11 +90,11 @@ export default class Loader {
             // The last operation has finished. Show loader a bit longer so there is no flickering when an operation
             // starts shortly after.
             this.closingTimeout = setTimeout(() => {
-              el.classList.remove(classActive);
+              el.classList.remove(classActive as string);
               this.closingTimeout = null;
             }, closeDelay);
           } else {
-            el.classList.remove(classActive);
+            el.classList.remove(classActive as string);
           }
         }
       };
@@ -79,9 +103,11 @@ export default class Loader {
     return promise;
   }
 
-  wrapFunction(fnc) {
-    const loaderCtx = this;
-    return function (...args) {
+  wrapFunction(fnc: Function): any { // eslint-disable-line @typescript-eslint/no-explicit-any
+    const loaderCtx = this; // eslint-disable-line @typescript-eslint/no-this-alias
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return function (this: any, ...args: any[]): Promise<any> {
       return loaderCtx.loader(fnc.apply(this, args));
     };
   }

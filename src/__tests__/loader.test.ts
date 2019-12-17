@@ -1,4 +1,10 @@
-import Loader from './loader';
+import Loader from '../loader';
+
+type PromiseResolver = (value?: unknown) => void;
+type PromiseRejecter = (reason?: any) => unknown; // eslint-disable-line @typescript-eslint/no-explicit-any
+
+const PromiseResolverStub: PromiseResolver = () => {};
+const PromiseRejecterStub: PromiseRejecter = () => {};
 
 jest.useFakeTimers();
 
@@ -9,7 +15,7 @@ describe('promise-loading-spinner', () => {
 
   describe('default configuration', () => {
     it('handles a single promise (success)', async () => {
-      const loaderElement = document.getElementById('js-page-loader');
+      const loaderElement = document.getElementById('js-page-loader') as HTMLElement;
 
       const loader = new Loader(); // Initialize the loader
 
@@ -19,7 +25,7 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promiseResolver;
+      let promiseResolver = PromiseResolverStub;
       const promise = new Promise((resolve) => {
         promiseResolver = resolve;
       });
@@ -44,7 +50,7 @@ describe('promise-loading-spinner', () => {
     });
 
     it('handles a single promise (error)', async () => {
-      const loaderElement = document.getElementById('js-page-loader');
+      const loaderElement = document.getElementById('js-page-loader') as HTMLElement;
 
       const loader = new Loader(); // Initialize the loader
 
@@ -54,7 +60,7 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promiseRejecter;
+      let promiseRejecter = PromiseRejecterStub;
       const promise = new Promise((resolve, reject) => {
         promiseRejecter = reject;
       });
@@ -79,7 +85,7 @@ describe('promise-loading-spinner', () => {
     });
 
     it('handles a promise that resolves in the delay phase)', async () => {
-      const loaderElement = document.getElementById('js-page-loader');
+      const loaderElement = document.getElementById('js-page-loader') as HTMLElement;
 
       const loader = new Loader(); // Initialize the loader
 
@@ -89,7 +95,7 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promiseResolver;
+      let promiseResolver = PromiseResolverStub;
       const promise = new Promise((resolve) => {
         promiseResolver = resolve;
       });
@@ -110,7 +116,7 @@ describe('promise-loading-spinner', () => {
     });
 
     it('does\'t show a loader directly at page load (init delay)', async () => {
-      const loaderElement = document.getElementById('js-page-loader');
+      const loaderElement = document.getElementById('js-page-loader') as HTMLElement;
 
       const loader = new Loader(); // Initialize the loader
 
@@ -118,7 +124,7 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false);
 
       // Prepare the promise to pass into
-      let promiseResolver;
+      let promiseResolver = PromiseResolverStub;
       const promise = new Promise((resolve) => {
         promiseResolver = resolve;
       });
@@ -141,7 +147,7 @@ describe('promise-loading-spinner', () => {
     });
 
     it('processes two promises (added second in delay phase)', async () => {
-      const loaderElement = document.getElementById('js-page-loader');
+      const loaderElement = document.getElementById('js-page-loader') as HTMLElement;
 
       const loader = new Loader(); // Initialize the loader
 
@@ -151,11 +157,11 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promise1Resolver;
+      let promise1Resolver = PromiseResolverStub;
       const promise1 = new Promise((resolve) => {
         promise1Resolver = resolve;
       });
-      let promise2Resolver;
+      let promise2Resolver = PromiseResolverStub;
       const promise2 = new Promise((resolve) => {
         promise2Resolver = resolve;
       });
@@ -192,7 +198,7 @@ describe('promise-loading-spinner', () => {
     });
 
     it('processes two promises (added second after delay phase)', async () => {
-      const loaderElement = document.getElementById('js-page-loader');
+      const loaderElement = document.getElementById('js-page-loader') as HTMLElement;
 
       const loader = new Loader(); // Initialize the loader
 
@@ -202,11 +208,11 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promise1Resolver;
+      let promise1Resolver = PromiseResolverStub;
       const promise1 = new Promise((resolve) => {
         promise1Resolver = resolve;
       });
-      let promise2Resolver;
+      let promise2Resolver = PromiseResolverStub;
       const promise2 = new Promise((resolve) => {
         promise2Resolver = resolve;
       });
@@ -243,7 +249,7 @@ describe('promise-loading-spinner', () => {
     });
 
     it('processes two promises (added second directly after resolving first)', async () => {
-      const loaderElement = document.getElementById('js-page-loader');
+      const loaderElement = document.getElementById('js-page-loader') as HTMLElement;
 
       const loader = new Loader(); // Initialize the loader
 
@@ -253,11 +259,11 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promise1Resolver;
+      let promise1Resolver = PromiseResolverStub;
       const promise1 = new Promise((resolve) => {
         promise1Resolver = resolve;
       });
-      let promise2Resolver;
+      let promise2Resolver = PromiseResolverStub;
       const promise2 = new Promise((resolve) => {
         promise2Resolver = resolve;
       });
@@ -300,7 +306,7 @@ describe('promise-loading-spinner', () => {
     });
 
     it('processes two promises (added second after close delay)', async () => {
-      const loaderElement = document.getElementById('js-page-loader');
+      const loaderElement = document.getElementById('js-page-loader') as HTMLElement;
 
       const loader = new Loader(); // Initialize the loader
 
@@ -310,11 +316,11 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promise1Resolver;
+      let promise1Resolver = PromiseResolverStub;
       const promise1 = new Promise((resolve) => {
         promise1Resolver = resolve;
       });
-      let promise2Resolver;
+      let promise2Resolver = PromiseResolverStub;
       const promise2 = new Promise((resolve) => {
         promise2Resolver = resolve;
       });
@@ -363,8 +369,8 @@ describe('promise-loading-spinner', () => {
 
   describe('Configuration object', () => {
     it('uses a selector for looking up the loader element', async () => {
-      const loaderElement = document.getElementById('js-page-loader');
-      const alternativeElement = document.getElementById('alternativeElement');
+      const loaderElement = document.getElementById('js-page-loader') as HTMLElement;
+      const alternativeElement = document.getElementById('alternativeElement') as HTMLElement;
 
       const loader = new Loader({
         loaderElement: '#alternativeElement',
@@ -377,7 +383,7 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promiseResolver;
+      let promiseResolver = PromiseResolverStub;
       const promise = new Promise((resolve) => {
         promiseResolver = resolve;
       });
@@ -406,8 +412,8 @@ describe('promise-loading-spinner', () => {
     });
 
     it('uses an element instance for the loader element', async () => {
-      const loaderElement = document.getElementById('js-page-loader');
-      const alternativeElement = document.getElementById('alternativeElement');
+      const loaderElement = document.getElementById('js-page-loader') as HTMLElement;
+      const alternativeElement = document.getElementById('alternativeElement') as HTMLElement;
 
       const loader = new Loader({
         loaderElement: alternativeElement,
@@ -420,7 +426,7 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promiseResolver;
+      let promiseResolver = PromiseResolverStub;
       const promise = new Promise((resolve) => {
         promiseResolver = resolve;
       });
@@ -449,7 +455,7 @@ describe('promise-loading-spinner', () => {
     });
 
     it('uses another class name for the active class', async () => {
-      const loaderElement = document.getElementById('js-page-loader');
+      const loaderElement = document.getElementById('js-page-loader') as HTMLElement;
 
       const loader = new Loader({
         classActive: 'loading',
@@ -462,7 +468,7 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promiseResolver;
+      let promiseResolver = PromiseResolverStub;
       const promise = new Promise((resolve) => {
         promiseResolver = resolve;
       });
@@ -491,7 +497,7 @@ describe('promise-loading-spinner', () => {
     });
 
     it('can disable loader delay', async () => {
-      const loaderElement = document.getElementById('js-page-loader');
+      const loaderElement = document.getElementById('js-page-loader') as HTMLElement;
 
       const loader = new Loader({
         delay: 0,
@@ -503,7 +509,7 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promiseResolver;
+      let promiseResolver = PromiseResolverStub;
       const promise = new Promise((resolve) => {
         promiseResolver = resolve;
       });
@@ -524,7 +530,7 @@ describe('promise-loading-spinner', () => {
     });
 
     it('can disable the init delay', async () => {
-      const loaderElement = document.getElementById('js-page-loader');
+      const loaderElement = document.getElementById('js-page-loader') as HTMLElement;
 
       const loader = new Loader({ // Initialize the loader
         initDelay: 0,
@@ -534,7 +540,7 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false);
 
       // Prepare the promise to pass into
-      let promiseResolver;
+      let promiseResolver = PromiseResolverStub;
       const promise = new Promise((resolve) => {
         promiseResolver = resolve;
       });
@@ -559,7 +565,7 @@ describe('promise-loading-spinner', () => {
     });
 
     it('can disable the close delay', async () => {
-      const loaderElement = document.getElementById('js-page-loader');
+      const loaderElement = document.getElementById('js-page-loader') as HTMLElement;
 
       const loader = new Loader({ // Initialize the loader
         closeDelay: 0,
@@ -571,7 +577,7 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promiseResolver;
+      let promiseResolver = PromiseResolverStub;
       const promise = new Promise((resolve) => {
         promiseResolver = resolve;
       });
@@ -594,7 +600,7 @@ describe('promise-loading-spinner', () => {
 
   describe('loaderFnc', () => {
     it('can export a function wrapper', async () => {
-      const loaderElement = document.getElementById('js-page-loader');
+      const loaderElement = document.getElementById('js-page-loader') as HTMLElement;
 
       const loader = new Loader(); // Initialize the loader
 
@@ -604,12 +610,12 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promiseResolver;
+      let promiseResolver = PromiseResolverStub;
       const promise = new Promise((resolve) => {
         promiseResolver = resolve;
       });
 
-      const fn = jest.fn(function () {
+      const fn = jest.fn(function (this: string) {
         expect(this).toBe('Hello');
         return promise;
       });
@@ -624,9 +630,7 @@ describe('promise-loading-spinner', () => {
 
       expect(fn.mock.calls).toHaveLength(1);
       expect(fn.mock.calls[0]).toHaveLength(3);
-      expect(fn.mock.calls[0][0]).toBe('foo');
-      expect(fn.mock.calls[0][1]).toStrictEqual(['foo', 'bar']);
-      expect(fn.mock.calls[0][2]).toStrictEqual({ foo: 'bar' });
+      expect(fn).toHaveBeenCalledWith('foo', ['foo', 'bar'], { foo: 'bar' });
 
       expect(loaderElement.classList.contains('is-active')).toBe(false);
 
@@ -645,3 +649,5 @@ describe('promise-loading-spinner', () => {
     });
   });
 });
+
+export default undefined;
