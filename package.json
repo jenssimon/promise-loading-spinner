@@ -1,6 +1,6 @@
 {
   "name": "promise-loading-spinner",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Advanced handling of loaders/spinners based on one or multiple Promises",
   "repository": {
     "type": "git",
