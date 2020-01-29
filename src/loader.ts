@@ -103,10 +103,12 @@ export default class Loader {
     return promise;
   }
 
-  wrapFunction<C, A, R>(fnc: (this: C, ...args: A[]) => Promise<R>): (this: C, ...args: A[]) => Promise<R> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  wrapFunction<C, A extends any[], R>(fnc: (this: C, ...args: A) => Promise<R>): (this: C,
+    ...args: A) => Promise<R> {
     const loaderCtx = this; // eslint-disable-line @typescript-eslint/no-this-alias
 
-    return function (this: C, ...args: A[]): Promise<R> {
+    return function (this: C, ...args: A): Promise<R> {
       return loaderCtx.loader(fnc.apply(this, args));
     };
   }
