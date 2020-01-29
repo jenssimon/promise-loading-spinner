@@ -26,8 +26,8 @@ describe('promise-loading-spinner', () => {
 
       // Prepare the promise to pass into
       let promiseResolver = PromiseResolverStub;
-      const promise = new Promise((resolve) => {
-        promiseResolver = resolve;
+      const promise = new Promise<string>((resolve) => {
+        promiseResolver = resolve as PromiseResolver;
       });
 
       const passedThroughPromise = loader.loader(promise); // call the loader
@@ -61,7 +61,7 @@ describe('promise-loading-spinner', () => {
 
       // Prepare the promise to pass into
       let promiseRejecter = PromiseRejecterStub;
-      const promise = new Promise((resolve, reject) => {
+      const promise = new Promise<string>((resolve, reject) => {
         promiseRejecter = reject;
       });
 
@@ -96,8 +96,8 @@ describe('promise-loading-spinner', () => {
 
       // Prepare the promise to pass into
       let promiseResolver = PromiseResolverStub;
-      const promise = new Promise((resolve) => {
-        promiseResolver = resolve;
+      const promise = new Promise<string>((resolve) => {
+        promiseResolver = resolve as PromiseResolver;
       });
 
       const passedThroughPromise = loader.loader(promise); // call the loader
@@ -125,8 +125,8 @@ describe('promise-loading-spinner', () => {
 
       // Prepare the promise to pass into
       let promiseResolver = PromiseResolverStub;
-      const promise = new Promise((resolve) => {
-        promiseResolver = resolve;
+      const promise = new Promise<string>((resolve) => {
+        promiseResolver = resolve as PromiseResolver;
       });
 
       const passedThroughPromise = loader.loader(promise); // call the loader
@@ -158,12 +158,12 @@ describe('promise-loading-spinner', () => {
 
       // Prepare the promise to pass into
       let promise1Resolver = PromiseResolverStub;
-      const promise1 = new Promise((resolve) => {
-        promise1Resolver = resolve;
+      const promise1 = new Promise<string>((resolve) => {
+        promise1Resolver = resolve as PromiseResolver;
       });
       let promise2Resolver = PromiseResolverStub;
-      const promise2 = new Promise((resolve) => {
-        promise2Resolver = resolve;
+      const promise2 = new Promise<string>((resolve) => {
+        promise2Resolver = resolve as PromiseResolver;
       });
 
       const passedThroughPromise1 = loader.loader(promise1); // call the loader
@@ -209,12 +209,12 @@ describe('promise-loading-spinner', () => {
 
       // Prepare the promise to pass into
       let promise1Resolver = PromiseResolverStub;
-      const promise1 = new Promise((resolve) => {
-        promise1Resolver = resolve;
+      const promise1 = new Promise<string>((resolve) => {
+        promise1Resolver = resolve as PromiseResolver;
       });
       let promise2Resolver = PromiseResolverStub;
-      const promise2 = new Promise((resolve) => {
-        promise2Resolver = resolve;
+      const promise2 = new Promise<string>((resolve) => {
+        promise2Resolver = resolve as PromiseResolver;
       });
 
       const passedThroughPromise1 = loader.loader(promise1); // call the loader
@@ -260,12 +260,12 @@ describe('promise-loading-spinner', () => {
 
       // Prepare the promise to pass into
       let promise1Resolver = PromiseResolverStub;
-      const promise1 = new Promise((resolve) => {
-        promise1Resolver = resolve;
+      const promise1 = new Promise<string>((resolve) => {
+        promise1Resolver = resolve as PromiseResolver;
       });
       let promise2Resolver = PromiseResolverStub;
-      const promise2 = new Promise((resolve) => {
-        promise2Resolver = resolve;
+      const promise2 = new Promise<string>((resolve) => {
+        promise2Resolver = resolve as PromiseResolver;
       });
 
       const passedThroughPromise1 = loader.loader(promise1); // call the loader
@@ -317,12 +317,12 @@ describe('promise-loading-spinner', () => {
 
       // Prepare the promise to pass into
       let promise1Resolver = PromiseResolverStub;
-      const promise1 = new Promise((resolve) => {
-        promise1Resolver = resolve;
+      const promise1 = new Promise<string>((resolve) => {
+        promise1Resolver = resolve as PromiseResolver;
       });
       let promise2Resolver = PromiseResolverStub;
-      const promise2 = new Promise((resolve) => {
-        promise2Resolver = resolve;
+      const promise2 = new Promise<string>((resolve) => {
+        promise2Resolver = resolve as PromiseResolver;
       });
 
       const passedThroughPromise1 = loader.loader(promise1); // call the loader
@@ -384,8 +384,8 @@ describe('promise-loading-spinner', () => {
 
       // Prepare the promise to pass into
       let promiseResolver = PromiseResolverStub;
-      const promise = new Promise((resolve) => {
-        promiseResolver = resolve;
+      const promise = new Promise<string>((resolve) => {
+        promiseResolver = resolve as PromiseResolver;
       });
 
       const passedThroughPromise = loader.loader(promise); // call the loader
@@ -427,8 +427,8 @@ describe('promise-loading-spinner', () => {
 
       // Prepare the promise to pass into
       let promiseResolver = PromiseResolverStub;
-      const promise = new Promise((resolve) => {
-        promiseResolver = resolve;
+      const promise = new Promise<string>((resolve) => {
+        promiseResolver = resolve as PromiseResolver;
       });
 
       const passedThroughPromise = loader.loader(promise); // call the loader
@@ -469,8 +469,8 @@ describe('promise-loading-spinner', () => {
 
       // Prepare the promise to pass into
       let promiseResolver = PromiseResolverStub;
-      const promise = new Promise((resolve) => {
-        promiseResolver = resolve;
+      const promise = new Promise<string>((resolve) => {
+        promiseResolver = resolve as PromiseResolver;
       });
 
       const passedThroughPromise = loader.loader(promise); // call the loader
@@ -510,8 +510,8 @@ describe('promise-loading-spinner', () => {
 
       // Prepare the promise to pass into
       let promiseResolver = PromiseResolverStub;
-      const promise = new Promise((resolve) => {
-        promiseResolver = resolve;
+      const promise = new Promise<string>((resolve) => {
+        promiseResolver = resolve as PromiseResolver;
       });
 
       const passedThroughPromise = loader.loader(promise); // call the loader
@@ -541,8 +541,8 @@ describe('promise-loading-spinner', () => {
 
       // Prepare the promise to pass into
       let promiseResolver = PromiseResolverStub;
-      const promise = new Promise((resolve) => {
-        promiseResolver = resolve;
+      const promise = new Promise<string>((resolve) => {
+        promiseResolver = resolve as PromiseResolver;
       });
 
       const passedThroughPromise = loader.loader(promise); // call the loader
@@ -578,8 +578,8 @@ describe('promise-loading-spinner', () => {
 
       // Prepare the promise to pass into
       let promiseResolver = PromiseResolverStub;
-      const promise = new Promise((resolve) => {
-        promiseResolver = resolve;
+      const promise = new Promise<string>((resolve) => {
+        promiseResolver = resolve as PromiseResolver;
       });
 
       const passedThroughPromise = loader.loader(promise); // call the loader
@@ -611,8 +611,8 @@ describe('promise-loading-spinner', () => {
 
       // Prepare the promise to pass into
       let promiseResolver = PromiseResolverStub;
-      const promise = new Promise((resolve) => {
-        promiseResolver = resolve;
+      const promise = new Promise<string>((resolve) => {
+        promiseResolver = resolve as PromiseResolver;
       });
 
       const fn = jest.fn(function (this: string) {
@@ -620,11 +620,15 @@ describe('promise-loading-spinner', () => {
         return promise;
       });
 
-      const loaderFunction = loader.wrapFunction(fn.bind('Hello'));
+      const loaderFunction = loader.wrapFunction(fn) as (this: string, first: string, second: string[], third: {
+        foo: string;
+      }) => Promise<string>;
 
       expect(fn.mock.calls).toHaveLength(0);
 
-      const passedThroughPromise = loaderFunction('foo', ['foo', 'bar'], { foo: 'bar' }); // call the loader
+      // call the loader
+      const passedThroughPromise = loaderFunction.call('Hello', 'foo', ['foo', 'bar'],
+        { foo: 'bar' });
 
       expect(passedThroughPromise).toEqual(promise); // is the returned promise the same as the passed in?
 

@@ -15,7 +15,7 @@ const defaults = {
 };
 
 export default class Loader {
-  private loaderPromises: Promise<any>[] // eslint-disable-line @typescript-eslint/no-explicit-any
+  private loaderPromises: Promise<unknown>[]
 
   private config: LoaderConfig
 
@@ -47,7 +47,7 @@ export default class Loader {
     }
   }
 
-  loader(promise: Promise<any>): Promise<any> { // eslint-disable-line @typescript-eslint/no-explicit-any
+  loader<T>(promise: Promise<T>): Promise<T> {
     const {
       el, suppressOnInit, loaderPromises, config,
     } = this;
@@ -103,11 +103,10 @@ export default class Loader {
     return promise;
   }
 
-  wrapFunction(fnc: Function): any { // eslint-disable-line @typescript-eslint/no-explicit-any
+  wrapFunction<C, A, R>(fnc: (this: C, ...args: A[]) => Promise<R>): (this: C, ...args: A[]) => Promise<R> {
     const loaderCtx = this; // eslint-disable-line @typescript-eslint/no-this-alias
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return function (this: any, ...args: any[]): Promise<any> {
+    return function (this: C, ...args: A[]): Promise<R> {
       return loaderCtx.loader(fnc.apply(this, args));
     };
   }
