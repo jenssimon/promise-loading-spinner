@@ -112,4 +112,17 @@ export default class Loader {
       return loaderCtx.loader(fnc.apply(this, args));
     };
   }
+
+  decorator(): MethodDecorator {
+    const loaderCtx = this; // eslint-disable-line @typescript-eslint/no-this-alias
+    const decorator: MethodDecorator = function (target, propertyKey, descriptor) {
+      const oldValue = descriptor.value as unknown;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (descriptor as any).value = function (...params: any[]) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        return loaderCtx.loader((oldValue as any).apply(this, params));
+      };
+    };
+    return decorator;
+  }
 }
