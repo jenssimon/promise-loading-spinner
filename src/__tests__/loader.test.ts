@@ -652,6 +652,74 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false);
     });
   });
+
+  describe('decorator', () => {
+    it('can export a decorator', async () => {
+      const loaderElement = document.getElementById('js-page-loader') as HTMLElement;
+
+      const loader = new Loader(); // Initialize the loader
+
+      // Loader is initialized
+      expect(loaderElement.classList.contains('is-active')).toBe(false);
+
+      jest.runAllTimers(); // init delay expired
+
+      // Prepare the promise to pass into
+      let promiseResolver = PromiseResolverStub;
+      const promise = new Promise<string>((resolve) => {
+        promiseResolver = resolve as PromiseResolver;
+      });
+
+      const fn = jest.fn(function (this: string, p1: string, p2: number) {
+        expect(p1).toBe('bar');
+        expect(p2).toBe(815);
+        return this;
+      });
+
+      class TestClass {
+        foo: string
+
+        constructor() {
+          this.foo = 'bar';
+        }
+
+        @loader.decorator()
+        test() {
+          fn.call(this, this.foo, 815);
+          return promise;
+        }
+      }
+
+      const myTest = new TestClass();
+
+      expect(fn.mock.calls).toHaveLength(0);
+
+      const passedThroughPromise = myTest.test();
+
+      expect(passedThroughPromise).toBe(promise);
+
+      expect(fn.mock.calls).toHaveLength(1);
+      expect(fn.mock.calls[0]).toHaveLength(2);
+      expect(fn.mock.calls[0][0]).toBe('bar');
+      expect(fn.mock.calls[0][1]).toBe(815);
+      expect(fn.mock.results[0].value).toBe(myTest);
+
+      expect(loaderElement.classList.contains('is-active')).toBe(false);
+
+      jest.runAllTimers(); // delay expired
+
+      expect(loaderElement.classList.contains('is-active')).toBe(true);
+
+      promiseResolver('success'); // promise resolves
+      await expect(passedThroughPromise).resolves.toBe('success');
+
+      expect(loaderElement.classList.contains('is-active')).toBe(true);
+
+      jest.runAllTimers(); // close delay expired
+
+      expect(loaderElement.classList.contains('is-active')).toBe(false);
+    });
+  });
 });
 
 export default undefined;

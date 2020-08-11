@@ -6,7 +6,8 @@
     "declaration": true,
     "noEmit": true,
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "experimentalDecorators": true
   },
   "include": [
     "src/**/*"
