@@ -21,7 +21,7 @@ $ yarn add promise-loading-spinner
 
 ## Usage
 
-This generates a file size table with multiple sections and groups.
+This shows loading spinners based on promises.
 
 ```javascript
 import PromiseLoadingSpinner from 'promise-loading-spinner';
@@ -53,6 +53,19 @@ const myFunction = loader.wrapFunction(async (url) => {
 myFunction(someUrl);
 ```
 
+It also exports a method decorator:
+
+```javascript
+const loaderDecorator = loader.decorator();
+
+class MyClass {
+  @loaderDecorator()
+  async foo() {
+    // ...
+  }
+}
+```
+
 ## Options
 
 Option  | Description | Type | Default
@@ -65,11 +78,11 @@ Option  | Description | Type | Default
 
 ## License
 
-MIT © 2019 [Jens Simon](https://github.com/jenssimon)
+MIT © 2020 [Jens Simon](https://github.com/jenssimon)
 
 [npm-url]: https://www.npmjs.com/package/promise-loading-spinner
 [npm-image]: https://badgen.net/npm/v/promise-loading-spinner
-[npm-downloads-image]: https://badgen.net/npm/dt/promise-loading-spinner
+[npm-downloads-image]: https://badgen.net/npm/dw/promise-loading-spinner
 
 [deps-url]: https://david-dm.org/jenssimon/promise-loading-spinner
 [deps-image]: https://badgen.net/david/dep/jenssimon/promise-loading-spinner
