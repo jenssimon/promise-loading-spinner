@@ -676,6 +676,8 @@ describe('promise-loading-spinner', () => {
         return this;
       });
 
+      const decorator = loader.decorator();
+
       class TestClass {
         foo: string
 
@@ -683,7 +685,7 @@ describe('promise-loading-spinner', () => {
           this.foo = 'bar';
         }
 
-        @loader.decorator()
+        @decorator
         test() {
           fn.call(this, this.foo, 815);
           return promise;

@@ -59,7 +59,7 @@ It also exports a method decorator:
 const loaderDecorator = loader.decorator();
 
 class MyClass {
-  @loaderDecorator()
+  @loaderDecorator
   async foo() {
     // ...
   }
