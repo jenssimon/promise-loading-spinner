@@ -1,12 +1,16 @@
 interface LoaderConfig {
-  delay?: number;
-  closeDelay?: number;
-  initDelay?: number;
-  loaderElement?: HTMLElement | string;
-  classActive?: string;
+  delay: number;
+  closeDelay: number;
+  initDelay: number;
+  loaderElement: HTMLElement | string;
+  classActive: string;
 }
 
-const defaults = {
+type LoaderPromise = Promise<unknown>;
+
+type LoaderShownPromise = Promise<LoaderPromise[]>;
+
+const defaults: LoaderConfig = {
   delay: 300, // delay before the loader is shown
   closeDelay: 10, // delay before the loader closes
   initDelay: 1000, // ignore loaders after a limited time after initialization
@@ -15,7 +19,7 @@ const defaults = {
 };
 
 export default class Loader {
-  private loaderPromises: Promise<unknown>[]
+  private loaderPromises: LoaderPromise[]
 
   private config: LoaderConfig
 
@@ -27,11 +31,14 @@ export default class Loader {
 
   private closingTimeout: NodeJS.Timeout | null
 
-  constructor(cfg: LoaderConfig = {}) {
+  private loaderShows: boolean
+
+  constructor(cfg: Partial<LoaderConfig> = {}) {
     this.loaderPromises = [];
     this.suppressOnInit = false;
     this.timeout = null;
     this.closingTimeout = null;
+    this.loaderShows = false;
 
     const config = { ...defaults, ...cfg };
     const { loaderElement, initDelay } = config;
@@ -39,12 +46,10 @@ export default class Loader {
 
     this.el = loaderElement instanceof HTMLElement
       ? loaderElement : document.querySelector(loaderElement) as HTMLElement;
-    if (initDelay) {
-      this.suppressOnInit = true;
-      setTimeout(() => {
-        this.suppressOnInit = false;
-      }, initDelay);
-    }
+    this.suppressOnInit = true;
+    setTimeout(() => {
+      this.suppressOnInit = false;
+    }, initDelay);
   }
 
   loader<T>(promise: Promise<T>): Promise<T> {
@@ -57,20 +62,22 @@ export default class Loader {
       loaderPromises.push(promise);
 
       const showLoader = (): void => {
-        el.classList.add(classActive as string);
+        el.classList.add(classActive);
+        this.loaderShows = true;
+      };
+
+      const hideLoader = (): void => {
+        el.classList.remove(classActive);
+        this.loaderShows = false;
       };
 
       if (isFirstLoader) { // Only the first loader needs to initialize the show functionality
         if (!this.closingTimeout) {
-          if (delay) {
-            // Show loader after a delay. For operation that are finished fast enough no loader is shown.
-            this.timeout = setTimeout(() => {
-              showLoader();
-              this.timeout = null;
-            }, delay);
-          } else {
+          // Show loader after a delay. For operation that are finished fast enough no loader is shown.
+          this.timeout = setTimeout(() => {
             showLoader();
-          }
+            this.timeout = null;
+          }, delay);
         } else {
           // Another operation finished shortly before. To avoid flickering the loader closes later.
           // But here we don't need to close it because another operation starts.
@@ -86,16 +93,12 @@ export default class Loader {
         }
         loaderPromises.splice(loaderPromises.indexOf(promise), 1);
         if (!loaderPromises.length) {
-          if (closeDelay) {
-            // The last operation has finished. Show loader a bit longer so there is no flickering when an operation
-            // starts shortly after.
-            this.closingTimeout = setTimeout(() => {
-              el.classList.remove(classActive as string);
-              this.closingTimeout = null;
-            }, closeDelay);
-          } else {
-            el.classList.remove(classActive as string);
-          }
+          // The last operation has finished. Show loader a bit longer so there is no flickering when an operation
+          // starts shortly after.
+          this.closingTimeout = setTimeout(() => {
+            hideLoader();
+            this.closingTimeout = null;
+          }, closeDelay);
         }
       };
       promise.then(finished, finished);
