@@ -1,4 +1,4 @@
-interface LoaderConfig {
+export interface LoaderConfig {
   delay: number;
   closeDelay: number;
   initDelay: number;
@@ -31,7 +31,13 @@ export default class Loader {
 
   private closingTimeout: NodeJS.Timeout | null
 
-  private loaderShows: boolean
+  protected loaderShows: boolean
+
+  private loaderShownResolver: (value?: LoaderPromise[] | PromiseLike<LoaderPromise[]> | undefined) => void
+
+  private promisesForShownLoader: LoaderPromise[]
+
+  public currentLoadingPromise: Promise<LoaderPromise[]>
 
   constructor(cfg: Partial<LoaderConfig> = {}) {
     this.loaderPromises = [];
@@ -39,6 +45,11 @@ export default class Loader {
     this.timeout = null;
     this.closingTimeout = null;
     this.loaderShows = false;
+    this.promisesForShownLoader = [];
+    this.loaderShownResolver = ((null as unknown) as
+      (value?: LoaderPromise[] | PromiseLike<LoaderPromise[]> | undefined) => void);
+    this.currentLoadingPromise = Promise.resolve([]);
+    this.setCurrentLoadingPromise();
 
     const config = { ...defaults, ...cfg };
     const { loaderElement, initDelay } = config;
@@ -52,6 +63,12 @@ export default class Loader {
     }, initDelay);
   }
 
+  private setCurrentLoadingPromise() {
+    this.currentLoadingPromise = new Promise((resolve) => {
+      this.loaderShownResolver = resolve;
+    });
+  }
+
   loader<T>(promise: Promise<T>): Promise<T> {
     const {
       el, suppressOnInit, loaderPromises, config,
@@ -60,15 +77,21 @@ export default class Loader {
     if (!suppressOnInit && el) {
       const isFirstLoader = !loaderPromises.length;
       loaderPromises.push(promise);
+      if (this.loaderShows) {
+        this.promisesForShownLoader.push(promise);
+      }
 
       const showLoader = (): void => {
         el.classList.add(classActive);
         this.loaderShows = true;
+        this.promisesForShownLoader.push(...loaderPromises);
       };
 
       const hideLoader = (): void => {
         el.classList.remove(classActive);
         this.loaderShows = false;
+        this.loaderShownResolver(this.promisesForShownLoader.splice(0, this.promisesForShownLoader.length));
+        this.setCurrentLoadingPromise();
       };
 
       if (isFirstLoader) { // Only the first loader needs to initialize the show functionality

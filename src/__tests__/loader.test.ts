@@ -720,6 +720,80 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false);
     });
   });
+
+  describe('currentLoadingPromise', () => {
+    it('returns a promise for the currently shown loader', async () => {
+      const loader = new Loader({ delay: 666 }); // Initialize the loader
+
+      const loadingPromise = loader.currentLoadingPromise;
+
+      // Prepare the promise to pass into
+      let promiseResolver = PromiseResolverStub;
+      const promise = new Promise<string>((resolve) => {
+        promiseResolver = resolve as PromiseResolver;
+      });
+
+      loader.loader(promise);
+
+      promiseResolver('success');
+      await expect(promise).resolves.toEqual('success');
+
+      jest.runAllTimers(); // init delay expired
+
+      let promiseResolver2 = PromiseResolverStub;
+      const promise2 = new Promise<string>((resolve) => {
+        promiseResolver2 = resolve as PromiseResolver;
+      });
+
+      loader.loader(promise2);
+
+      jest.runAllTimers();
+
+      promiseResolver2('foo');
+      await expect(promise2).resolves.toEqual('foo');
+
+      jest.runAllTimers();
+
+      const loadingPromiseResult = await loadingPromise;
+      expect(loadingPromiseResult).toHaveLength(1);
+      expect(loadingPromiseResult[0]).toBe(promise2);
+
+      const loadingPromise2 = loader.currentLoadingPromise;
+
+      let promiseResolver3 = PromiseResolverStub;
+      const promise3 = new Promise<string>((resolve) => {
+        promiseResolver3 = resolve as PromiseResolver;
+      });
+
+      loader.loader(promise3);
+
+      jest.runAllTimers();
+
+      let promiseResolver4 = PromiseResolverStub;
+      const promise4 = new Promise<string>((resolve) => {
+        promiseResolver4 = resolve as PromiseResolver;
+      });
+
+      loader.loader(promise4);
+
+      jest.runAllTimers();
+
+      promiseResolver3('08');
+      await expect(promise3).resolves.toEqual('08');
+
+      jest.runAllTimers();
+
+      promiseResolver4('15');
+      await expect(promise4).resolves.toEqual('15');
+
+      jest.runAllTimers();
+
+      const loadingPromiseResult2 = await loadingPromise2;
+      expect(loadingPromiseResult2).toHaveLength(2);
+      expect(loadingPromiseResult2[0]).toBe(promise3);
+      expect(loadingPromiseResult2[1]).toBe(promise4);
+    });
+  });
 });
 
 export default undefined;
