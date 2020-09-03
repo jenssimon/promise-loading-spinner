@@ -8,8 +8,6 @@ export interface LoaderConfig {
 
 type LoaderPromise = Promise<unknown>;
 
-type LoaderShownPromise = Promise<LoaderPromise[]>;
-
 const defaults: LoaderConfig = {
   delay: 300, // delay before the loader is shown
   closeDelay: 10, // delay before the loader closes

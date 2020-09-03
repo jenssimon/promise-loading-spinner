@@ -1,7 +1,10 @@
-import typescript from 'rollup-plugin-typescript2';
+import typescript from '@rollup/plugin-typescript';
 import commonjs from '@rollup/plugin-commonjs';
-import Typescript from 'typescript';
 import pkg from './package.json';
+
+const commonTypescriptConfig = {
+  outDir: 'dist/',
+};
 
 export default [
   // browser-friendly UMD build
@@ -14,7 +17,8 @@ export default [
     },
     plugins: [
       typescript({
-        typescript: Typescript,
+        ...commonTypescriptConfig,
+        module: 'CommonJS',
       }),
       commonjs(),
     ],
@@ -24,12 +28,12 @@ export default [
     input: 'src/loader.ts',
     external: [],
     output: [
-      { file: pkg.main, format: 'cjs' },
+      { file: pkg.main, format: 'cjs', exports: 'auto' },
       { file: pkg.module, format: 'es' },
     ],
     plugins: [
       typescript({
-        typescript: Typescript,
+        ...commonTypescriptConfig,
       }),
     ],
   },
