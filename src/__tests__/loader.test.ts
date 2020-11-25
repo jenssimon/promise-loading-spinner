@@ -15,6 +15,7 @@ describe('promise-loading-spinner', () => {
 
   describe('default configuration', () => {
     it('handles a single promise (success)', async () => {
+      // eslint-disable-next-line sonarjs/no-duplicate-string
       const loaderElement = document.getElementById('js-page-loader') as HTMLElement;
 
       const loader = new Loader(); // Initialize the loader

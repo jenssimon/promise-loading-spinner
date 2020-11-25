@@ -1,7 +1,11 @@
 {
   "root": true,
   "extends": [
-    "@jenssimon/base/frontend-modern",
+    "@jenssimon/base/frontend-react",
     "@jenssimon/typescript"
-  ]
+  ],
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "tsconfigRootDir": "."
+  }
 }

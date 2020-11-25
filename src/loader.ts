@@ -31,7 +31,7 @@ export default class Loader {
 
   protected loaderShows: boolean
 
-  private loaderShownResolver: (value?: LoaderPromise[] | PromiseLike<LoaderPromise[]> | undefined) => void
+  private loaderShownResolver?: (value?: LoaderPromise[] | PromiseLike<LoaderPromise[]> | undefined) => void
 
   private promisesForShownLoader: LoaderPromise[]
 
@@ -44,8 +44,7 @@ export default class Loader {
     this.closingTimeout = null;
     this.loaderShows = false;
     this.promisesForShownLoader = [];
-    this.loaderShownResolver = ((null as unknown) as
-      (value?: LoaderPromise[] | PromiseLike<LoaderPromise[]> | undefined) => void);
+    this.loaderShownResolver = undefined;
     this.currentLoadingPromise = Promise.resolve([]);
     this.setCurrentLoadingPromise();
 
@@ -63,10 +62,12 @@ export default class Loader {
 
   private setCurrentLoadingPromise() {
     this.currentLoadingPromise = new Promise((resolve) => {
-      this.loaderShownResolver = resolve;
+      this.loaderShownResolver = resolve as (
+        value?: LoaderPromise[] | PromiseLike<LoaderPromise[]> | undefined) => void;
     });
   }
 
+  // eslint-disable-next-line sonarjs/cognitive-complexity
   loader<T>(promise: Promise<T>): Promise<T> {
     const {
       el, suppressOnInit, loaderPromises, config,
@@ -88,7 +89,10 @@ export default class Loader {
       const hideLoader = (): void => {
         el.classList.remove(classActive);
         this.loaderShows = false;
-        this.loaderShownResolver(this.promisesForShownLoader.splice(0, this.promisesForShownLoader.length));
+        /* istanbul ignore else */
+        if (this.loaderShownResolver) {
+          this.loaderShownResolver(this.promisesForShownLoader.splice(0, this.promisesForShownLoader.length));
+        }
         this.setCurrentLoadingPromise();
       };
 
@@ -139,7 +143,7 @@ export default class Loader {
 
   decorator(): MethodDecorator {
     const loaderCtx = this; // eslint-disable-line @typescript-eslint/no-this-alias
-    const decorator: MethodDecorator = function (target, propertyKey, descriptor) {
+    return function (target, propertyKey, descriptor) {
       const oldValue = descriptor.value as unknown;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (descriptor as any).value = function (...params: any[]) {
@@ -147,6 +151,5 @@ export default class Loader {
         return loaderCtx.loader((oldValue as any).apply(this, params));
       };
     };
-    return decorator;
   }
 }
