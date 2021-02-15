@@ -78,7 +78,7 @@ Option  | Description | Type | Default
 
 ## License
 
-MIT © 2020 [Jens Simon](https://github.com/jenssimon)
+MIT © 2021 [Jens Simon](https://github.com/jenssimon)
 
 [npm-url]: https://www.npmjs.com/package/promise-loading-spinner
 [npm-image]: https://badgen.net/npm/v/promise-loading-spinner
