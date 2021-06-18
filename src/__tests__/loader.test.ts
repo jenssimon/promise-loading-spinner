@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import Loader from '../loader';
 
 type PromiseResolver = (value?: unknown) => void;
