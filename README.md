@@ -56,10 +56,35 @@ myFunction(someUrl);
 It also exports a method decorator:
 
 ```javascript
-const loaderDecorator = loader.decorator();
+const loaderDecorator = loader.decorator.bind(loader);
 
 class MyClass {
-  @loaderDecorator
+  @loaderDecorator()
+  async foo() {
+    // ...
+  }
+}
+```
+
+All ways to add a promise can also take a configuration object as an optional parameter.
+
+Option  | Description | Type
+--------|-------------|------
+`skipDelays` |  Skip all delays (`initDelay`, `delay`) | `boolean`
+
+Examples:
+
+```javascript
+
+// loader
+loader(promise, { skipDelays: true });
+
+// wrapFunction:
+wrapFunction(fnc, { skipDelays: true });
+
+// decorator:
+class MyClass {
+  @loaderDecorator({ skipDelays: true })
   async foo() {
     // ...
   }

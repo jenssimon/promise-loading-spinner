@@ -151,6 +151,39 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false);
     });
 
+    it('forces a loader directly at page load (init delay)', async () => {
+      const loaderElement = document.getElementById('js-page-loader') as HTMLElement;
+
+      const loader = new Loader(); // Initialize the loader
+
+      // Loader is initialized
+      expect(loaderElement.classList.contains('is-active')).toBe(false);
+
+      // Prepare the promise to pass into
+      let promiseResolver = PromiseResolverStub;
+      const promise = new Promise<string>((resolve) => {
+        promiseResolver = resolve as PromiseResolver;
+      });
+
+      const passedThroughPromise = loader.loader(promise, { skipDelays: true }); // call the loader
+
+      expect(passedThroughPromise).toEqual(promise); // is the returned promise the same as the passed in?
+      expect(loaderElement.classList.contains('is-active')).toBe(true);
+
+      // for the case init delay and delay timeouts are set
+      // jest.runAllTimers();
+      /* expect(loaderElement.classList.contains('is-active')).toBe(false);
+      jest.runAllTimers();
+      expect(loaderElement.classList.contains('is-active')).toBe(false); */
+
+      promiseResolver('success'); // promise resolves
+      await expect(passedThroughPromise).resolves.toBe('success');
+
+      jest.runAllTimers();
+
+      expect(loaderElement.classList.contains('is-active')).toBe(false);
+    });
+
     it('processes two promises (added second in delay phase)', async () => {
       const loaderElement = document.getElementById('js-page-loader') as HTMLElement;
 
@@ -679,7 +712,7 @@ describe('promise-loading-spinner', () => {
         return this;
       });
 
-      const decorator = loader.decorator();
+      const decorator = loader.decorator.bind(loader);
 
       class TestClass {
         foo: string
@@ -688,7 +721,7 @@ describe('promise-loading-spinner', () => {
           this.foo = 'bar';
         }
 
-        @decorator
+        @decorator()
         test() {
           fn.call(this, this.foo, 815);
           return promise;

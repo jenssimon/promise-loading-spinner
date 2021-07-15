@@ -6,6 +6,10 @@ export interface LoaderConfig {
   classActive: string;
 }
 
+export interface LoaderCallOptions {
+  skipDelays: boolean;
+}
+
 type LoaderPromise = Promise<unknown>;
 
 const defaults: LoaderConfig = {
@@ -24,6 +28,8 @@ export default class Loader {
   private el: HTMLElement
 
   private suppressOnInit: boolean
+
+  private initSuppressTimeout: NodeJS.Timeout | null
 
   private timeout: NodeJS.Timeout | null
 
@@ -55,8 +61,9 @@ export default class Loader {
     this.el = loaderElement instanceof HTMLElement
       ? loaderElement : document.querySelector(loaderElement) as HTMLElement;
     this.suppressOnInit = true;
-    setTimeout(() => {
+    this.initSuppressTimeout = setTimeout(() => {
       this.suppressOnInit = false;
+      this.initSuppressTimeout = null;
     }, initDelay);
   }
 
@@ -68,12 +75,18 @@ export default class Loader {
   }
 
   // eslint-disable-next-line sonarjs/cognitive-complexity
-  loader<T>(promise: Promise<T>): Promise<T> {
+  loader<T>(promise: Promise<T>, options?: Partial<LoaderCallOptions>): Promise<T> {
     const {
-      el, suppressOnInit, loaderPromises, config,
+      el, suppressOnInit, loaderPromises, config, initSuppressTimeout,
     } = this;
     const { classActive, delay, closeDelay } = config;
-    if (!suppressOnInit && el) {
+    const skipDelays = options?.skipDelays ?? false;
+    if ((!suppressOnInit || skipDelays) && el) {
+      if (suppressOnInit && skipDelays) {
+        clearTimeout(initSuppressTimeout as NodeJS.Timeout);
+        this.suppressOnInit = false;
+        this.initSuppressTimeout = null;
+      }
       const isFirstLoader = !loaderPromises.length;
       loaderPromises.push(promise);
       if (this.loaderShows) {
@@ -98,11 +111,15 @@ export default class Loader {
 
       if (isFirstLoader) { // Only the first loader needs to initialize the show functionality
         if (!this.closingTimeout) {
-          // Show loader after a delay. For operation that are finished fast enough no loader is shown.
-          this.timeout = setTimeout(() => {
+          if (!skipDelays) {
+            // Show loader after a delay. For operation that are finished fast enough no loader is shown.
+            this.timeout = setTimeout(() => {
+              showLoader();
+              this.timeout = null;
+            }, delay);
+          } else {
             showLoader();
-            this.timeout = null;
-          }, delay);
+          }
         } else {
           // Another operation finished shortly before. To avoid flickering the loader closes later.
           // But here we don't need to close it because another operation starts.
@@ -132,23 +149,23 @@ export default class Loader {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  wrapFunction<C, A extends any[], R>(fnc: (this: C, ...args: A) => Promise<R>): (this: C,
-    ...args: A) => Promise<R> {
+  wrapFunction<C, A extends any[], R>(fnc: (this: C, ...args: A) => Promise<R>,
+    options?: Partial<LoaderCallOptions>): (this: C, ...args: A) => Promise<R> {
     const loaderCtx = this; // eslint-disable-line @typescript-eslint/no-this-alias
 
     return function (this: C, ...args: A): Promise<R> {
-      return loaderCtx.loader(fnc.apply(this, args));
+      return loaderCtx.loader(fnc.apply(this, args), options);
     };
   }
 
-  decorator(): MethodDecorator {
+  decorator(options?: Partial<LoaderCallOptions>): MethodDecorator {
     const loaderCtx = this; // eslint-disable-line @typescript-eslint/no-this-alias
     return function (target, propertyKey, descriptor) {
       const oldValue = descriptor.value as unknown;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (descriptor as any).value = function (...params: any[]) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        return loaderCtx.loader((oldValue as any).apply(this, params));
+        return loaderCtx.loader((oldValue as any).apply(this, params), options);
       };
     };
   }
