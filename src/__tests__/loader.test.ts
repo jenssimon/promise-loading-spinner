@@ -5,10 +5,10 @@
 import Loader from '../loader';
 
 type PromiseResolver = (value?: unknown) => void;
-type PromiseRejecter = (reason?: any) => unknown; // eslint-disable-line @typescript-eslint/no-explicit-any
+type PromiseRejecter = (reason?: unknown) => unknown;
 
-const PromiseResolverStub: PromiseResolver = () => {};
-const PromiseRejecterStub: PromiseRejecter = () => {};
+const promiseResolverStub: PromiseResolver = () => {};
+const promiseRejecterStub: PromiseRejecter = () => {};
 
 jest.useFakeTimers();
 
@@ -30,7 +30,7 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promiseResolver = PromiseResolverStub;
+      let promiseResolver = promiseResolverStub;
       const promise = new Promise<string>((resolve) => {
         promiseResolver = resolve as PromiseResolver;
       });
@@ -65,7 +65,7 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promiseRejecter = PromiseRejecterStub;
+      let promiseRejecter = promiseRejecterStub;
       const promise = new Promise<string>((resolve, reject) => {
         promiseRejecter = reject;
       });
@@ -100,7 +100,7 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promiseResolver = PromiseResolverStub;
+      let promiseResolver = promiseResolverStub;
       const promise = new Promise<string>((resolve) => {
         promiseResolver = resolve as PromiseResolver;
       });
@@ -129,7 +129,7 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false);
 
       // Prepare the promise to pass into
-      let promiseResolver = PromiseResolverStub;
+      let promiseResolver = promiseResolverStub;
       const promise = new Promise<string>((resolve) => {
         promiseResolver = resolve as PromiseResolver;
       });
@@ -160,7 +160,7 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false);
 
       // Prepare the promise to pass into
-      let promiseResolver = PromiseResolverStub;
+      let promiseResolver = promiseResolverStub;
       const promise = new Promise<string>((resolve) => {
         promiseResolver = resolve as PromiseResolver;
       });
@@ -195,11 +195,11 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promise1Resolver = PromiseResolverStub;
+      let promise1Resolver = promiseResolverStub;
       const promise1 = new Promise<string>((resolve) => {
         promise1Resolver = resolve as PromiseResolver;
       });
-      let promise2Resolver = PromiseResolverStub;
+      let promise2Resolver = promiseResolverStub;
       const promise2 = new Promise<string>((resolve) => {
         promise2Resolver = resolve as PromiseResolver;
       });
@@ -246,11 +246,11 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promise1Resolver = PromiseResolverStub;
+      let promise1Resolver = promiseResolverStub;
       const promise1 = new Promise<string>((resolve) => {
         promise1Resolver = resolve as PromiseResolver;
       });
-      let promise2Resolver = PromiseResolverStub;
+      let promise2Resolver = promiseResolverStub;
       const promise2 = new Promise<string>((resolve) => {
         promise2Resolver = resolve as PromiseResolver;
       });
@@ -297,11 +297,11 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promise1Resolver = PromiseResolverStub;
+      let promise1Resolver = promiseResolverStub;
       const promise1 = new Promise<string>((resolve) => {
         promise1Resolver = resolve as PromiseResolver;
       });
-      let promise2Resolver = PromiseResolverStub;
+      let promise2Resolver = promiseResolverStub;
       const promise2 = new Promise<string>((resolve) => {
         promise2Resolver = resolve as PromiseResolver;
       });
@@ -354,11 +354,11 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promise1Resolver = PromiseResolverStub;
+      let promise1Resolver = promiseResolverStub;
       const promise1 = new Promise<string>((resolve) => {
         promise1Resolver = resolve as PromiseResolver;
       });
-      let promise2Resolver = PromiseResolverStub;
+      let promise2Resolver = promiseResolverStub;
       const promise2 = new Promise<string>((resolve) => {
         promise2Resolver = resolve as PromiseResolver;
       });
@@ -421,7 +421,7 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promiseResolver = PromiseResolverStub;
+      let promiseResolver = promiseResolverStub;
       const promise = new Promise<string>((resolve) => {
         promiseResolver = resolve as PromiseResolver;
       });
@@ -464,7 +464,7 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promiseResolver = PromiseResolverStub;
+      let promiseResolver = promiseResolverStub;
       const promise = new Promise<string>((resolve) => {
         promiseResolver = resolve as PromiseResolver;
       });
@@ -506,7 +506,7 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promiseResolver = PromiseResolverStub;
+      let promiseResolver = promiseResolverStub;
       const promise = new Promise<string>((resolve) => {
         promiseResolver = resolve as PromiseResolver;
       });
@@ -547,7 +547,7 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promiseResolver = PromiseResolverStub;
+      let promiseResolver = promiseResolverStub;
       const promise = new Promise<string>((resolve) => {
         promiseResolver = resolve as PromiseResolver;
       });
@@ -580,7 +580,7 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false);
 
       // Prepare the promise to pass into
-      let promiseResolver = PromiseResolverStub;
+      let promiseResolver = promiseResolverStub;
       const promise = new Promise<string>((resolve) => {
         promiseResolver = resolve as PromiseResolver;
       });
@@ -611,7 +611,7 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promiseResolver = PromiseResolverStub;
+      let promiseResolver = promiseResolverStub;
       const promise = new Promise<string>((resolve) => {
         promiseResolver = resolve as PromiseResolver;
       });
@@ -646,7 +646,7 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promiseResolver = PromiseResolverStub;
+      let promiseResolver = promiseResolverStub;
       const promise = new Promise<string>((resolve) => {
         promiseResolver = resolve as PromiseResolver;
       });
@@ -663,8 +663,12 @@ describe('promise-loading-spinner', () => {
       expect(fn.mock.calls).toHaveLength(0);
 
       // call the loader
-      const passedThroughPromise = loaderFunction.call('Hello', 'foo', ['foo', 'bar'],
-        { foo: 'bar' });
+      const passedThroughPromise = loaderFunction.call(
+        'Hello',
+        'foo',
+        ['foo', 'bar'],
+        { foo: 'bar' },
+      );
 
       expect(passedThroughPromise).toEqual(promise); // is the returned promise the same as the passed in?
 
@@ -701,7 +705,7 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers(); // init delay expired
 
       // Prepare the promise to pass into
-      let promiseResolver = PromiseResolverStub;
+      let promiseResolver = promiseResolverStub;
       const promise = new Promise<string>((resolve) => {
         promiseResolver = resolve as PromiseResolver;
       });
@@ -715,7 +719,7 @@ describe('promise-loading-spinner', () => {
       const decorator = loader.decorator.bind(loader);
 
       class TestClass {
-        foo: string
+        foo: string;
 
         constructor() {
           this.foo = 'bar';
@@ -766,7 +770,7 @@ describe('promise-loading-spinner', () => {
       const loadingPromise = loader.currentLoadingPromise;
 
       // Prepare the promise to pass into
-      let promiseResolver = PromiseResolverStub;
+      let promiseResolver = promiseResolverStub;
       const promise = new Promise<string>((resolve) => {
         promiseResolver = resolve as PromiseResolver;
       });
@@ -778,7 +782,7 @@ describe('promise-loading-spinner', () => {
 
       jest.runAllTimers(); // init delay expired
 
-      let promiseResolver2 = PromiseResolverStub;
+      let promiseResolver2 = promiseResolverStub;
       const promise2 = new Promise<string>((resolve) => {
         promiseResolver2 = resolve as PromiseResolver;
       });
@@ -798,7 +802,7 @@ describe('promise-loading-spinner', () => {
 
       const loadingPromise2 = loader.currentLoadingPromise;
 
-      let promiseResolver3 = PromiseResolverStub;
+      let promiseResolver3 = promiseResolverStub;
       const promise3 = new Promise<string>((resolve) => {
         promiseResolver3 = resolve as PromiseResolver;
       });
@@ -807,7 +811,7 @@ describe('promise-loading-spinner', () => {
 
       jest.runAllTimers();
 
-      let promiseResolver4 = PromiseResolverStub;
+      let promiseResolver4 = promiseResolverStub;
       const promise4 = new Promise<string>((resolve) => {
         promiseResolver4 = resolve as PromiseResolver;
       });

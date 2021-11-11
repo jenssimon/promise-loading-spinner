@@ -21,27 +21,27 @@ const defaults: LoaderConfig = {
 };
 
 export default class Loader {
-  private loaderPromises: LoaderPromise[]
+  private loaderPromises: LoaderPromise[];
 
-  private config: LoaderConfig
+  private config: LoaderConfig;
 
-  private el: HTMLElement
+  private el: HTMLElement;
 
-  private suppressOnInit: boolean
+  private suppressOnInit: boolean;
 
-  private initSuppressTimeout: NodeJS.Timeout | null
+  private initSuppressTimeout: NodeJS.Timeout | null;
 
-  private timeout: NodeJS.Timeout | null
+  private timeout: NodeJS.Timeout | null;
 
-  private closingTimeout: NodeJS.Timeout | null
+  private closingTimeout: NodeJS.Timeout | null;
 
-  protected loaderShows: boolean
+  protected loaderShows: boolean;
 
-  private loaderShownResolver?: (value?: LoaderPromise[] | PromiseLike<LoaderPromise[]> | undefined) => void
+  private loaderShownResolver?: (value?: LoaderPromise[] | PromiseLike<LoaderPromise[]> | undefined) => void;
 
-  private promisesForShownLoader: LoaderPromise[]
+  private promisesForShownLoader: LoaderPromise[];
 
-  public currentLoadingPromise: Promise<LoaderPromise[]>
+  public currentLoadingPromise: Promise<LoaderPromise[]>;
 
   constructor(cfg: Partial<LoaderConfig> = {}) {
     this.loaderPromises = [];
@@ -143,14 +143,15 @@ export default class Loader {
           }, closeDelay);
         }
       };
-      promise.then(finished, finished);
+      promise.then(finished, finished); // eslint-disable-line promise/prefer-await-to-then
     }
     return promise;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  wrapFunction<C, A extends any[], R>(fnc: (this: C, ...args: A) => Promise<R>,
-    options?: Partial<LoaderCallOptions>): (this: C, ...args: A) => Promise<R> {
+  wrapFunction<C, A extends never[], R>(
+    fnc: (this: C, ...args: A) => Promise<R>,
+    options?: Partial<LoaderCallOptions>,
+  ): (this: C, ...args: A) => Promise<R> {
     const loaderCtx = this; // eslint-disable-line @typescript-eslint/no-this-alias
 
     return function (this: C, ...args: A): Promise<R> {
@@ -161,9 +162,9 @@ export default class Loader {
   decorator(options?: Partial<LoaderCallOptions>): MethodDecorator {
     const loaderCtx = this; // eslint-disable-line @typescript-eslint/no-this-alias
     return function (target, propertyKey, descriptor) {
-      const oldValue = descriptor.value as unknown;
+      const oldValue = descriptor.value;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (descriptor as any).value = function (...params: any[]) {
+      (descriptor as any).value = function (...params: never[]) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         return loaderCtx.loader((oldValue as any).apply(this, params), options);
       };
