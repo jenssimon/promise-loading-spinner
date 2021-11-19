@@ -1,3 +1,5 @@
+import PromiseLoadingSpinner from '../dist/loader.js';
+
 (async () => {
   const getWorkingSectionPromise = (sectionNumber, workingTime) => new Promise((resolve) => {
     const section = document.querySelector(`.section-${sectionNumber}`);
@@ -17,7 +19,7 @@
   const demo = async () => {
     await waitFor(2000);
 
-    const loader = new this.PromiseLoadingSpinner();
+    const loader = new PromiseLoadingSpinner();
 
     // in init delay
     await loader.loader(getWorkingSectionPromise(1, 5000));

@@ -19,13 +19,14 @@
   "author": "Jens Simon <https://github.com/jenssimon>",
   "license": "MIT",
   "private": false,
-  "main": "dist/promise-loading-spinner.cjs.js",
-  "module": "dist/promise-loading-spinner.esm.js",
-  "browser": "dist/promise-loading-spinner.umd.js",
-  "types": "./dist/loader.d.ts",
+  "main": "dist/loader.js",
+  "types": "dist/loader.d.ts",
+  "type": "module",
   "scripts": {
-    "lint": "eslint --fix --ext .tsx,.ts,.jsx,.js ./ && tsc",
-    "build": "rollup -c",
+    "lint": "eslint --fix --ext .tsx,.ts,.jsx,.js ./ && tsc --noEmit",
+    "build": "tsc",
+    "predemo": "run-s build",
+    "demo": "web-dev-server --open /demo/demo.html",
     "prepublishOnly": "yarn build",
     "test": "jest --coverage",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
@@ -33,19 +34,18 @@
   "devDependencies": {
     "@jenssimon/eslint-config-base": "^5.0.0",
     "@jenssimon/eslint-config-typescript": "^3.1.3",
-    "@rollup/plugin-commonjs": "^19.0.0",
-    "@rollup/plugin-typescript": "^8.3.0",
     "@types/jest": "^27.0.3",
+    "@web/dev-server": "^0.1.28",
     "coveralls": "^3.1.1",
     "eslint": "^8.2.0",
     "jest": "^27.3.1",
-    "rollup": "^2.60.0",
+    "npm-run-all": "^4.1.5",
     "ts-jest": "^27.0.7",
-    "tslib": "^2.3.1",
     "typescript": "^4.5.2"
   },
   "files": [
-    "dist"
+    "dist/loader.js",
+    "dist/loader.d.ts"
   ],
   "eslintConfig": {
     "parserOptions": {
@@ -63,6 +63,13 @@
     "modulePathIgnorePatterns": [
       "dist/"
     ],
-    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
