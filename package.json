@@ -32,7 +32,7 @@
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "devDependencies": {
-    "@jenssimon/eslint-config-base": "5.3.0",
+    "@jenssimon/eslint-config-base": "5.3.1",
     "@jenssimon/eslint-config-typescript": "3.3.3",
     "@types/jest": "27.4.1",
     "@web/dev-server": "0.1.30",
