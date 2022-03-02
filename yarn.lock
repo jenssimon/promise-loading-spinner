@@ -521,17 +521,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-typescript@npm:3.3.4":
-  version: 3.3.4
-  resolution: "@jenssimon/eslint-config-typescript@npm:3.3.4"
+"@jenssimon/eslint-config-typescript@npm:3.4.0":
+  version: 3.4.0
+  resolution: "@jenssimon/eslint-config-typescript@npm:3.4.0"
   dependencies:
-    "@typescript-eslint/eslint-plugin": ^5.12.1
-    "@typescript-eslint/parser": ^5.12.1
+    "@typescript-eslint/eslint-plugin": ^5.13.0
+    "@typescript-eslint/parser": ^5.13.0
     eslint-plugin-deprecation: ^1.3.2
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
     typescript: ">=4.0.0"
-  checksum: b54877a6bff1db338ababa85b3f1de66cd6b0aebf6d7dece4f426512df8e9d718705397ce884a626ffab067b60dee9eeed8c71d3f6bfbf864cd2f5700b3aff4a
+  checksum: 0c3c2b8471247d3b43fcbfdacfa2fee3a4a04b8101d433764eb23ace5a7d562de696ecbc83d277da74a15fafd5ddd0714a7f0d62be3ab4c39fad47bd4bb0296b
   languageName: node
   linkType: hard
 
@@ -1190,7 +1190,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.12.1":
+"@typescript-eslint/eslint-plugin@npm:^5.13.0":
   version: 5.13.0
   resolution: "@typescript-eslint/eslint-plugin@npm:5.13.0"
   dependencies:
@@ -1224,7 +1224,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.12.1":
+"@typescript-eslint/parser@npm:^5.13.0":
   version: 5.13.0
   resolution: "@typescript-eslint/parser@npm:5.13.0"
   dependencies:
@@ -5557,7 +5557,7 @@ __metadata:
   resolution: "promise-loading-spinner@workspace:."
   dependencies:
     "@jenssimon/eslint-config-base": 5.3.1
-    "@jenssimon/eslint-config-typescript": 3.3.4
+    "@jenssimon/eslint-config-typescript": 3.4.0
     "@types/jest": 27.4.1
     "@web/dev-server": 0.1.30
     eslint: 8.10.0
