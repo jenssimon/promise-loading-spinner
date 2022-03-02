@@ -1,4 +1,4 @@
-[![NPM version][npm-image]][npm-url] [![Downloads][npm-downloads-image]][npm-url] [![star this repo][gh-stars-image]][gh-url] [![fork this repo][gh-forks-image]][gh-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] ![Code Style][codestyle-image]
+[![NPM version][npm-image]][npm-url] [![Downloads][npm-downloads-image]][npm-url] [![star this repo][gh-stars-image]][gh-url] [![fork this repo][gh-forks-image]][gh-url] [![Build Status][gh-status-image]][gh-url] [![Coverage Status][coveralls-image]][coveralls-url]
 
 # promise-loading-spinner
 
@@ -103,7 +103,7 @@ Option  | Description | Type | Default
 
 ## License
 
-MIT © 2021 [Jens Simon](https://github.com/jenssimon)
+MIT © 2022 [Jens Simon](https://github.com/jenssimon)
 
 [npm-url]: https://www.npmjs.com/package/promise-loading-spinner
 [npm-image]: https://badgen.net/npm/v/promise-loading-spinner
@@ -112,11 +112,7 @@ MIT © 2021 [Jens Simon](https://github.com/jenssimon)
 [gh-url]: https://github.com/jenssimon/promise-loading-spinner
 [gh-stars-image]: https://badgen.net/github/stars/jenssimon/promise-loading-spinner
 [gh-forks-image]: https://badgen.net/github/forks/jenssimon/promise-loading-spinner
-
-[travis-url]: https://travis-ci.com/jenssimon/promise-loading-spinner
-[travis-image]: https://travis-ci.com/jenssimon/promise-loading-spinner.svg?branch=master
+[gh-status-image]: https://badgen.net/github/status/jenssimon/promise-loading-spinner
 
 [coveralls-url]: https://coveralls.io/github/jenssimon/promise-loading-spinner?branch=master
 [coveralls-image]: https://coveralls.io/repos/github/jenssimon/promise-loading-spinner/badge.svg?branch=master
-
-[codestyle-image]: https://badgen.net/badge/code%20style/airbnb/f2a

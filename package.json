@@ -28,7 +28,11 @@
     "predemo": "run-s build",
     "demo": "web-dev-server --open /demo/demo.html",
     "prepublishOnly": "yarn build",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "ci": "run-s \"ci:*\"",
+    "ci:lint": "eslint ./",
+    "ci:tsc": "tsc --noEmit",
+    "ci:test": "jest --coverage"
   },
   "devDependencies": {
     "@jenssimon/eslint-config-base": "5.3.1",
