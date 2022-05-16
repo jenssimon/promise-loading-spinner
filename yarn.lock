@@ -31,7 +31,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.17.8":
+"@babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.17.10":
   version: 7.17.10
   resolution: "@babel/core@npm:7.17.10"
   dependencies:
@@ -486,29 +486,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-base@npm:5.4.0":
-  version: 5.4.0
-  resolution: "@jenssimon/eslint-config-base@npm:5.4.0"
+"@jenssimon/eslint-config-base@npm:5.4.1":
+  version: 5.4.1
+  resolution: "@jenssimon/eslint-config-base@npm:5.4.1"
   dependencies:
-    "@babel/core": ^7.17.8
+    "@babel/core": ^7.17.10
     "@babel/eslint-parser": ^7.17.0
     eslint-config-airbnb: ^19.0.4
     eslint-config-airbnb-base: ^15.0.0
     eslint-import-resolver-node: ^0.3.6
     eslint-plugin-babel: ^5.3.1
     eslint-plugin-eslint-comments: ^3.2.0
-    eslint-plugin-import: ^2.25.4
-    eslint-plugin-jest: ^26.1.3
+    eslint-plugin-import: ^2.26.0
+    eslint-plugin-jest: ^26.2.2
     eslint-plugin-jsx-a11y: ^6.5.1
     eslint-plugin-optimize-regex: ^1.2.1
     eslint-plugin-promise: ^6.0.0
     eslint-plugin-react: ^7.29.4
-    eslint-plugin-react-hooks: ^4.4.0
+    eslint-plugin-react-hooks: ^4.5.0
     eslint-plugin-react-redux: ^4.0.0
     eslint-plugin-sonarjs: ^0.13.0
   peerDependencies:
     eslint: ^7.32.0 || ^8.2.0
-  checksum: d7e633f358997256158e3fbb404e5b4654577ac0080fba249894a56664391534b5abe70589e344e6341563d52737de754829dc0e89845a211cd30b20bd025571
+  checksum: 815dd3bf74eca5a0337541e1e5d4024604ae5c747b088075883f3a845cb9c721aabff8e69b415c7b26dc79996fafbd0a64df1e42cfa719286181290c99c14d81
   languageName: node
   linkType: hard
 
@@ -2846,7 +2846,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import@npm:^2.25.4":
+"eslint-plugin-import@npm:^2.26.0":
   version: 2.26.0
   resolution: "eslint-plugin-import@npm:2.26.0"
   dependencies:
@@ -2869,9 +2869,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest@npm:^26.1.3":
-  version: 26.1.5
-  resolution: "eslint-plugin-jest@npm:26.1.5"
+"eslint-plugin-jest@npm:^26.2.2":
+  version: 26.2.2
+  resolution: "eslint-plugin-jest@npm:26.2.2"
   dependencies:
     "@typescript-eslint/utils": ^5.10.0
   peerDependencies:
@@ -2882,7 +2882,7 @@ __metadata:
       optional: true
     jest:
       optional: true
-  checksum: 727487c6d0cc4aa66f8209fc187a2f4eb56ffea6569dacb04bb1e3272221d6238460fb967a12074acac50b0b545d2190c697bad64ebc6c8bdd4e8f3cc66d5a68
+  checksum: c1299a0bb465196d3c8a26ee892e29398b91bb741fe69ac6b19b54096f795142a152355ca520d80c778fb588ba2282a7c625ef204c17fe65ee94709d16970d46
   languageName: node
   linkType: hard
 
@@ -2926,7 +2926,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-hooks@npm:^4.4.0":
+"eslint-plugin-react-hooks@npm:^4.5.0":
   version: 4.5.0
   resolution: "eslint-plugin-react-hooks@npm:4.5.0"
   peerDependencies:
@@ -5749,7 +5749,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "promise-loading-spinner@workspace:."
   dependencies:
-    "@jenssimon/eslint-config-base": 5.4.0
+    "@jenssimon/eslint-config-base": 5.4.1
     "@jenssimon/eslint-config-typescript": 3.4.2
     "@types/jest": 27.5.1
     "@web/dev-server": 0.1.31
