@@ -424,7 +424,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:^17.0.0":
+"@commitlint/cli@npm:17.0.0":
   version: 17.0.0
   resolution: "@commitlint/cli@npm:17.0.0"
   dependencies:
@@ -443,7 +443,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:^17.0.0":
+"@commitlint/config-conventional@npm:17.0.0":
   version: 17.0.0
   resolution: "@commitlint/config-conventional@npm:17.0.0"
   dependencies:
@@ -2791,7 +2791,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cz-conventional-changelog@npm:^3.3.0":
+"cz-conventional-changelog@npm:3.3.0":
   version: 3.3.0
   resolution: "cz-conventional-changelog@npm:3.3.0"
   dependencies:
@@ -4376,7 +4376,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:^8.0.0":
+"husky@npm:8.0.1":
   version: 8.0.1
   resolution: "husky@npm:8.0.1"
   bin:
@@ -6630,7 +6630,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pinst@npm:^3.0.0":
+"pinst@npm:3.0.0":
   version: 3.0.0
   resolution: "pinst@npm:3.0.0"
   bin:
@@ -6714,19 +6714,19 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "promise-loading-spinner@workspace:."
   dependencies:
-    "@commitlint/cli": ^17.0.0
-    "@commitlint/config-conventional": ^17.0.0
+    "@commitlint/cli": 17.0.0
+    "@commitlint/config-conventional": 17.0.0
     "@jenssimon/eslint-config-base": 5.4.1
     "@jenssimon/eslint-config-typescript": 3.4.2
     "@types/jest": 27.5.1
     "@web/dev-server": 0.1.31
-    cz-conventional-changelog: ^3.3.0
+    cz-conventional-changelog: 3.3.0
     eslint: 8.15.0
-    husky: ^8.0.0
+    husky: 8.0.1
     jest: 28.1.0
     jest-environment-jsdom: 28.1.0
     npm-run-all: 4.1.5
-    pinst: ^3.0.0
+    pinst: 3.0.0
     ts-jest: 28.0.2
     typescript: 4.6.4
   languageName: unknown
