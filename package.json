@@ -35,7 +35,8 @@
     "commit": "cz",
     "postinstall": "husky install",
     "prepack": "pinst --disable",
-    "postpack": "pinst --enable"
+    "postpack": "pinst --enable",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "@commitlint/cli": "17.0.0",
@@ -52,6 +53,7 @@
     "jest-environment-jsdom": "28.1.0",
     "npm-run-all": "4.1.5",
     "pinst": "3.0.0",
+    "semantic-release": "^19.0.2",
     "ts-jest": "28.0.2",
     "typescript": "4.6.4"
   },
