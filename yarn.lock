@@ -2148,9 +2148,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@web/dev-server-core@npm:^0.3.16, @web/dev-server-core@npm:^0.3.17":
-  version: 0.3.17
-  resolution: "@web/dev-server-core@npm:0.3.17"
+"@web/dev-server-core@npm:^0.3.18":
+  version: 0.3.18
+  resolution: "@web/dev-server-core@npm:0.3.18"
   dependencies:
     "@types/koa": ^2.11.6
     "@types/ws": ^7.4.0
@@ -2170,33 +2170,33 @@ __metadata:
     parse5: ^6.0.1
     picomatch: ^2.2.2
     ws: ^7.4.2
-  checksum: 6d920dbbe2b736736d61ae529ffaff31631ffce2319025f63fc783e842654e92fc3b30c92460d1e656ca6650713c74e722c05e6e0d6add5b740be808525d2680
+  checksum: d6275dd89d4a764f8f9e898bf614c80c7adf612b9a960dfbef2f90151c5267b87ae250ea2e2ad98deff5c63e0f12b62c8f5852c24d5e514135e836be2db3df5f
   languageName: node
   linkType: hard
 
-"@web/dev-server-rollup@npm:^0.3.16":
-  version: 0.3.17
-  resolution: "@web/dev-server-rollup@npm:0.3.17"
+"@web/dev-server-rollup@npm:^0.3.18":
+  version: 0.3.18
+  resolution: "@web/dev-server-rollup@npm:0.3.18"
   dependencies:
     "@rollup/plugin-node-resolve": ^13.0.4
-    "@web/dev-server-core": ^0.3.16
+    "@web/dev-server-core": ^0.3.18
     nanocolors: ^0.2.1
     parse5: ^6.0.1
-    rollup: ^2.66.1
+    rollup: ^2.67.0
     whatwg-url: ^11.0.0
-  checksum: 16b029abc09f11ca8e785f454015c1a3e9f9c6cc7a9651f3be447e78949dfa7e0ae3e21da3fd56cf4160e4dee308dcdf9a1cf1e530e4d83645e18cbd64c1b83a
+  checksum: cebf00c6aa8ae4db1f438b84b10f1e8c1be5b393a4add8d583f188774136cd9475cbd8bcbe14a95d072fa14e5a80761634c49a5c45a3f1f035c4bb341ccd883e
   languageName: node
   linkType: hard
 
-"@web/dev-server@npm:0.1.31":
-  version: 0.1.31
-  resolution: "@web/dev-server@npm:0.1.31"
+"@web/dev-server@npm:0.1.32":
+  version: 0.1.32
+  resolution: "@web/dev-server@npm:0.1.32"
   dependencies:
     "@babel/code-frame": ^7.12.11
     "@types/command-line-args": ^5.0.0
     "@web/config-loader": ^0.1.3
-    "@web/dev-server-core": ^0.3.17
-    "@web/dev-server-rollup": ^0.3.16
+    "@web/dev-server-core": ^0.3.18
+    "@web/dev-server-rollup": ^0.3.18
     camelcase: ^6.2.0
     command-line-args: ^5.1.1
     command-line-usage: ^6.1.1
@@ -2209,7 +2209,7 @@ __metadata:
   bin:
     wds: dist/bin.js
     web-dev-server: dist/bin.js
-  checksum: de9684ed19759c3a6931500d0cd3e9295f40ebf7b79c535a815f6924c88ed2ae9ba280caf414e031eca1570894737ecf45c668a2dd269621275fb7b6e035776c
+  checksum: f3053b4e1321b47882fc841d982249bd2e73562f361e9ab8d60651b7904934b466124be945e920a497d93b9a20182d9ca03a88cacc6a93aab5bf48c789fb2117
   languageName: node
   linkType: hard
 
@@ -8371,7 +8371,7 @@ __metadata:
     "@jenssimon/eslint-config-base": 5.4.1
     "@jenssimon/eslint-config-typescript": 3.4.3
     "@types/jest": 28.1.2
-    "@web/dev-server": 0.1.31
+    "@web/dev-server": 0.1.32
     commitizen: 4.2.4
     cz-conventional-changelog: 3.3.0
     eslint: 8.18.0
@@ -8840,9 +8840,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:^2.66.1":
-  version: 2.73.0
-  resolution: "rollup@npm:2.73.0"
+"rollup@npm:^2.67.0":
+  version: 2.75.6
+  resolution: "rollup@npm:2.75.6"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -8850,7 +8850,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: 38b12cecc59eaa8f32fe0df456e4585d35997572de185eaeb0c97df7fd6db56711842011c6e8ef5601613024fd8074b2d73a65dbdc90baa781090ba99e75d174
+  checksum: df83c6d43a144a296daf82bed7f12f2dfcc6c495a64245e840d15fd21f2ab8b66bb3423e61c974875b33ccf53fb659d2ed099f272937ecf23af48815277c6cd5
   languageName: node
   linkType: hard
 
