@@ -163,6 +163,9 @@ export default class Loader {
     const loaderCtx = this; // eslint-disable-line @typescript-eslint/no-this-alias
     return function (target, propertyKey, descriptor) {
       const oldValue = descriptor.value;
+      if (oldValue as any === 'XXX') {
+        console.log('XXX');
+      }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (descriptor as any).value = function (...params: never[]) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
