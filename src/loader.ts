@@ -77,7 +77,7 @@ export default class Loader {
   // eslint-disable-next-line sonarjs/cognitive-complexity
   loader<T>(promise: Promise<T>, options?: Partial<LoaderCallOptions>): Promise<T> {
     const {
-      el, suppressOnInit, loaderPromises, config, initSuppressTimeout,
+      el, suppressOnInit, loaderPromises, config, initSuppressTimeout, promisesForShownLoader, closingTimeout,
     } = this;
     const { classActive, delay, closeDelay } = config;
     const skipDelays = options?.skipDelays ?? false;
@@ -87,30 +87,31 @@ export default class Loader {
         this.suppressOnInit = false;
         this.initSuppressTimeout = null;
       }
-      const isFirstLoader = !loaderPromises.length;
+      const isFirstLoader = loaderPromises.length === 0;
       loaderPromises.push(promise);
+      // eslint-disable-next-line unicorn/consistent-destructuring
       if (this.loaderShows) {
-        this.promisesForShownLoader.push(promise);
+        promisesForShownLoader.push(promise);
       }
 
       const showLoader = (): void => {
         el.classList.add(classActive);
         this.loaderShows = true;
-        this.promisesForShownLoader.push(...loaderPromises);
+        promisesForShownLoader.push(...loaderPromises);
       };
 
       const hideLoader = (): void => {
         el.classList.remove(classActive);
         this.loaderShows = false;
         /* istanbul ignore else */
-        if (this.loaderShownResolver) {
-          this.loaderShownResolver(this.promisesForShownLoader.splice(0, this.promisesForShownLoader.length));
+        if (this.loaderShownResolver) { // eslint-disable-line unicorn/consistent-destructuring
+          this.loaderShownResolver(promisesForShownLoader.splice(0, promisesForShownLoader.length));
         }
         this.setCurrentLoadingPromise();
       };
 
       if (isFirstLoader) { // Only the first loader needs to initialize the show functionality
-        if (!this.closingTimeout) {
+        if (!closingTimeout) {
           if (!skipDelays) {
             // Show loader after a delay. For operation that are finished fast enough no loader is shown.
             this.timeout = setTimeout(() => {
@@ -123,18 +124,19 @@ export default class Loader {
         } else {
           // Another operation finished shortly before. To avoid flickering the loader closes later.
           // But here we don't need to close it because another operation starts.
-          clearTimeout(this.closingTimeout);
+          clearTimeout(closingTimeout);
           this.closingTimeout = null;
         }
       }
       const finished = (): void => {
-        if (this.timeout && loaderPromises.length === 1) {
+        const { timeout } = this;
+        if (timeout && loaderPromises.length === 1) {
           // We close the last operation before the loader was shown. There is no need anymore to show it.
-          clearTimeout(this.timeout);
+          clearTimeout(timeout);
           this.timeout = null;
         }
         loaderPromises.splice(loaderPromises.indexOf(promise), 1);
-        if (!loaderPromises.length) {
+        if (loaderPromises.length === 0) {
           // The last operation has finished. Show loader a bit longer so there is no flickering when an operation
           // starts shortly after.
           this.closingTimeout = setTimeout(() => {
@@ -152,7 +154,8 @@ export default class Loader {
     fnc: (this: C, ...args: A) => Promise<R>,
     options?: Partial<LoaderCallOptions>,
   ): (this: C, ...args: A) => Promise<R> {
-    const loaderCtx = this; // eslint-disable-line @typescript-eslint/no-this-alias
+    // eslint-disable-next-line @typescript-eslint/no-this-alias, unicorn/no-this-assignment
+    const loaderCtx = this;
 
     return function (this: C, ...args: A): Promise<R> {
       return loaderCtx.loader(fnc.apply(this, args), options);
@@ -160,7 +163,8 @@ export default class Loader {
   }
 
   decorator(options?: Partial<LoaderCallOptions>): MethodDecorator {
-    const loaderCtx = this; // eslint-disable-line @typescript-eslint/no-this-alias
+    // eslint-disable-next-line @typescript-eslint/no-this-alias, unicorn/no-this-assignment
+    const loaderCtx = this;
     return function (target, propertyKey, descriptor) {
       const oldValue = descriptor.value;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
