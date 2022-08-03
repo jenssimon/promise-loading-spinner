@@ -1,5 +1,6 @@
 import PromiseLoadingSpinner from '../dist/loader.js';
 
+// eslint-disable-next-line unicorn/prefer-top-level-await
 (async () => {
   const getWorkingSectionPromise = (sectionNumber, workingTime) => new Promise((resolve) => {
     const section = document.querySelector(`.section-${sectionNumber}`);
