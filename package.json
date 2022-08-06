@@ -44,7 +44,7 @@
     "@jenssimon/eslint-config-base": "6.0.1",
     "@jenssimon/eslint-config-typescript": "3.5.2",
     "@types/jest": "28.1.6",
-    "@web/dev-server": "0.1.32",
+    "@web/dev-server": "0.1.33",
     "commitizen": "4.2.5",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.21.0",
