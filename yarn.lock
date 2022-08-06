@@ -2507,16 +2507,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@web/dev-server-core@npm:^0.3.18":
-  version: 0.3.18
-  resolution: "@web/dev-server-core@npm:0.3.18"
+"@web/dev-server-core@npm:^0.3.19":
+  version: 0.3.19
+  resolution: "@web/dev-server-core@npm:0.3.19"
   dependencies:
     "@types/koa": ^2.11.6
     "@types/ws": ^7.4.0
     "@web/parse5-utils": ^1.2.0
     chokidar: ^3.4.3
     clone: ^2.1.2
-    es-module-lexer: ^0.9.0
+    es-module-lexer: ^1.0.0
     get-stream: ^6.0.0
     is-stream: ^2.0.0
     isbinaryfile: ^4.0.6
@@ -2529,33 +2529,33 @@ __metadata:
     parse5: ^6.0.1
     picomatch: ^2.2.2
     ws: ^7.4.2
-  checksum: d6275dd89d4a764f8f9e898bf614c80c7adf612b9a960dfbef2f90151c5267b87ae250ea2e2ad98deff5c63e0f12b62c8f5852c24d5e514135e836be2db3df5f
+  checksum: 00b3cafc7d9c25806ae4af824d34d44928b09e039c7cf87e66ddc7b2f7d3198ab667f860282f8f8287cf26aeea1e8f4b348609eba4e05259cc52f4a7451c174f
   languageName: node
   linkType: hard
 
-"@web/dev-server-rollup@npm:^0.3.18":
-  version: 0.3.18
-  resolution: "@web/dev-server-rollup@npm:0.3.18"
+"@web/dev-server-rollup@npm:^0.3.19":
+  version: 0.3.19
+  resolution: "@web/dev-server-rollup@npm:0.3.19"
   dependencies:
     "@rollup/plugin-node-resolve": ^13.0.4
-    "@web/dev-server-core": ^0.3.18
+    "@web/dev-server-core": ^0.3.19
     nanocolors: ^0.2.1
     parse5: ^6.0.1
     rollup: ^2.67.0
     whatwg-url: ^11.0.0
-  checksum: cebf00c6aa8ae4db1f438b84b10f1e8c1be5b393a4add8d583f188774136cd9475cbd8bcbe14a95d072fa14e5a80761634c49a5c45a3f1f035c4bb341ccd883e
+  checksum: 480e4f976639a2014675c489c4c0c19d4e7e5f50a1a3cbde1eabf8823bc3189cc5aac7d7d0e1ee132ee2af93f12b5d723fff78ae0356f0d754f30d65f74fbb01
   languageName: node
   linkType: hard
 
-"@web/dev-server@npm:0.1.32":
-  version: 0.1.32
-  resolution: "@web/dev-server@npm:0.1.32"
+"@web/dev-server@npm:0.1.33":
+  version: 0.1.33
+  resolution: "@web/dev-server@npm:0.1.33"
   dependencies:
     "@babel/code-frame": ^7.12.11
     "@types/command-line-args": ^5.0.0
     "@web/config-loader": ^0.1.3
-    "@web/dev-server-core": ^0.3.18
-    "@web/dev-server-rollup": ^0.3.18
+    "@web/dev-server-core": ^0.3.19
+    "@web/dev-server-rollup": ^0.3.19
     camelcase: ^6.2.0
     command-line-args: ^5.1.1
     command-line-usage: ^6.1.1
@@ -2568,7 +2568,7 @@ __metadata:
   bin:
     wds: dist/bin.js
     web-dev-server: dist/bin.js
-  checksum: f3053b4e1321b47882fc841d982249bd2e73562f361e9ab8d60651b7904934b466124be945e920a497d93b9a20182d9ca03a88cacc6a93aab5bf48c789fb2117
+  checksum: d01d0ade94045b781154f0a932bff282289f760e55ef5d77b946b3f8a00ce86a94d955462e6ce484aba49d329eb610d0959812d0d77fb2eb4276b0d2ca48d3d1
   languageName: node
   linkType: hard
 
@@ -4473,10 +4473,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"es-module-lexer@npm:^0.9.0":
-  version: 0.9.3
-  resolution: "es-module-lexer@npm:0.9.3"
-  checksum: 84bbab23c396281db2c906c766af58b1ae2a1a2599844a504df10b9e8dc77ec800b3211fdaa133ff700f5703d791198807bba25d9667392d27a5e9feda344da8
+"es-module-lexer@npm:^1.0.0":
+  version: 1.0.2
+  resolution: "es-module-lexer@npm:1.0.2"
+  checksum: 90fab97712703ec9498e1a0b638fe83e36dffa4b612a89d0835e111d76cc2faa6359fac1da375e41ecee755c75b0164d645ed52e73f57e16c6917b79d8243930
   languageName: node
   linkType: hard
 
@@ -9079,7 +9079,7 @@ __metadata:
     "@jenssimon/eslint-config-base": 6.0.1
     "@jenssimon/eslint-config-typescript": 3.5.2
     "@types/jest": 28.1.6
-    "@web/dev-server": 0.1.32
+    "@web/dev-server": 0.1.33
     commitizen: 4.2.5
     cz-conventional-changelog: 3.3.0
     eslint: 8.21.0
