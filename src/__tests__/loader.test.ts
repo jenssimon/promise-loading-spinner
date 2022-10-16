@@ -37,7 +37,7 @@ describe('promise-loading-spinner', () => {
 
       const passedThroughPromise = loader.loader(promise); // call the loader
 
-      expect(passedThroughPromise).toEqual(promise); // is the returned promise the same as the passed in?
+      expect(passedThroughPromise).toStrictEqual(promise); // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false);
 
       jest.runAllTimers(); // delay expired
@@ -72,7 +72,7 @@ describe('promise-loading-spinner', () => {
 
       const passedThroughPromise = loader.loader(promise); // call the loader
 
-      expect(passedThroughPromise).toEqual(promise); // is the returned promise the same as the passed in?
+      expect(passedThroughPromise).toStrictEqual(promise); // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false);
 
       jest.runAllTimers(); // delay expired
@@ -107,7 +107,7 @@ describe('promise-loading-spinner', () => {
 
       const passedThroughPromise = loader.loader(promise); // call the loader
 
-      expect(passedThroughPromise).toEqual(promise); // is the returned promise the same as the passed in?
+      expect(passedThroughPromise).toStrictEqual(promise); // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false);
 
       promiseResolver('success'); // promise resolves
@@ -136,7 +136,7 @@ describe('promise-loading-spinner', () => {
 
       const passedThroughPromise = loader.loader(promise); // call the loader
 
-      expect(passedThroughPromise).toEqual(promise); // is the returned promise the same as the passed in?
+      expect(passedThroughPromise).toStrictEqual(promise); // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false);
 
       // for the case init delay and delay timeouts are set
@@ -167,7 +167,7 @@ describe('promise-loading-spinner', () => {
 
       const passedThroughPromise = loader.loader(promise, { skipDelays: true }); // call the loader
 
-      expect(passedThroughPromise).toEqual(promise); // is the returned promise the same as the passed in?
+      expect(passedThroughPromise).toStrictEqual(promise); // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(true);
 
       // for the case init delay and delay timeouts are set
@@ -206,12 +206,12 @@ describe('promise-loading-spinner', () => {
 
       const passedThroughPromise1 = loader.loader(promise1); // call the loader
 
-      expect(passedThroughPromise1).toEqual(promise1); // is the returned promise the same as the passed in?
+      expect(passedThroughPromise1).toStrictEqual(promise1); // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false);
 
       const passedThroughPromise2 = loader.loader(promise2);
 
-      expect(passedThroughPromise2).toEqual(promise1); // is the returned promise the same as the passed in?
+      expect(passedThroughPromise2).toStrictEqual(promise1); // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false);
 
       jest.runAllTimers(); // delay expired
@@ -257,7 +257,7 @@ describe('promise-loading-spinner', () => {
 
       const passedThroughPromise1 = loader.loader(promise1); // call the loader
 
-      expect(passedThroughPromise1).toEqual(promise1); // is the returned promise the same as the passed in?
+      expect(passedThroughPromise1).toStrictEqual(promise1); // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false);
 
       jest.runAllTimers(); // delay expired
@@ -266,7 +266,7 @@ describe('promise-loading-spinner', () => {
 
       const passedThroughPromise2 = loader.loader(promise2);
 
-      expect(passedThroughPromise2).toEqual(promise2); // is the returned promise the same as the passed in?
+      expect(passedThroughPromise2).toStrictEqual(promise2); // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(true);
 
       promise1Resolver('success1'); // promise resolves
@@ -308,7 +308,7 @@ describe('promise-loading-spinner', () => {
 
       const passedThroughPromise1 = loader.loader(promise1); // call the loader
 
-      expect(passedThroughPromise1).toEqual(promise1); // is the returned promise the same as the passed in?
+      expect(passedThroughPromise1).toStrictEqual(promise1); // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false);
 
       jest.runAllTimers(); // delay expired
@@ -322,7 +322,7 @@ describe('promise-loading-spinner', () => {
 
       const passedThroughPromise2 = loader.loader(promise2);
 
-      expect(passedThroughPromise2).toEqual(promise2); // is the returned promise the same as the passed in?
+      expect(passedThroughPromise2).toStrictEqual(promise2); // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(true);
 
       jest.runAllTimers(); // no timer should run, just to be sure
@@ -365,7 +365,7 @@ describe('promise-loading-spinner', () => {
 
       const passedThroughPromise1 = loader.loader(promise1); // call the loader
 
-      expect(passedThroughPromise1).toEqual(promise1); // is the returned promise the same as the passed in?
+      expect(passedThroughPromise1).toStrictEqual(promise1); // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false);
 
       jest.runAllTimers(); // delay expired
@@ -385,7 +385,7 @@ describe('promise-loading-spinner', () => {
 
       const passedThroughPromise2 = loader.loader(promise2);
 
-      expect(passedThroughPromise2).toEqual(promise2); // is the returned promise the same as the passed in?
+      expect(passedThroughPromise2).toStrictEqual(promise2); // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false);
 
       jest.runAllTimers(); // delay expired
@@ -428,7 +428,7 @@ describe('promise-loading-spinner', () => {
 
       const passedThroughPromise = loader.loader(promise); // call the loader
 
-      expect(passedThroughPromise).toEqual(promise); // is the returned promise the same as the passed in?
+      expect(passedThroughPromise).toStrictEqual(promise); // is the returned promise the same as the passed in?
       expect(alternativeElement.classList.contains('is-active')).toBe(false);
       expect(loaderElement.classList.contains('is-active')).toBe(false);
 
@@ -471,7 +471,7 @@ describe('promise-loading-spinner', () => {
 
       const passedThroughPromise = loader.loader(promise); // call the loader
 
-      expect(passedThroughPromise).toEqual(promise); // is the returned promise the same as the passed in?
+      expect(passedThroughPromise).toStrictEqual(promise); // is the returned promise the same as the passed in?
       expect(alternativeElement.classList.contains('is-active')).toBe(false);
       expect(loaderElement.classList.contains('is-active')).toBe(false);
 
@@ -513,7 +513,7 @@ describe('promise-loading-spinner', () => {
 
       const passedThroughPromise = loader.loader(promise); // call the loader
 
-      expect(passedThroughPromise).toEqual(promise); // is the returned promise the same as the passed in?
+      expect(passedThroughPromise).toStrictEqual(promise); // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false);
       expect(loaderElement.classList.contains('loading')).toBe(false);
 
@@ -556,7 +556,7 @@ describe('promise-loading-spinner', () => {
 
       jest.runAllTimers();
 
-      expect(passedThroughPromise).toEqual(promise); // is the returned promise the same as the passed in?
+      expect(passedThroughPromise).toStrictEqual(promise); // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(true);
 
       promiseResolver('success'); // promise resolves
@@ -587,7 +587,7 @@ describe('promise-loading-spinner', () => {
 
       const passedThroughPromise = loader.loader(promise); // call the loader
 
-      expect(passedThroughPromise).toEqual(promise); // is the returned promise the same as the passed in?
+      expect(passedThroughPromise).toStrictEqual(promise); // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false);
 
       promiseResolver('success'); // promise resolves
@@ -618,7 +618,7 @@ describe('promise-loading-spinner', () => {
 
       const passedThroughPromise = loader.loader(promise); // call the loader
 
-      expect(passedThroughPromise).toEqual(promise); // is the returned promise the same as the passed in?
+      expect(passedThroughPromise).toStrictEqual(promise); // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false);
 
       jest.runAllTimers(); // delay expired
@@ -670,7 +670,7 @@ describe('promise-loading-spinner', () => {
         { foo: 'bar' },
       );
 
-      expect(passedThroughPromise).toEqual(promise); // is the returned promise the same as the passed in?
+      expect(passedThroughPromise).toStrictEqual(promise); // is the returned promise the same as the passed in?
 
       expect(fn.mock.calls).toHaveLength(1);
       expect(fn.mock.calls[0]).toHaveLength(3);
@@ -778,7 +778,7 @@ describe('promise-loading-spinner', () => {
       loader.loader(promise);
 
       promiseResolver('success');
-      await expect(promise).resolves.toEqual('success');
+      await expect(promise).resolves.toBe('success');
 
       jest.runAllTimers(); // init delay expired
 
@@ -792,7 +792,7 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers();
 
       promiseResolver2('foo');
-      await expect(promise2).resolves.toEqual('foo');
+      await expect(promise2).resolves.toBe('foo');
 
       jest.runAllTimers();
 
@@ -821,12 +821,12 @@ describe('promise-loading-spinner', () => {
       jest.runAllTimers();
 
       promiseResolver3('08');
-      await expect(promise3).resolves.toEqual('08');
+      await expect(promise3).resolves.toBe('08');
 
       jest.runAllTimers();
 
       promiseResolver4('15');
-      await expect(promise4).resolves.toEqual('15');
+      await expect(promise4).resolves.toBe('15');
 
       jest.runAllTimers();
 
@@ -837,5 +837,3 @@ describe('promise-loading-spinner', () => {
     });
   });
 });
-
-export default undefined;
