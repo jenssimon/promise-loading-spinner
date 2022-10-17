@@ -1,9 +1,5 @@
 {
   "root": true,
-
-  "env": {
-    "browser": true
-  },
   "extends": [
     "@jenssimon/base/frontend-react"
   ]
