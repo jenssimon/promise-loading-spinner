@@ -2258,9 +2258,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@web/dev-server@npm:0.1.34":
-  version: 0.1.34
-  resolution: "@web/dev-server@npm:0.1.34"
+"@web/dev-server@npm:0.1.35":
+  version: 0.1.35
+  resolution: "@web/dev-server@npm:0.1.35"
   dependencies:
     "@babel/code-frame": ^7.12.11
     "@types/command-line-args": ^5.0.0
@@ -2275,11 +2275,11 @@ __metadata:
     ip: ^1.1.5
     nanocolors: ^0.2.1
     open: ^8.0.2
-    portfinder: ^1.0.28
+    portfinder: ^1.0.32
   bin:
     wds: dist/bin.js
     web-dev-server: dist/bin.js
-  checksum: 57df0511b64164ecc42d2262b0fc6605e7235c8a9f1b6c7c62194d55137c04479ae67ef4378428b7f93b9ce3360895d9e705ecf91fd79a50b81db512f3fb4ff7
+  checksum: eccaf90e2bcb25c8a1584a714e3139b63a67b969dc9df40910848e6f56de7eea22de67b80a2400580cab625cab7a00b2711aea742c112207d3e80a2791f6fc9c
   languageName: node
   linkType: hard
 
@@ -8741,7 +8741,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"portfinder@npm:^1.0.28":
+"portfinder@npm:^1.0.32":
   version: 1.0.32
   resolution: "portfinder@npm:1.0.32"
   dependencies:
@@ -8843,7 +8843,7 @@ __metadata:
     "@jenssimon/eslint-config-typescript": 3.6.7
     "@types/jest": 29.2.0
     "@types/node": 18.7.23
-    "@web/dev-server": 0.1.34
+    "@web/dev-server": 0.1.35
     commitizen: 4.2.5
     cz-conventional-changelog: 3.3.0
     eslint: 8.25.0
