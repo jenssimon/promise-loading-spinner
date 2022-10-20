@@ -13,55 +13,39 @@ jobs:
   pre_job:
     runs-on: ubuntu-latest
     outputs:
-      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+      is_pr: ${{ steps.PR.outcome == 'success' }}
+      needs_run: ${{ (github.event_name != 'pull_request' && (steps.PR.outcome != 'success' || steps.PR.outputs.number == null)) || github.event_name == 'pull_request' }}
     steps:
-      - id: skip_check
-        uses: fkirc/skip-duplicate-actions@v5.2.0
-        with:
-          skip_after_successful_duplicate: 'false'
-          concurrent_skipping: 'same_content_newer'
+      - uses: 8BitJonny/gh-get-current-pr@2.1.2
+        id: PR
+      - name: Output
+        run: echo "${{ steps.PR.outcome }} - ${{ github.event_name }} - ${{ steps.PR.outputs.number == null }}"
 
   build:
     needs: pre_job
-    if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-    steps:
-    - uses: actions/checkout@v3
-
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'yarn'
-
-    - name: Test
-      run: |
-        yarn
-        yarn ci-test
-
-    - uses: codecov/codecov-action@v3
-      with:
-        fail_ci_if_error: true
-
-  release:
-    needs: [build]
+    if: ${{ needs.pre_job.outputs.needs_run == 'true' }}
     runs-on: ubuntu-latest
     steps:
-        - uses: actions/checkout@v3
-        - uses: actions/setup-node@v3
-          with:
-            node-version: '18'
-            cache: 'yarn'
-        - name: Release
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          run: |
-            yarn
-            npx semantic-release
+      - uses: actions/checkout@v3
+
+      - name: Test
+        run: echo "${{ needs.pre_job.outputs.is_pr }} - ${{ github.event_name }} - ${{ needs.pre_job.outputs.needs_run }}"
+
+      - name: Changed Files src
+        id: changed_files_src
+        uses: tj-actions/changed-files@v32.1.2
+        with:
+          files: |
+            src/**
+
+      - name: Changed Files demo
+        id: changed_files_demo
+        uses: tj-actions/changed-files@v32.1.2
+        with:
+          files: |
+            demo/**
+
+      - name: Test 2
+        run: |
+          echo "Changed src: ${{ steps.changed_files_src.outputs.any_changed }}"
+          echo "Changed demo: ${{ steps.changed_files_demo.outputs.any_changed }}"
