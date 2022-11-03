@@ -9,12 +9,14 @@
   "keywords": [
     "loader",
     "spinner",
-    "promise",
+    "promises",
     "loading-indicator",
     "loading-spinner",
     "loading-animation",
     "vanilla-js",
-    "await-async"
+    "await-async",
+    "vanilla-javascript",
+    "vanillajs"
   ],
   "author": "Jens Simon <https://github.com/jenssimon>",
   "license": "MIT",
