@@ -118,7 +118,7 @@ export default class Loader {
     this.el = loaderElement instanceof HTMLElement
       ? loaderElement : document.querySelector(loaderElement) as HTMLElement;
 
-    if (!this.el) throw new Error('no element found');
+    if (!this.el) throw new Error('Element not found');
 
     // suppress loader in a short timeframe after initializing (page load)
     this.initSuppressTimeout = setTimeout(() => this.stopSuppressLoading(), initDelay);

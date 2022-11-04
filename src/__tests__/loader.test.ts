@@ -492,6 +492,12 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false);
     });
 
+    it('throws an error if the selector returns no result', () => {
+      expect(() => new Loader({
+        loaderElement: '.foo',
+      })).toThrow('Element not found');
+    });
+
     it('uses another class name for the active class', async () => {
       const loaderElement = document.getElementById('js-page-loader') as HTMLElement;
 
