@@ -114,5 +114,5 @@ MIT © 2022 [Jens Simon](https://github.com/jenssimon)
 [gh-forks-image]: https://badgen.net/github/forks/jenssimon/promise-loading-spinner
 [gh-status-image]: https://badgen.net/github/status/jenssimon/promise-loading-spinner
 
-[coveralls-url]: https://coveralls.io/github/jenssimon/promise-loading-spinner?branch=master
-[coveralls-image]: https://coveralls.io/repos/github/jenssimon/promise-loading-spinner/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/jenssimon/promise-loading-spinner?branch=main
+[coveralls-image]: https://coveralls.io/repos/github/jenssimon/promise-loading-spinner/badge.svg?branch=main
