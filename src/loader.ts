@@ -260,21 +260,19 @@ export default class Loader {
    * @param skipDelays skip delays?
    */
   private showLoader(skipDelays: boolean) {
-    if (!this.closingTimeout) {
-      if (!skipDelays) {
-        // Show loader after a delay. For operation that are finished fast enough no loader is shown.
-        this.timeout = setTimeout(() => {
-          this.setLoaderVisibility(true);
-          this.timeout = undefined;
-        }, this.config.delay);
-      } else {
-        this.setLoaderVisibility(true);
-      }
-    } else {
+    if (this.closingTimeout) {
       // Another operation finished shortly before. To avoid flickering the loader closes later.
       // But here we don't need to close it because another operation starts.
       clearTimeout(this.closingTimeout);
       this.closingTimeout = undefined;
+    } else if (skipDelays) {
+      this.setLoaderVisibility(true);
+    } else {
+      // Show loader after a delay. For operation that are finished fast enough no loader is shown.
+      this.timeout = setTimeout(() => {
+        this.setLoaderVisibility(true);
+        this.timeout = undefined;
+      }, this.config.delay);
     }
   }
 }
