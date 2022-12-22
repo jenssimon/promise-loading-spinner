@@ -31,7 +31,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.19.1":
+"@babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3":
   version: 7.19.6
   resolution: "@babel/core@npm:7.19.6"
   dependencies:
@@ -51,20 +51,6 @@ __metadata:
     json5: ^2.2.1
     semver: ^6.3.0
   checksum: 85c0bd38d0ef180aa2d23c3db6840a0baec88d2e05c30e7ffc3dfeb6b2b89d6e4864922f04997a1f4ce55f9dd469bf2e76518d5c7ae744b98516709d32769b73
-  languageName: node
-  linkType: hard
-
-"@babel/eslint-parser@npm:^7.19.1":
-  version: 7.19.1
-  resolution: "@babel/eslint-parser@npm:7.19.1"
-  dependencies:
-    "@nicolo-ribaudo/eslint-scope-5-internals": 5.1.1-v1
-    eslint-visitor-keys: ^2.1.0
-    semver: ^6.3.0
-  peerDependencies:
-    "@babel/core": ">=7.11.0"
-    eslint: ^7.5.0 || ^8.0.0
-  checksum: 6d5360f62f25ed097250657deb1bc4c4f51a5f5f2fe456e98cda13727753fdf7a11a109b4cfa03ef0dd6ced3beaeb703b76193c1141e29434d1f91f1bac0517d
   languageName: node
   linkType: hard
 
@@ -775,12 +761,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-base@npm:6.4.12":
-  version: 6.4.12
-  resolution: "@jenssimon/eslint-config-base@npm:6.4.12"
+"@jenssimon/eslint-config-base@npm:6.5.0":
+  version: 6.5.0
+  resolution: "@jenssimon/eslint-config-base@npm:6.5.0"
   dependencies:
-    "@babel/core": ^7.19.1
-    "@babel/eslint-parser": ^7.19.1
     eslint-config-airbnb: 19.0.4
     eslint-config-airbnb-base: 15.0.0
     eslint-import-resolver-node: 0.3.6
@@ -798,7 +782,7 @@ __metadata:
     eslint-plugin-unicorn: 45.0.2
   peerDependencies:
     eslint: ^7.32.0 || ^8.2.0
-  checksum: 1152cb9aa1836ced66f408f7bd1640350984f73981400c24ce61751381347768f123ecef6eeec7f1fd83e752deec641989504afb51ca5f81433228cbeab5e2cf
+  checksum: 47d8a1409475dbe4ec5dd5a22540086d83f94c065637b4d9c5e3df94a8f309dfc9e833af501d345a92e7f7f9720c27f12ce86d4c0b0e13d102c87be9dcaeee2f
   languageName: node
   linkType: hard
 
@@ -1128,15 +1112,6 @@ __metadata:
     "@jridgewell/resolve-uri": 3.1.0
     "@jridgewell/sourcemap-codec": 1.4.14
   checksum: 9d703b859cff5cd83b7308fd457a431387db5db96bd781a63bf48e183418dd9d3d44e76b9e4ae13237f6abeeb25d739ec9215c1d5bfdd08f66f750a50074a339
-  languageName: node
-  linkType: hard
-
-"@nicolo-ribaudo/eslint-scope-5-internals@npm:5.1.1-v1":
-  version: 5.1.1-v1
-  resolution: "@nicolo-ribaudo/eslint-scope-5-internals@npm:5.1.1-v1"
-  dependencies:
-    eslint-scope: 5.1.1
-  checksum: f2e3b2d6a6e2d9f163ca22105910c9f850dc4897af0aea3ef0a5886b63d8e1ba6505b71c99cb78a3bba24a09557d601eb21c8dede3f3213753fcfef364eb0e57
   languageName: node
   linkType: hard
 
@@ -4610,7 +4585,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-scope@npm:5.1.1, eslint-scope@npm:^5.1.1":
+"eslint-scope@npm:^5.1.1":
   version: 5.1.1
   resolution: "eslint-scope@npm:5.1.1"
   dependencies:
@@ -4641,7 +4616,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-visitor-keys@npm:^2.0.0, eslint-visitor-keys@npm:^2.1.0":
+"eslint-visitor-keys@npm:^2.0.0":
   version: 2.1.0
   resolution: "eslint-visitor-keys@npm:2.1.0"
   checksum: e3081d7dd2611a35f0388bbdc2f5da60b3a3c5b8b6e928daffff7391146b434d691577aa95064c8b7faad0b8a680266bcda0a42439c18c717b80e6718d7e267d
@@ -9061,7 +9036,7 @@ __metadata:
   dependencies:
     "@commitlint/cli": 17.3.0
     "@commitlint/config-conventional": 17.3.0
-    "@jenssimon/eslint-config-base": 6.4.12
+    "@jenssimon/eslint-config-base": 6.5.0
     "@jenssimon/eslint-config-typescript": 3.6.17
     "@types/jest": 29.2.4
     "@types/node": 18.11.17
