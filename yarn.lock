@@ -2409,12 +2409,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@web/config-loader@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "@web/config-loader@npm:0.2.0"
+"@web/config-loader@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "@web/config-loader@npm:0.2.1"
   dependencies:
     semver: ^7.3.4
-  checksum: ef50c974295f430a3b7bd8f9e725dace2f0b755c992e6d3cb06bf390c173b49ba7099bf78353ba70928c7f617d868a1f9600a1853c35def01cd07eafec239167
+  checksum: 698feaf18b9c486a77bc752fb74bbf62d44548a1a63beb35c58f9ef8eae498c5aafff3996dbcfd4a32b33226fed5d2d5338add8a12ba9ffe258063c95b7b947e
   languageName: node
   linkType: hard
 
@@ -2444,6 +2444,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@web/dev-server-core@npm:^0.5.1":
+  version: 0.5.1
+  resolution: "@web/dev-server-core@npm:0.5.1"
+  dependencies:
+    "@types/koa": ^2.11.6
+    "@types/ws": ^7.4.0
+    "@web/parse5-utils": ^2.0.0
+    chokidar: ^3.4.3
+    clone: ^2.1.2
+    es-module-lexer: ^1.0.0
+    get-stream: ^6.0.0
+    is-stream: ^2.0.0
+    isbinaryfile: ^5.0.0
+    koa: ^2.13.0
+    koa-etag: ^4.0.0
+    koa-send: ^5.0.1
+    koa-static: ^5.0.0
+    lru-cache: ^8.0.4
+    mime-types: ^2.1.27
+    parse5: ^6.0.1
+    picomatch: ^2.2.2
+    ws: ^7.4.2
+  checksum: 95eab93dcad632733f3e16270a2723967f190b16fc31000cf221d4b68e9277a2f95bd31f12798ccbe3ce1642d5d6295f2518f732219a0bc4af6674a79ea686d5
+  languageName: node
+  linkType: hard
+
 "@web/dev-server-rollup@npm:^0.5.0":
   version: 0.5.0
   resolution: "@web/dev-server-rollup@npm:0.5.0"
@@ -2458,14 +2484,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@web/dev-server@npm:0.2.0":
-  version: 0.2.0
-  resolution: "@web/dev-server@npm:0.2.0"
+"@web/dev-server@npm:0.2.1":
+  version: 0.2.1
+  resolution: "@web/dev-server@npm:0.2.1"
   dependencies:
     "@babel/code-frame": ^7.12.11
     "@types/command-line-args": ^5.0.0
-    "@web/config-loader": ^0.2.0
-    "@web/dev-server-core": ^0.5.0
+    "@web/config-loader": ^0.2.1
+    "@web/dev-server-core": ^0.5.1
     "@web/dev-server-rollup": ^0.5.0
     camelcase: ^6.2.0
     command-line-args: ^5.1.1
@@ -2479,7 +2505,7 @@ __metadata:
   bin:
     wds: dist/bin.js
     web-dev-server: dist/bin.js
-  checksum: a279da6c8db5d6fa6aff18fa75c5f3ce0bef67c2251a4c3648c22282a87e9e8e733594af935ac694d577e86bc5794a47c59a165d05ee393acf58d8dfdd20f0a4
+  checksum: 9b97305f13df2178dd3e93b20acf69376501ccfd13b6a14f13b8221787eb06ab908159cf82e26409576c3785778529e5e720d5a89feccb3a5ee3eb769b0a0421
   languageName: node
   linkType: hard
 
@@ -9775,7 +9801,7 @@ __metadata:
     "@jenssimon/eslint-config-typescript": 3.6.36
     "@types/jest": 29.5.1
     "@types/node": 18.16.0
-    "@web/dev-server": 0.2.0
+    "@web/dev-server": 0.2.1
     commitizen: 4.3.0
     cz-conventional-changelog: 3.3.0
     eslint: 8.39.0
