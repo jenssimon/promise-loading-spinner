@@ -44,7 +44,7 @@
     "@commitlint/cli": "17.6.1",
     "@commitlint/config-conventional": "17.6.1",
     "@jenssimon/eslint-config-base": "6.6.15",
-    "@jenssimon/eslint-config-typescript": "3.6.37",
+    "@jenssimon/eslint-config-typescript": "3.6.38",
     "@types/jest": "29.5.1",
     "@types/node": "18.16.3",
     "@web/dev-server": "0.2.1",
@@ -91,7 +91,7 @@
       "node"
     ]
   },
-  "packageManager": "yarn@3.5.0",
+  "packageManager": "yarn@3.5.1",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
