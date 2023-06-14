@@ -2499,9 +2499,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@web/dev-server@npm:0.2.2":
-  version: 0.2.2
-  resolution: "@web/dev-server@npm:0.2.2"
+"@web/dev-server@npm:0.2.3":
+  version: 0.2.3
+  resolution: "@web/dev-server@npm:0.2.3"
   dependencies:
     "@babel/code-frame": ^7.12.11
     "@types/command-line-args": ^5.0.0
@@ -2520,7 +2520,7 @@ __metadata:
   bin:
     wds: dist/bin.js
     web-dev-server: dist/bin.js
-  checksum: 41ce5ffa1d22b1c492600d921cfa9cafc10a3ae424f8213a294d095a70da45708e9602b9960887bc9f134bb2049e8eae51e7a058030a57bea6763e5198025e78
+  checksum: 7fc938feb690f952199b5a0418eac282d6f5a8a6f65603b6d8d4681656a57f6ed220f05da3039bf982d2bdb46b82b2f81fb474685515b7fcf0d05502ccc200d0
   languageName: node
   linkType: hard
 
@@ -9829,7 +9829,7 @@ __metadata:
     "@jenssimon/eslint-config-typescript": 3.7.5
     "@types/jest": 29.5.2
     "@types/node": 18.16.18
-    "@web/dev-server": 0.2.2
+    "@web/dev-server": 0.2.3
     commitizen: 4.3.0
     cz-conventional-changelog: 3.3.0
     eslint: 8.42.0
