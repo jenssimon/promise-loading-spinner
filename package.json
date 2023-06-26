@@ -24,7 +24,7 @@
   "types": "dist/loader.d.ts",
   "type": "module",
   "scripts": {
-    "lint": "eslint --fix --ext .tsx,.ts,.jsx,.js ./ && tsc --noEmit",
+    "lint": "eslint --fix --ext .tsx,.ts,.cts,.mts,.jsx,.js,.cjs,.mts ./ && tsc --noEmit",
     "build": "tsc",
     "predemo": "run-s build",
     "demo": "web-dev-server --open /demo/demo.html",
@@ -43,7 +43,7 @@
   "devDependencies": {
     "@commitlint/cli": "17.6.6",
     "@commitlint/config-conventional": "17.6.6",
-    "@jenssimon/eslint-config-base": "6.7.1",
+    "@jenssimon/eslint-config-base": "6.8.0",
     "@jenssimon/eslint-config-typescript": "3.7.6",
     "@types/jest": "29.5.2",
     "@types/node": "18.16.18",

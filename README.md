@@ -24,39 +24,39 @@ $ yarn add promise-loading-spinner
 This shows loading spinners based on promises.
 
 ```javascript
-import PromiseLoadingSpinner from 'promise-loading-spinner';
+import PromiseLoadingSpinner from 'promise-loading-spinner'
 
 const loader = new PromiseLoadingSpinner({
   // options
-});
+})
 
 // ...
 
 const myPromise = new Promise((resolve) => {
   setTimeout(() => {
-    resolve('done');
-  }, 5000);
-});
+    resolve('done')
+  }, 5000)
+})
 
-loader.loader(myPromise);
+loader.loader(myPromise)
 ```
 
 You can also use a wrapper function for a function that returns a promise or uses `await`:
 
 ```javascript
 const myFunction = loader.wrapFunction(async (url) => {
-  const response = await fetch(url);
-  const result = await response.json();
-  return result;
-});
+  const response = await fetch(url)
+  const result = await response.json()
+  return result
+})
 
-myFunction(someUrl);
+myFunction(someUrl)
 ```
 
 It also exports a method decorator:
 
 ```javascript
-const loaderDecorator = loader.decorator.bind(loader);
+const loaderDecorator = loader.decorator.bind(loader)
 
 class MyClass {
   @loaderDecorator()
@@ -77,10 +77,10 @@ Examples:
 ```javascript
 
 // loader
-loader(promise, { skipDelays: true });
+loader(promise, { skipDelays: true })
 
 // wrapFunction:
-wrapFunction(fnc, { skipDelays: true });
+wrapFunction(fnc, { skipDelays: true })
 
 // decorator:
 class MyClass {
@@ -103,7 +103,7 @@ Option  | Description | Type | Default
 
 ## License
 
-MIT © 2022 [Jens Simon](https://github.com/jenssimon)
+MIT © 2023 [Jens Simon](https://github.com/jenssimon)
 
 [npm-url]: https://www.npmjs.com/package/promise-loading-spinner
 [npm-image]: https://badgen.net/npm/v/promise-loading-spinner
