@@ -46,7 +46,7 @@ const defaults: LoaderConfig = {
   initDelay: 1000,
   loaderElement: '#js-page-loader',
   classActive: 'is-active',
-};
+}
 
 /**
  * Advanced handling of loaders/spinners based on one or multiple Promises.
@@ -55,54 +55,54 @@ export default class Loader {
   /**
    * Contains all promises that aren't settled.
    */
-  private loaderPromises: Promise<unknown>[] = [];
+  private loaderPromises: Promise<unknown>[] = []
 
   /**
    * The configuration of the loader.
    */
-  private config: LoaderConfig;
+  private config: LoaderConfig
 
   /**
    * The attached DOM element which represents the loader.
    */
-  private el: HTMLElement;
+  private el: HTMLElement
 
   /**
    * The timeout handle for the initial suppression of the loader.
    */
-  private initSuppressTimeout: NodeJS.Timeout | undefined;
+  private initSuppressTimeout: NodeJS.Timeout | undefined
 
   /**
    * The timeout handle for the delay before showing the loader.
    */
-  private timeout: NodeJS.Timeout | undefined;
+  private timeout: NodeJS.Timeout | undefined
 
   /**
    * The timeout handle for the closing delay.
    */
-  private closingTimeout: NodeJS.Timeout | undefined;
+  private closingTimeout: NodeJS.Timeout | undefined
 
   /**
    * Is the loader currently shown?
    */
-  protected loaderShows = false;
+  protected loaderShows = false
 
   /**
    * Resolver function used to resolve the currentLoadingPromise promise after the loader get hidden.
    */
   private loaderShownResolver?: (
     value?: Promise<unknown>[] | PromiseLike<Promise<unknown>[]> | undefined
-  ) => void | undefined;
+  ) => void | undefined
 
   /**
    * The promises for which the loader currently shows up.
    */
-  private promisesForShownLoader: Promise<unknown>[] = [];
+  private promisesForShownLoader: Promise<unknown>[] = []
 
   /**
    * A promise that resolves after the loader get hidden.
    */
-  public currentLoadingPromise: Promise<Promise<unknown>[]> = Promise.resolve([]);
+  public currentLoadingPromise: Promise<Promise<unknown>[]> = Promise.resolve([])
 
   /**
    * Constructor.
@@ -110,18 +110,18 @@ export default class Loader {
    * @param cfg configuration of the loader (optional)
    */
   public constructor(cfg: Partial<LoaderConfig> = {}) {
-    this.setCurrentLoadingPromise();
-    const config = { ...defaults, ...cfg };
-    const { loaderElement, initDelay } = config;
-    this.config = config;
+    this.setCurrentLoadingPromise()
+    const config = { ...defaults, ...cfg }
+    const { loaderElement, initDelay } = config
+    this.config = config
 
     this.el = loaderElement instanceof HTMLElement
-      ? loaderElement : document.querySelector(loaderElement) as HTMLElement;
+      ? loaderElement : document.querySelector(loaderElement) as HTMLElement
 
-    if (!this.el) throw new Error('Element not found');
+    if (!this.el) throw new Error('Element not found')
 
     // suppress loader in a short timeframe after initializing (page load)
-    this.initSuppressTimeout = setTimeout(() => this.stopSuppressLoading(), initDelay);
+    this.initSuppressTimeout = setTimeout(() => this.stopSuppressLoading(), initDelay)
   }
 
   /**
@@ -132,22 +132,22 @@ export default class Loader {
    * @returns the used promise
    */
   public loader<T>(promise: Promise<T>, options?: Partial<LoaderCallOptions>): Promise<T> {
-    const skipDelays = options?.skipDelays ?? false;
+    const skipDelays = options?.skipDelays ?? false
     if ((!this.initSuppressTimeout || skipDelays)) {
-      if (this.initSuppressTimeout && skipDelays) this.stopSuppressLoading();
+      if (this.initSuppressTimeout && skipDelays) this.stopSuppressLoading()
 
-      const isFirstLoader = this.loaderPromises.length === 0;
+      const isFirstLoader = this.loaderPromises.length === 0
 
-      this.loaderPromises.push(promise);
-      if (this.loaderShows) this.promisesForShownLoader.push(promise);
+      this.loaderPromises.push(promise)
+      if (this.loaderShows) this.promisesForShownLoader.push(promise)
 
       if (isFirstLoader) { // Only the first loader needs to initialize the show functionality
-        this.showLoader(skipDelays);
+        this.showLoader(skipDelays)
       }
 
-      this.handlePromise(promise);
+      this.handlePromise(promise)
     }
-    return promise;
+    return promise
   }
 
   /**
@@ -162,11 +162,11 @@ export default class Loader {
     options?: Partial<LoaderCallOptions>,
   ): (this: C, ...args: A) => Promise<R> {
     // eslint-disable-next-line @typescript-eslint/no-this-alias, unicorn/no-this-assignment
-    const loaderCtx = this;
+    const loaderCtx = this
 
     return function (this: C, ...args: A): Promise<R> {
-      return loaderCtx.loader(fnc.apply(this, args), options);
-    };
+      return loaderCtx.loader(fnc.apply(this, args), options)
+    }
   }
 
   /**
@@ -175,24 +175,24 @@ export default class Loader {
    * @returns a decorator for methods that wraps loader functionality around a function call.
    */
   public decorator(options?: Partial<LoaderCallOptions>): MethodDecorator {
-    const loaderCtx = this; // eslint-disable-line @typescript-eslint/no-this-alias, unicorn/no-this-assignment
+    const loaderCtx = this // eslint-disable-line @typescript-eslint/no-this-alias, unicorn/no-this-assignment
 
     return function (target, propertyKey, descriptor) {
       const oldValue = descriptor.value;
       /* eslint-disable @typescript-eslint/no-explicit-any */
       (descriptor as any).value = function (...params: never[]) {
-        return loaderCtx.loader((oldValue as any).apply(this, params), options);
-      };
+        return loaderCtx.loader((oldValue as any).apply(this, params), options)
+      }
       /* eslint-enable @typescript-eslint/no-explicit-any */
-    };
+    }
   }
 
   /**
    * Stops initial loader suppresion
    */
   private stopSuppressLoading() {
-    clearTimeout(this.initSuppressTimeout as NodeJS.Timeout);
-    this.initSuppressTimeout = undefined;
+    clearTimeout(this.initSuppressTimeout as NodeJS.Timeout)
+    this.initSuppressTimeout = undefined
   }
 
   /**
@@ -201,8 +201,8 @@ export default class Loader {
   private setCurrentLoadingPromise() {
     this.currentLoadingPromise = new Promise((resolve) => {
       this.loaderShownResolver = resolve as (
-        value?: Promise<unknown>[] | PromiseLike<Promise<unknown>[]> | undefined) => void;
-    });
+        value?: Promise<unknown>[] | PromiseLike<Promise<unknown>[]> | undefined) => void
+    })
   }
 
   /**
@@ -211,17 +211,17 @@ export default class Loader {
    * @param visible is the loader visible?
    */
   private setLoaderVisibility(visible: boolean) {
-    this.el.classList[visible ? 'add' : 'remove'](this.config.classActive);
-    this.loaderShows = visible;
+    this.el.classList[visible ? 'add' : 'remove'](this.config.classActive)
+    this.loaderShows = visible
 
     if (visible) {
-      this.promisesForShownLoader.push(...this.loaderPromises);
+      this.promisesForShownLoader.push(...this.loaderPromises)
     } else {
       /* istanbul ignore else */
       if (this.loaderShownResolver) {
-        this.loaderShownResolver(this.promisesForShownLoader.splice(0, this.promisesForShownLoader.length));
+        this.loaderShownResolver(this.promisesForShownLoader.splice(0, this.promisesForShownLoader.length))
       }
-      this.setCurrentLoadingPromise();
+      this.setCurrentLoadingPromise()
     }
   }
 
@@ -232,25 +232,25 @@ export default class Loader {
    */
   private async handlePromise<T>(promise: Promise<T>) {
     try {
-      await promise;
+      await promise
     } catch {
       // nothing to do
     }
 
-    const { timeout, loaderPromises, config } = this;
+    const { timeout, loaderPromises, config } = this
     if (timeout && loaderPromises.length === 1) {
       // We close the last operation before the loader was shown. There is no need anymore to show it.
-      clearTimeout(timeout);
-      this.timeout = undefined;
+      clearTimeout(timeout)
+      this.timeout = undefined
     }
-    loaderPromises.splice(loaderPromises.indexOf(promise), 1);
+    loaderPromises.splice(loaderPromises.indexOf(promise), 1)
     if (loaderPromises.length === 0) {
       // The last operation has finished. Show loader a bit longer so there is no flickering when an operation
       // starts shortly after.
       this.closingTimeout = setTimeout(() => {
-        this.setLoaderVisibility(false);
-        this.closingTimeout = undefined;
-      }, config.closeDelay);
+        this.setLoaderVisibility(false)
+        this.closingTimeout = undefined
+      }, config.closeDelay)
     }
   }
 
@@ -263,16 +263,16 @@ export default class Loader {
     if (this.closingTimeout) {
       // Another operation finished shortly before. To avoid flickering the loader closes later.
       // But here we don't need to close it because another operation starts.
-      clearTimeout(this.closingTimeout);
-      this.closingTimeout = undefined;
+      clearTimeout(this.closingTimeout)
+      this.closingTimeout = undefined
     } else if (skipDelays) {
-      this.setLoaderVisibility(true);
+      this.setLoaderVisibility(true)
     } else {
       // Show loader after a delay. For operation that are finished fast enough no loader is shown.
       this.timeout = setTimeout(() => {
-        this.setLoaderVisibility(true);
-        this.timeout = undefined;
-      }, this.config.delay);
+        this.setLoaderVisibility(true)
+        this.timeout = undefined
+      }, this.config.delay)
     }
   }
 }

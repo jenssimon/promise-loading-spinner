@@ -24,7 +24,7 @@
   "types": "dist/loader.d.ts",
   "type": "module",
   "scripts": {
-    "lint": "eslint --fix --ext .tsx,.ts,.jsx,.js ./ && tsc --noEmit",
+    "lint": "eslint --fix --ext .tsx,.ts,.cts,.mts,.jsx,.js,.cjs,.mts ./ && tsc --noEmit",
     "build": "tsc",
     "predemo": "run-s build",
     "demo": "web-dev-server --open /demo/demo.html",
