@@ -44,7 +44,7 @@
     "@commitlint/cli": "17.6.6",
     "@commitlint/config-conventional": "17.6.6",
     "@jenssimon/eslint-config-base": "7.0.1",
-    "@jenssimon/eslint-config-typescript": "3.7.6",
+    "@jenssimon/eslint-config-typescript": "3.7.7",
     "@types/jest": "29.5.2",
     "@types/node": "18.16.18",
     "@web/dev-server": "0.2.3",
