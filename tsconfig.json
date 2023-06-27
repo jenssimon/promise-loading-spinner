@@ -10,7 +10,8 @@
     "outDir": "./dist/"
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "**/*.cjs"
   ],
   "exclude": [
     "node_modules",

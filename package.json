@@ -73,6 +73,16 @@
     "extends": [
       "@jenssimon/base/frontend-react",
       "@jenssimon/typescript"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "*.cjs"
+        ],
+        "rules": {
+          "import/no-commonjs": "off"
+        }
+      }
     ]
   },
   "jest": {
