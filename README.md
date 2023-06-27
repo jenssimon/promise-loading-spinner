@@ -1,4 +1,4 @@
-[![NPM version][npm-image]][npm-url] [![Downloads][npm-downloads-image]][npm-url] [![star this repo][gh-stars-image]][gh-url] [![fork this repo][gh-forks-image]][gh-url] [![Build Status][gh-status-image]][gh-url] [![Coverage Status][coveralls-image]][coveralls-url]
+[![NPM version][npm-image]][npm-url] [![Downloads][npm-downloads-image]][npm-url] [![star this repo][gh-stars-image]][gh-url] [![fork this repo][gh-forks-image]][gh-url] [![CI][gh-status-image]][gh-status-url] [![Coverage Status][coveralls-image]][coveralls-url]
 
 # promise-loading-spinner
 
@@ -112,7 +112,8 @@ MIT © 2023 [Jens Simon](https://github.com/jenssimon)
 [gh-url]: https://github.com/jenssimon/promise-loading-spinner
 [gh-stars-image]: https://badgen.net/github/stars/jenssimon/promise-loading-spinner
 [gh-forks-image]: https://badgen.net/github/forks/jenssimon/promise-loading-spinner
-[gh-status-image]: https://badgen.net/github/status/jenssimon/promise-loading-spinner
+[gh-status-image]: https://github.com/jenssimon/promise-loading-spinner/actions/workflows/ci.yml/badge.svg
+[gh-status-url]: https://github.com/jenssimon/promise-loading-spinner/actions/workflows/ci.yml
 
 [coveralls-url]: https://coveralls.io/github/jenssimon/promise-loading-spinner?branch=main
 [coveralls-image]: https://coveralls.io/repos/github/jenssimon/promise-loading-spinner/badge.svg?branch=main
