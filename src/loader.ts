@@ -2,29 +2,29 @@ export interface LoaderConfig {
   /**
    * Time (ms) until spinner will show up to handle short operations without a spinner.
    */
-  delay: number;
+  delay: number
 
   /**
    * Time (ms) to wait until last promise is resolved to enable multiple operations in a sequence
    * without a "flickering" spinner.
    */
-  closeDelay: number;
+  closeDelay: number
 
   /**
    * Delay (ms) after loader initialization to suppress spinners on page load.
    */
-  initDelay: number;
+  initDelay: number
 
   /**
    * The element which represents the spinner.
    * Can be used with an element or a selector string.
    */
-  loaderElement: HTMLElement | string;
+  loaderElement: HTMLElement | string
 
   /**
    * Class name used to show the spinner.
    */
-  classActive: string;
+  classActive: string
 }
 
 /**
@@ -34,7 +34,7 @@ export interface LoaderCallOptions {
   /**
    * Skip all delays (initDelay, delay).
    */
-  skipDelays: boolean;
+  skipDelays: boolean
 }
 
 /**

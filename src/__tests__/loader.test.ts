@@ -663,7 +663,7 @@ describe('promise-loading-spinner', () => {
       })
 
       const loaderFunction = loader.wrapFunction(fn) as (this: string, first: string, second: string[], third: {
-        foo: string;
+        foo: string
       }) => Promise<string>
 
       expect(fn.mock.calls).toHaveLength(0)
