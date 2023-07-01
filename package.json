@@ -46,11 +46,11 @@
     "@jenssimon/eslint-config-base": "7.0.1",
     "@jenssimon/eslint-config-typescript": "4.0.0",
     "@types/jest": "29.5.2",
-    "@types/node": "18.16.18",
+    "@types/node": "18.16.19",
     "@web/dev-server": "0.2.3",
     "commitizen": "4.3.0",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "8.43.0",
+    "eslint": "8.44.0",
     "husky": "8.0.3",
     "jest": "29.5.0",
     "jest-environment-jsdom": "29.5.0",
@@ -101,7 +101,7 @@
       "node"
     ]
   },
-  "packageManager": "yarn@3.6.0",
+  "packageManager": "yarn@3.6.1",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
