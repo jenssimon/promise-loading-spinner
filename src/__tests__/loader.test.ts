@@ -725,14 +725,14 @@ describe('promise-loading-spinner', () => {
       const decorator = loader.decorator.bind(loader)
 
       class TestClass {
-        foo: string
+        private foo: string
 
-        constructor() {
+        public constructor() {
           this.foo = 'bar'
         }
 
         @decorator()
-        test() {
+        public test() {
           fn.call(this, this.foo, 815)
           return promise
         }
