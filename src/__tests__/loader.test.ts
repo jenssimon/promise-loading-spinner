@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import Loader from '../loader'
+import Loader from '../loader.js'
 
 type PromiseResolver = (value?: unknown) => void;
 type PromiseRejecter = (reason?: unknown) => unknown;

@@ -86,8 +86,17 @@
     ]
   },
   "jest": {
+    "preset": "ts-jest/presets/default-esm",
+    "moduleNameMapper": {
+      "^(\\.{1,2}/.*)\\.js$": "$1"
+    },
     "transform": {
-      "^.+\\.tsx?$": "ts-jest"
+      "^.+\\.[tj]sx?": [
+        "ts-jest",
+        {
+          "useESM": true
+        }
+      ]
     },
     "modulePathIgnorePatterns": [
       "dist/"
@@ -99,7 +108,8 @@
       "jsx",
       "json",
       "node"
-    ]
+    ],
+    "extensionsToTreatAsEsm": [".ts"]
   },
   "packageManager": "yarn@3.6.1",
   "config": {
