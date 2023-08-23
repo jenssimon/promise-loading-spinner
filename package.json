@@ -46,7 +46,7 @@
     "@jenssimon/eslint-config-base": "7.1.9",
     "@jenssimon/eslint-config-typescript": "5.1.4",
     "@types/jest": "29.5.4",
-    "@types/node": "18.17.8",
+    "@types/node": "18.17.9",
     "@web/dev-server": "0.3.0",
     "commitizen": "4.3.0",
     "cz-conventional-changelog": "3.3.0",
@@ -111,7 +111,7 @@
     ],
     "extensionsToTreatAsEsm": [".ts"]
   },
-  "packageManager": "yarn@3.6.2",
+  "packageManager": "yarn@3.6.3",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
