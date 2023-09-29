@@ -2214,10 +2214,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.18.0":
-  version: 18.18.0
-  resolution: "@types/node@npm:18.18.0"
-  checksum: 61bcffa28eb713e7a4c66fd369df603369c3f834a783faeced95fe3e78903faa25f1a704d49e054f41d71b7915eeb066d10a37cc699421fcf5dd267f96ad5808
+"@types/node@npm:18.18.1":
+  version: 18.18.1
+  resolution: "@types/node@npm:18.18.1"
+  checksum: 079085afc8615b91727900628410a2077f7fff51c5c3e20c4ab2d9caae4010b035aac13dae1221155e9d6ca46084aebf68121642140527b4009eee17b716d339
   languageName: node
   linkType: hard
 
@@ -2662,9 +2662,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@web/dev-server@npm:0.3.1":
-  version: 0.3.1
-  resolution: "@web/dev-server@npm:0.3.1"
+"@web/dev-server@npm:0.3.2":
+  version: 0.3.2
+  resolution: "@web/dev-server@npm:0.3.2"
   dependencies:
     "@babel/code-frame": ^7.12.11
     "@types/command-line-args": ^5.0.0
@@ -2683,7 +2683,7 @@ __metadata:
   bin:
     wds: dist/bin.js
     web-dev-server: dist/bin.js
-  checksum: 4f3f94506cfc9afd32cf825c72b3ae6af24f17298985c6eb3d10d8db08d657b8f976e22179946fdb842975d2097d3cf024cf8db2a83299293b5eb5ba93e50838
+  checksum: 086602bffc691cb9a7539db67cee5fb4b3fd86e009e3795c3bf5c9186816cefed2e9f4c5ee74f27e83079266e1732525902f236d1651c659a9a77907628a20b0
   languageName: node
   linkType: hard
 
@@ -10532,8 +10532,8 @@ __metadata:
     "@jenssimon/eslint-config-base": 7.2.5
     "@jenssimon/eslint-config-typescript": 5.1.10
     "@types/jest": 29.5.5
-    "@types/node": 18.18.0
-    "@web/dev-server": 0.3.1
+    "@types/node": 18.18.1
+    "@web/dev-server": 0.3.2
     commitizen: 4.3.0
     cz-conventional-changelog: 3.3.0
     eslint: 8.50.0
