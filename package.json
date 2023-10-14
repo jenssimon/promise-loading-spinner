@@ -24,7 +24,7 @@
   "types": "dist/loader.d.ts",
   "type": "module",
   "scripts": {
-    "lint": "eslint --fix --ext .tsx,.ts,.cts,.mts,.jsx,.js,.cjs,.mts ./ && tsc --noEmit",
+    "lint": "eslint --ext .tsx,.ts,.cts,.mts,.jsx,.js,.cjs,.mts ./",
     "build": "tsc",
     "predemo": "run-s build",
     "demo": "web-dev-server --open /demo/demo.html",
@@ -109,7 +109,9 @@
       "json",
       "node"
     ],
-    "extensionsToTreatAsEsm": [".ts"]
+    "extensionsToTreatAsEsm": [
+      ".ts"
+    ]
   },
   "packageManager": "yarn@3.6.4",
   "config": {
