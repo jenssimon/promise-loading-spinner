@@ -2596,9 +2596,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@web/dev-server-core@npm:^0.5.0":
-  version: 0.5.0
-  resolution: "@web/dev-server-core@npm:0.5.0"
+"@web/dev-server-core@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "@web/dev-server-core@npm:0.6.0"
   dependencies:
     "@types/koa": ^2.11.6
     "@types/ws": ^7.4.0
@@ -2618,59 +2618,33 @@ __metadata:
     parse5: ^6.0.1
     picomatch: ^2.2.2
     ws: ^7.4.2
-  checksum: f5d364daba40e5c6857632961855ced9c712437ecab4095d80973f3b726d85924d2e952dba1674b6375b59894bed934cbe743441c217169d8f8438359d0c9216
+  checksum: 18058984e8daff839603884793b0d785916b3232bc939797e6ba2970af86d23bb39396fc07d40221621e970d2c39966f5656bea7934323ead31f41089d98c805
   languageName: node
   linkType: hard
 
-"@web/dev-server-core@npm:^0.5.1":
-  version: 0.5.1
-  resolution: "@web/dev-server-core@npm:0.5.1"
-  dependencies:
-    "@types/koa": ^2.11.6
-    "@types/ws": ^7.4.0
-    "@web/parse5-utils": ^2.0.0
-    chokidar: ^3.4.3
-    clone: ^2.1.2
-    es-module-lexer: ^1.0.0
-    get-stream: ^6.0.0
-    is-stream: ^2.0.0
-    isbinaryfile: ^5.0.0
-    koa: ^2.13.0
-    koa-etag: ^4.0.0
-    koa-send: ^5.0.1
-    koa-static: ^5.0.0
-    lru-cache: ^8.0.4
-    mime-types: ^2.1.27
-    parse5: ^6.0.1
-    picomatch: ^2.2.2
-    ws: ^7.4.2
-  checksum: 95eab93dcad632733f3e16270a2723967f190b16fc31000cf221d4b68e9277a2f95bd31f12798ccbe3ce1642d5d6295f2518f732219a0bc4af6674a79ea686d5
-  languageName: node
-  linkType: hard
-
-"@web/dev-server-rollup@npm:^0.5.1":
-  version: 0.5.1
-  resolution: "@web/dev-server-rollup@npm:0.5.1"
+"@web/dev-server-rollup@npm:^0.5.3":
+  version: 0.5.3
+  resolution: "@web/dev-server-rollup@npm:0.5.3"
   dependencies:
     "@rollup/plugin-node-resolve": ^15.0.1
-    "@web/dev-server-core": ^0.5.0
+    "@web/dev-server-core": ^0.6.0
     nanocolors: ^0.2.1
     parse5: ^6.0.1
     rollup: ^3.15.0
     whatwg-url: ^11.0.0
-  checksum: cd2955128cfd870e03aff54c78a970b7983b0c335fd3ef19bd743341a9bd9be0c33ab490a068d5839e37fa2bfff0794411bc69e4b22b609feccd09f322d37afc
+  checksum: afa059ca51c2128dc48fcde3b0966e4df2463aebe3bd7724cce94f7ca876e9ee910ee2899573b79de4c50c29834f1a8a9e85fe498b029e7a9dbd996f73ef6c89
   languageName: node
   linkType: hard
 
-"@web/dev-server@npm:0.3.3":
-  version: 0.3.3
-  resolution: "@web/dev-server@npm:0.3.3"
+"@web/dev-server@npm:0.3.4":
+  version: 0.3.4
+  resolution: "@web/dev-server@npm:0.3.4"
   dependencies:
     "@babel/code-frame": ^7.12.11
     "@types/command-line-args": ^5.0.0
     "@web/config-loader": ^0.2.1
-    "@web/dev-server-core": ^0.5.1
-    "@web/dev-server-rollup": ^0.5.1
+    "@web/dev-server-core": ^0.6.0
+    "@web/dev-server-rollup": ^0.5.3
     camelcase: ^6.2.0
     command-line-args: ^5.1.1
     command-line-usage: ^7.0.1
@@ -2683,7 +2657,7 @@ __metadata:
   bin:
     wds: dist/bin.js
     web-dev-server: dist/bin.js
-  checksum: 5bd741c1776bdcfa390d2c074914713a367fd4e3b46f9c87d8956699bfbdfe30f887b1c5303f3d07ad1223e1fe35a87679a8da66f30018d6c1c26a7aba55e6fd
+  checksum: 62c4bb906647a3ea8f5c9b1fef78603fb1b1a11a743c8762e8f8e00ffa66ecc10f17784079b59bd40006d98e54bb19d96f512486b7534fcb4db100c2e09eed47
   languageName: node
   linkType: hard
 
@@ -10504,7 +10478,7 @@ __metadata:
     "@jenssimon/eslint-config-typescript": 5.2.2
     "@types/jest": 29.5.5
     "@types/node": 18.18.5
-    "@web/dev-server": 0.3.3
+    "@web/dev-server": 0.3.4
     commitizen: 4.3.0
     cz-conventional-changelog: 3.3.0
     eslint: 8.51.0
