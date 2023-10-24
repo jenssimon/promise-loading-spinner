@@ -70,6 +70,9 @@
       "@jenssimon/base/frontend-react",
       "@jenssimon/typescript"
     ],
+    "rules": {
+      "@typescript-eslint/naming-convention": "off"
+    },
     "overrides": [
       {
         "files": [
