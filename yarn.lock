@@ -900,9 +900,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-typescript@npm:5.2.3":
-  version: 5.2.3
-  resolution: "@jenssimon/eslint-config-typescript@npm:5.2.3"
+"@jenssimon/eslint-config-typescript@npm:5.2.4":
+  version: 5.2.4
+  resolution: "@jenssimon/eslint-config-typescript@npm:5.2.4"
   dependencies:
     "@typescript-eslint/eslint-plugin": "npm:^6.8.0"
     "@typescript-eslint/parser": "npm:^6.8.0"
@@ -910,7 +910,7 @@ __metadata:
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
     typescript: ">=4.0.0"
-  checksum: 6648f7bc0a5ca5cf77b29f84cdd0e7ac9bb9e16a5acbbbc2aa7b514acb4dc2240668da41d53e8d620c29c52d759ccedfe0b93b3f5c1a71a082bb057dd18dd27d
+  checksum: 2f77d1fea2c330659389d554d7b96f1fc038e8125bb25c7406ecde4ac37e82cb4e9092b18931460be830244712ab433093d9e989a9d02714166d36411a446b95
   languageName: node
   linkType: hard
 
@@ -2124,13 +2124,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:29.5.6":
-  version: 29.5.6
-  resolution: "@types/jest@npm:29.5.6"
+"@types/jest@npm:29.5.7":
+  version: 29.5.7
+  resolution: "@types/jest@npm:29.5.7"
   dependencies:
     expect: "npm:^29.0.0"
     pretty-format: "npm:^29.0.0"
-  checksum: 316463d2755677c42db5b6d5189794b8bbcf281c79f60cc936b5daa049cb2dc6339a6e343941b3c995ef29778c1c84b2a4f32f10a119ece418c47a3febfb2051
+  checksum: 231c873f3d1ddac973b8f8f2ad7760677d941d85fb52d1c5dc4a311bafba4c2c1658a1040fd7054a51f4d1841f51c6ca4cabf70675ee4fa9e10fc5b8066e1de1
   languageName: node
   linkType: hard
 
@@ -10660,8 +10660,8 @@ __metadata:
     "@commitlint/cli": "npm:18.2.0"
     "@commitlint/config-conventional": "npm:18.1.0"
     "@jenssimon/eslint-config-base": "npm:7.3.6"
-    "@jenssimon/eslint-config-typescript": "npm:5.2.3"
-    "@types/jest": "npm:29.5.6"
+    "@jenssimon/eslint-config-typescript": "npm:5.2.4"
+    "@types/jest": "npm:29.5.7"
     "@types/node": "npm:20.8.9"
     "@web/dev-server": "npm:0.3.6"
     commitizen: "npm:4.3.0"
