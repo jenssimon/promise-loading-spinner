@@ -872,9 +872,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-base@npm:7.3.6":
-  version: 7.3.6
-  resolution: "@jenssimon/eslint-config-base@npm:7.3.6"
+"@jenssimon/eslint-config-base@npm:7.3.7":
+  version: 7.3.7
+  resolution: "@jenssimon/eslint-config-base@npm:7.3.7"
   dependencies:
     eslint-config-airbnb: "npm:^19.0.4"
     eslint-config-airbnb-base: "npm:^15.0.0"
@@ -891,12 +891,12 @@ __metadata:
     eslint-plugin-react: "npm:^7.33.2"
     eslint-plugin-react-hooks: "npm:^4.6.0"
     eslint-plugin-react-redux: "npm:^4.0.0"
-    eslint-plugin-sonarjs: "npm:^0.21.0"
+    eslint-plugin-sonarjs: "npm:^0.22.0"
     eslint-plugin-unicorn: "npm:^49.0.0"
     eslint-plugin-wc: "npm:^2.0.4"
   peerDependencies:
     eslint: ^7.32.0 || ^8.2.0
-  checksum: 5d030f34091e3372a2e933dcf95267ea1b9d89598300eaa56466cdf654d9533d5f4dc66f7e9bc70f5727aaa89409e35b11862df9088d3bd0616671dba5011ad2
+  checksum: 7e1e2dd919116a47aacd5db6d571e0b72ae8460e2580724cce97dda8dd5a36c6ac1bc3752a4fc59996dc2d4e4338312f794f4abdb7a843202d16d8ab012d8417
   languageName: node
   linkType: hard
 
@@ -2601,22 +2601,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@web/config-loader@npm:^0.2.2":
-  version: 0.2.2
-  resolution: "@web/config-loader@npm:0.2.2"
+"@web/config-loader@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@web/config-loader@npm:0.3.0"
   dependencies:
     semver: "npm:^7.3.4"
-  checksum: f0b8fb3f53335f194ac18f14a86a2afcab0558d02bf4821c07867fe9020c83135a462a2c3fd61978f516d689482c623ca6da245e239a33a96fae1af189b805fd
+  checksum: c2c6a78233b02a06306ee86722f123d5441b48120d724167dd52de286f6822e79b46f2b71b13300411bed0121ce8b85b36652bbb20a6ecc3c5f2d49009f34172
   languageName: node
   linkType: hard
 
-"@web/dev-server-core@npm:^0.6.2, @web/dev-server-core@npm:^0.6.3":
-  version: 0.6.3
-  resolution: "@web/dev-server-core@npm:0.6.3"
+"@web/dev-server-core@npm:^0.7.0":
+  version: 0.7.0
+  resolution: "@web/dev-server-core@npm:0.7.0"
   dependencies:
     "@types/koa": "npm:^2.11.6"
     "@types/ws": "npm:^7.4.0"
-    "@web/parse5-utils": "npm:^2.0.2"
+    "@web/parse5-utils": "npm:^2.1.0"
     chokidar: "npm:^3.4.3"
     clone: "npm:^2.1.2"
     es-module-lexer: "npm:^1.0.0"
@@ -2632,33 +2632,33 @@ __metadata:
     parse5: "npm:^6.0.1"
     picomatch: "npm:^2.2.2"
     ws: "npm:^7.4.2"
-  checksum: ac7f4d0f6be9d32a2177519678750c4889fbda844df31b55efbf1879c56264839ccedb03ac5976354c38be68f8bf55488c9eedb5d5b1f7145fcf4a2bb163daf4
+  checksum: a546b1ebb5d0691ff6d68acdbf828d2b1aa5e35cdeb290bcecfd5004567cfcf9ee60a85781ef3dfd2f72e6168f4152c431a9109deddb251f30eb946dfc650588
   languageName: node
   linkType: hard
 
-"@web/dev-server-rollup@npm:^0.5.4":
-  version: 0.5.4
-  resolution: "@web/dev-server-rollup@npm:0.5.4"
+"@web/dev-server-rollup@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "@web/dev-server-rollup@npm:0.6.0"
   dependencies:
     "@rollup/plugin-node-resolve": "npm:^15.0.1"
-    "@web/dev-server-core": "npm:^0.6.2"
+    "@web/dev-server-core": "npm:^0.7.0"
     nanocolors: "npm:^0.2.1"
     parse5: "npm:^6.0.1"
     rollup: "npm:^3.15.0"
     whatwg-url: "npm:^11.0.0"
-  checksum: 98db4e4ba55592d4b00d1cc08053488723148e468655678265dd7c3a7e8e0ad3d1d93852b535b7817551db5cd9adc3a8df9d6570d6e1ac1c4656ae66d08b0c68
+  checksum: 7b05c9132f277d2449466505542904a8ea63fa6bb4999bfe80585f27d0ee01ece8b135eb1103284b2dc2af7abd71dd9de79aedc9180f1ad3ab4f3dee9378c733
   languageName: node
   linkType: hard
 
-"@web/dev-server@npm:0.3.7":
-  version: 0.3.7
-  resolution: "@web/dev-server@npm:0.3.7"
+"@web/dev-server@npm:0.4.0":
+  version: 0.4.0
+  resolution: "@web/dev-server@npm:0.4.0"
   dependencies:
     "@babel/code-frame": "npm:^7.12.11"
     "@types/command-line-args": "npm:^5.0.0"
-    "@web/config-loader": "npm:^0.2.2"
-    "@web/dev-server-core": "npm:^0.6.3"
-    "@web/dev-server-rollup": "npm:^0.5.4"
+    "@web/config-loader": "npm:^0.3.0"
+    "@web/dev-server-core": "npm:^0.7.0"
+    "@web/dev-server-rollup": "npm:^0.6.0"
     camelcase: "npm:^6.2.0"
     command-line-args: "npm:^5.1.1"
     command-line-usage: "npm:^7.0.1"
@@ -2671,17 +2671,17 @@ __metadata:
   bin:
     wds: dist/bin.js
     web-dev-server: dist/bin.js
-  checksum: 0322cab1ffa6cfe820116592c82202d99cf0f0a90efb2636dd4083a65a6ffefa75d55cd83d1052de0da91c6427a910340d548892f693e6af5cdc1404a42fc687
+  checksum: d4ed8b22504e8f9882f72c9a946014d60e28a31451a49ae7c9ddf631cc8817e2d919eef15343e08ad255eacfe9e86ef8d6643fba837ed331a6434392a4ca8bf2
   languageName: node
   linkType: hard
 
-"@web/parse5-utils@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "@web/parse5-utils@npm:2.0.2"
+"@web/parse5-utils@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "@web/parse5-utils@npm:2.1.0"
   dependencies:
     "@types/parse5": "npm:^6.0.1"
     parse5: "npm:^6.0.1"
-  checksum: f33ee99db8f738a8e8978280ed0434629c9301ec33ed1df5edb799a10fad43e7d346c772c4a125d27f1d46d7c0089e3acb6d57d869c92de62759818c2a9c66bb
+  checksum: 9eedec69b38efd0d03640d55584e1ccc24de7818db077bd01420995014aa0bf994bd20616e4b728bc123eaca0c1572b629b29403da4c1a90c71dc91bada58667
   languageName: node
   linkType: hard
 
@@ -5323,12 +5323,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-sonarjs@npm:^0.21.0":
-  version: 0.21.0
-  resolution: "eslint-plugin-sonarjs@npm:0.21.0"
+"eslint-plugin-sonarjs@npm:^0.22.0":
+  version: 0.22.0
+  resolution: "eslint-plugin-sonarjs@npm:0.22.0"
   peerDependencies:
     eslint: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
-  checksum: 6377b43ed2e65ef3b3b1fff2de27603beed1d411b03a8669479fdfbdc76bff4f1392a004e792e6130e0e273121927532e792e11262f2fa640e99e26c6246ef8c
+  checksum: 1dc305acc84a9e78fce08f654c8818dc91dd6b821af79a7c4fb99efb6a5f1937fabd6516ff7d1bbcac5b2f111d8ee70dc75b548b77f3199b1af0f2a0808953bc
   languageName: node
   linkType: hard
 
@@ -10658,11 +10658,11 @@ __metadata:
   dependencies:
     "@commitlint/cli": "npm:18.2.0"
     "@commitlint/config-conventional": "npm:18.1.0"
-    "@jenssimon/eslint-config-base": "npm:7.3.6"
+    "@jenssimon/eslint-config-base": "npm:7.3.7"
     "@jenssimon/eslint-config-typescript": "npm:5.2.4"
     "@types/jest": "npm:29.5.7"
     "@types/node": "npm:20.8.10"
-    "@web/dev-server": "npm:0.3.7"
+    "@web/dev-server": "npm:0.4.0"
     commitizen: "npm:4.3.0"
     cz-conventional-changelog: "npm:3.3.0"
     eslint: "npm:8.52.0"
