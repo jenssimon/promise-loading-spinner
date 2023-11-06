@@ -40,7 +40,7 @@
     "@commitlint/cli": "18.2.0",
     "@commitlint/config-conventional": "18.1.0",
     "@jenssimon/eslint-config-base": "7.3.10",
-    "@jenssimon/eslint-config-typescript": "5.2.4",
+    "@jenssimon/eslint-config-typescript": "5.2.5",
     "@types/jest": "29.5.7",
     "@types/node": "20.8.10",
     "@web/dev-server": "0.4.0",
