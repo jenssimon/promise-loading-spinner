@@ -2229,13 +2229,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:29.5.9":
-  version: 29.5.9
-  resolution: "@types/jest@npm:29.5.9"
+"@types/jest@npm:29.5.10":
+  version: 29.5.10
+  resolution: "@types/jest@npm:29.5.10"
   dependencies:
     expect: "npm:^29.0.0"
     pretty-format: "npm:^29.0.0"
-  checksum: 66fe6b9b1c72739d02edaf1c98468aec84c700d841376afab9321b5268cb7b656a00a3561408b6c37f8619fffa7902e2ef29357fbc355e3e641c18b254899e49
+  checksum: b46171d59d12a5f69bbe710f65eaf59a8073337c6b4a67dff8158575caec53f1c61f8a7d645b34d6ac3c4ea398acd30f0c5d1c4a131c0c918798019264a3397d
   languageName: node
   linkType: hard
 
@@ -2324,12 +2324,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.9.3":
-  version: 20.9.3
-  resolution: "@types/node@npm:20.9.3"
+"@types/node@npm:20.9.4":
+  version: 20.9.4
+  resolution: "@types/node@npm:20.9.4"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 0f61809f00241d0f1db23f8d938ef287138754819150d026e57d2246fec0330ba4b771781ff0d2ed1ea0dd42953850424b495956ff89d06d0bf3995d53da75b1
+  checksum: c8b48ace4c7e17715fa901201c98275f8e5268cf5895a8d149777eb0ec6c3ef6c831ff3917e92da5453a5dbe13f230caa50b348a0601b0d50eb9e628010c0364
   languageName: node
   linkType: hard
 
@@ -10823,8 +10823,8 @@ __metadata:
     "@commitlint/config-conventional": "npm:18.4.3"
     "@jenssimon/eslint-config-base": "npm:7.3.10"
     "@jenssimon/eslint-config-typescript": "npm:5.2.7"
-    "@types/jest": "npm:29.5.9"
-    "@types/node": "npm:20.9.3"
+    "@types/jest": "npm:29.5.10"
+    "@types/node": "npm:20.9.4"
     "@web/dev-server": "npm:0.4.1"
     commitizen: "npm:4.3.0"
     cz-conventional-changelog: "npm:3.3.0"
