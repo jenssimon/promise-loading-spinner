@@ -37,8 +37,8 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.0.1",
-    "@commitlint/config-conventional": "19.0.0",
+    "@commitlint/cli": "19.0.3",
+    "@commitlint/config-conventional": "19.0.3",
     "@jenssimon/eslint-config-base": "7.3.23",
     "@jenssimon/eslint-config-typescript": "5.2.23",
     "@types/jest": "29.5.12",
