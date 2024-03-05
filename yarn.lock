@@ -836,9 +836,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-typescript@npm:5.2.23":
-  version: 5.2.23
-  resolution: "@jenssimon/eslint-config-typescript@npm:5.2.23"
+"@jenssimon/eslint-config-typescript@npm:5.2.24":
+  version: 5.2.24
+  resolution: "@jenssimon/eslint-config-typescript@npm:5.2.24"
   dependencies:
     "@typescript-eslint/eslint-plugin": "npm:^7.0.0"
     "@typescript-eslint/parser": "npm:^7.0.0"
@@ -846,7 +846,7 @@ __metadata:
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
     typescript: ">=4.0.0"
-  checksum: 10c0/d5f45df2d40c0e01c0f62ea252abab2b671964a8820dbe134c466a662973bcecd638fa2d49dfd8e6ec42d058612b581ccd20ceb1b7e0ea66fde6f19b58097b43
+  checksum: 10c0/90b2dcabe0626e2dd6b62b034ba1084e91d28274aadcb9969c45b051225ce69367c026bd0550493b15236b7a1668e79c3165bc39292537108c0709b465b47ead
   languageName: node
   linkType: hard
 
@@ -9483,7 +9483,7 @@ __metadata:
     "@commitlint/cli": "npm:19.0.3"
     "@commitlint/config-conventional": "npm:19.0.3"
     "@jenssimon/eslint-config-base": "npm:7.3.24"
-    "@jenssimon/eslint-config-typescript": "npm:5.2.23"
+    "@jenssimon/eslint-config-typescript": "npm:5.2.24"
     "@types/jest": "npm:29.5.12"
     "@types/node": "npm:20.11.24"
     "@web/dev-server": "npm:0.4.3"
