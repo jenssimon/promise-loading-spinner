@@ -42,7 +42,7 @@
     "@jenssimon/eslint-config-base": "7.3.24",
     "@jenssimon/eslint-config-typescript": "5.2.24",
     "@types/jest": "29.5.12",
-    "@types/node": "20.11.24",
+    "@types/node": "20.11.25",
     "@web/dev-server": "0.4.3",
     "commitizen": "4.3.0",
     "cz-conventional-changelog": "3.3.0",
@@ -56,7 +56,7 @@
     "semantic-release": "23.0.2",
     "ts-jest": "29.1.2",
     "ts-node": "10.9.2",
-    "typescript": "5.3.3"
+    "typescript": "5.4.2"
   },
   "files": [
     "dist/loader.js",
