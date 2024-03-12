@@ -836,9 +836,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-typescript@npm:5.2.24":
-  version: 5.2.24
-  resolution: "@jenssimon/eslint-config-typescript@npm:5.2.24"
+"@jenssimon/eslint-config-typescript@npm:5.2.25":
+  version: 5.2.25
+  resolution: "@jenssimon/eslint-config-typescript@npm:5.2.25"
   dependencies:
     "@typescript-eslint/eslint-plugin": "npm:^7.0.0"
     "@typescript-eslint/parser": "npm:^7.0.0"
@@ -846,7 +846,7 @@ __metadata:
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
     typescript: ">=4.0.0"
-  checksum: 10c0/90b2dcabe0626e2dd6b62b034ba1084e91d28274aadcb9969c45b051225ce69367c026bd0550493b15236b7a1668e79c3165bc39292537108c0709b465b47ead
+  checksum: 10c0/5d3af599b2ef45c8841a5b385757eb6023545f3b585bdc7e4ac6eb3c99d2702567edb5058083f07e1c32aea3ff12224901668dae1e3d40eaff4f4acae405dc7e
   languageName: node
   linkType: hard
 
@@ -2152,12 +2152,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.11.25":
-  version: 20.11.25
-  resolution: "@types/node@npm:20.11.25"
+"@types/node@npm:20.11.26":
+  version: 20.11.26
+  resolution: "@types/node@npm:20.11.26"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/3a65a0469309d503e572a3198d81c9248876236b1bcc0c9943e995cfa536df7ce9a9302638258984877420d1613167a8a82dbfb3a92197319fb79ebebf9abc83
+  checksum: 10c0/2df81e4f109588c4c490f2c7d616a06d2b3b9298f217468134b80711af810c9a6017a59beb3e6b1c596eb9b6c5a39d33403b99179acb89006badfbc55f2468bb
   languageName: node
   linkType: hard
 
@@ -9483,9 +9483,9 @@ __metadata:
     "@commitlint/cli": "npm:19.0.3"
     "@commitlint/config-conventional": "npm:19.0.3"
     "@jenssimon/eslint-config-base": "npm:7.3.24"
-    "@jenssimon/eslint-config-typescript": "npm:5.2.24"
+    "@jenssimon/eslint-config-typescript": "npm:5.2.25"
     "@types/jest": "npm:29.5.12"
-    "@types/node": "npm:20.11.25"
+    "@types/node": "npm:20.11.26"
     "@web/dev-server": "npm:0.4.3"
     commitizen: "npm:4.3.0"
     cz-conventional-changelog: "npm:3.3.0"
