@@ -837,9 +837,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-typescript@npm:5.2.25":
-  version: 5.2.25
-  resolution: "@jenssimon/eslint-config-typescript@npm:5.2.25"
+"@jenssimon/eslint-config-typescript@npm:5.2.26":
+  version: 5.2.26
+  resolution: "@jenssimon/eslint-config-typescript@npm:5.2.26"
   dependencies:
     "@typescript-eslint/eslint-plugin": "npm:^7.0.0"
     "@typescript-eslint/parser": "npm:^7.0.0"
@@ -847,7 +847,7 @@ __metadata:
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
     typescript: ">=4.0.0"
-  checksum: 10c0/5d3af599b2ef45c8841a5b385757eb6023545f3b585bdc7e4ac6eb3c99d2702567edb5058083f07e1c32aea3ff12224901668dae1e3d40eaff4f4acae405dc7e
+  checksum: 10c0/05de4d10a17e8c177ebb37f708307b973b729c0ab4ef0254f027471bce54a30a84a704eed6598eb98ed5e9fa42577b5bcb0b445eaba57e28750b857eae8b87cb
   languageName: node
   linkType: hard
 
@@ -1654,9 +1654,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/commit-analyzer@npm:^11.0.0":
-  version: 11.1.0
-  resolution: "@semantic-release/commit-analyzer@npm:11.1.0"
+"@semantic-release/commit-analyzer@npm:^12.0.0":
+  version: 12.0.0
+  resolution: "@semantic-release/commit-analyzer@npm:12.0.0"
   dependencies:
     conventional-changelog-angular: "npm:^7.0.0"
     conventional-commits-filter: "npm:^4.0.0"
@@ -1667,7 +1667,7 @@ __metadata:
     micromatch: "npm:^4.0.2"
   peerDependencies:
     semantic-release: ">=20.1.0"
-  checksum: 10c0/f39dd42a69ee2afd13b690489c5d266802041e47b09e36ca7534bb1a4a0069295d51c43f2a180a36369ff9b38c31ef9a4d6ca39c823768279761304f0f5dd7e3
+  checksum: 10c0/d9f76fd64ec679bdbb12b0a10d2493567403067d7fc9271571486f8edd53896b298eec2241a1a4427356309d9dea7e45097c8f1772177e38ebf671ff4fbe09a0
   languageName: node
   linkType: hard
 
@@ -2184,12 +2184,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.11.28":
-  version: 20.11.28
-  resolution: "@types/node@npm:20.11.28"
+"@types/node@npm:20.11.29":
+  version: 20.11.29
+  resolution: "@types/node@npm:20.11.29"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/c599745243ed9ae4ca87460f18f88d02ab7424b545136aa504ed7a1d898e3a9bb133c927bcc7e861f79d7f6043ef917a173e780c8a001e129221e92f6d97b0ee
+  checksum: 10c0/b839bad64b2d0e2b4a2d09a53c019ac06c732ac66ea88f3a86a9d2f28a789caf8fd56b888f577183459733abfa1b77e4bf6986cde18b2ec63e1939427aa0d387
   languageName: node
   linkType: hard
 
@@ -9508,9 +9508,9 @@ __metadata:
     "@commitlint/cli": "npm:19.2.0"
     "@commitlint/config-conventional": "npm:19.1.0"
     "@jenssimon/eslint-config-base": "npm:7.3.25"
-    "@jenssimon/eslint-config-typescript": "npm:5.2.25"
+    "@jenssimon/eslint-config-typescript": "npm:5.2.26"
     "@types/jest": "npm:29.5.12"
-    "@types/node": "npm:20.11.28"
+    "@types/node": "npm:20.11.29"
     "@web/dev-server": "npm:0.4.3"
     commitizen: "npm:4.3.0"
     cz-conventional-changelog: "npm:3.3.0"
@@ -9521,7 +9521,7 @@ __metadata:
     lint-staged: "npm:15.2.2"
     npm-run-all2: "npm:6.1.2"
     pinst: "npm:3.0.0"
-    semantic-release: "npm:23.0.4"
+    semantic-release: "npm:23.0.5"
     ts-jest: "npm:29.1.2"
     ts-node: "npm:10.9.2"
     typescript: "npm:5.4.2"
@@ -10151,11 +10151,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semantic-release@npm:23.0.4":
-  version: 23.0.4
-  resolution: "semantic-release@npm:23.0.4"
+"semantic-release@npm:23.0.5":
+  version: 23.0.5
+  resolution: "semantic-release@npm:23.0.5"
   dependencies:
-    "@semantic-release/commit-analyzer": "npm:^11.0.0"
+    "@semantic-release/commit-analyzer": "npm:^12.0.0"
     "@semantic-release/error": "npm:^4.0.0"
     "@semantic-release/github": "npm:^10.0.0"
     "@semantic-release/npm": "npm:^12.0.0"
@@ -10186,7 +10186,7 @@ __metadata:
     yargs: "npm:^17.5.1"
   bin:
     semantic-release: bin/semantic-release.js
-  checksum: 10c0/1e99360d1ce7ffb96c0f590ebcd749539ded66addde69c946e726de9a51e1b785a48ad744ef5df92434c95a86e32fc88f1d60dc0ac3561fcabe59fe2e202cd11
+  checksum: 10c0/a8ea1a143f567881ffe98ff3491fba445ddab9f777d439f6e7d8bb9ea22b263f345890a1cc320dc2d42bc3f8aa753015ab562fb280f89958624bf6a49b7f6820
   languageName: node
   linkType: hard
 
