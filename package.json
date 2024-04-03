@@ -39,7 +39,7 @@
   "devDependencies": {
     "@commitlint/cli": "19.2.1",
     "@commitlint/config-conventional": "19.1.0",
-    "@jenssimon/eslint-config-base": "7.3.26",
+    "@jenssimon/eslint-config-base": "7.4.0",
     "@jenssimon/eslint-config-typescript": "5.2.29",
     "@types/jest": "29.5.12",
     "@types/node": "20.12.3",
@@ -53,7 +53,7 @@
     "lint-staged": "15.2.2",
     "npm-run-all2": "6.1.2",
     "pinst": "3.0.0",
-    "semantic-release": "23.0.6",
+    "semantic-release": "23.0.7",
     "ts-jest": "29.1.2",
     "ts-node": "10.9.2",
     "typescript": "5.4.3"
