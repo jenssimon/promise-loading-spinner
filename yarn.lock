@@ -809,9 +809,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-base@npm:7.4.0":
-  version: 7.4.0
-  resolution: "@jenssimon/eslint-config-base@npm:7.4.0"
+"@jenssimon/eslint-config-base@npm:7.4.1":
+  version: 7.4.1
+  resolution: "@jenssimon/eslint-config-base@npm:7.4.1"
   dependencies:
     eslint-config-airbnb: "npm:^19.0.4"
     eslint-config-airbnb-base: "npm:^15.0.0"
@@ -833,7 +833,7 @@ __metadata:
     eslint-plugin-wc: "npm:^2.0.4"
   peerDependencies:
     eslint: ^7.32.0 || ^8.2.0
-  checksum: 10c0/852e55b4e9a2ee751d40978c0ff7581fb7ea2de659570ff7cf354bc6280c5484bf7abd65f5365977c14dabc4d7d22e627d304062c568b6a1fe18178c064ead81
+  checksum: 10c0/f8340e33c2a2c58c5c29523fbc993d578c0c61dfc05a32544027dff74a95ca94cecee2c3e22468ac00f22225a1b12cad116fa4d5ec601ec0413fbd71298b8547
   languageName: node
   linkType: hard
 
@@ -2184,12 +2184,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.12.5":
-  version: 20.12.5
-  resolution: "@types/node@npm:20.12.5"
+"@types/node@npm:20.12.6":
+  version: 20.12.6
+  resolution: "@types/node@npm:20.12.6"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/2da65516fba98f0417620e42bddbe53e144d4782d69cd37f99df2537c6850b9cfbdb8a017f02c61e9a074bcac84f9f3f221b250474ac8c6b95d507a47e8d53f9
+  checksum: 10c0/48ce732162cd6c02656aa5f996f0e695b57fdeb1ae762fbaa966afac2dcdcf52cb56be5ce1efb4babf8f97c2de545889aebc7f43c2e86f033487245c41fa1e6b
   languageName: node
   linkType: hard
 
@@ -9522,10 +9522,10 @@ __metadata:
   dependencies:
     "@commitlint/cli": "npm:19.2.1"
     "@commitlint/config-conventional": "npm:19.1.0"
-    "@jenssimon/eslint-config-base": "npm:7.4.0"
+    "@jenssimon/eslint-config-base": "npm:7.4.1"
     "@jenssimon/eslint-config-typescript": "npm:5.2.30"
     "@types/jest": "npm:29.5.12"
-    "@types/node": "npm:20.12.5"
+    "@types/node": "npm:20.12.6"
     "@web/dev-server": "npm:0.4.4"
     commitizen: "npm:4.3.0"
     cz-conventional-changelog: "npm:3.3.0"
