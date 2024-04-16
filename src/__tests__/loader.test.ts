@@ -1,6 +1,9 @@
 /**
  * @jest-environment jsdom
  */
+import {
+  beforeEach, describe, expect, it, jest,
+} from '@jest/globals'
 
 import Loader from '../loader.js'
 
