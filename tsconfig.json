@@ -11,8 +11,9 @@
   },
   "include": [
     "src/**/*",
-    "**/*.js"
-, "commitlint.config.js"  ],
+    "commitlint.config.js",
+    "vitest.config.ts"
+  ],
   "exclude": [
     "node_modules",
     "dist"
