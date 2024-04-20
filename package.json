@@ -41,7 +41,9 @@
     "@commitlint/config-conventional": "19.2.2",
     "@jenssimon/eslint-config-base": "7.4.3",
     "@jenssimon/eslint-config-typescript": "5.2.32",
+    "@preact/signals": "^1.2.3",
     "@types/node": "20.12.7",
+    "@vitest/coverage-v8": "^1.5.0",
     "@web/dev-server": "0.4.4",
     "commitizen": "4.3.0",
     "cz-conventional-changelog": "3.3.0",
@@ -51,6 +53,7 @@
     "lint-staged": "15.2.2",
     "npm-run-all2": "6.1.2",
     "pinst": "3.0.0",
+    "preact": "^10.20.2",
     "semantic-release": "23.0.8",
     "typescript": "5.4.5",
     "vitest": "^1.5.0"

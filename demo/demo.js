@@ -1,4 +1,8 @@
-import PromiseLoadingSpinner from '../dist/loader.js';
+// import { signal } from '@preact/signals'
+
+import PromiseLoadingSpinner from '../dist/loader.js'
+
+const LOADER_ELEMENT = '#js-page-loader';
 
 // eslint-disable-next-line unicorn/prefer-top-level-await
 (async () => {
@@ -20,7 +24,9 @@ import PromiseLoadingSpinner from '../dist/loader.js';
   const demo = async () => {
     await waitFor(2000)
 
-    const loader = new PromiseLoadingSpinner()
+    const loader = new PromiseLoadingSpinner({
+      loaderElement: LOADER_ELEMENT,
+    })
 
     // in init delay
     await loader.loader(getWorkingSectionPromise(1, 5000))

@@ -1,5 +1,10 @@
 export interface LoaderConfig {
   /**
+   * Signal - TODO: Add description.
+   */
+  signal: { value: boolean } | undefined
+
+  /**
    * Time (ms) until spinner will show up to handle short operations without a spinner.
    */
   delay: number
@@ -19,13 +24,14 @@ export interface LoaderConfig {
    * The element which represents the spinner.
    * Can be used with an element or a selector string.
    */
-  loaderElement: HTMLElement | string
+  loaderElement?: HTMLElement | string
 
   /**
    * Class name used to show the spinner.
    */
   classActive: string
 }
+
 
 /**
  * Call options for the public API functions that add a promise.
@@ -37,16 +43,19 @@ export interface LoaderCallOptions {
   skipDelays: boolean
 }
 
+
 /**
  * Default config.
  */
 const defaults: LoaderConfig = {
+  signal: undefined,
   delay: 300,
   closeDelay: 10,
   initDelay: 1000,
-  loaderElement: '#js-page-loader',
+  loaderElement: undefined,
   classActive: 'is-active',
 }
+
 
 /**
  * Advanced handling of loaders/spinners based on one or multiple Promises.
@@ -65,7 +74,7 @@ export default class Loader {
   /**
    * The attached DOM element which represents the loader.
    */
-  private el: HTMLElement
+  private el?: HTMLElement
 
   /**
    * The timeout handle for the initial suppression of the loader.
@@ -104,25 +113,31 @@ export default class Loader {
    */
   public currentLoadingPromise: Promise<Promise<unknown>[]> = Promise.resolve([])
 
+
   /**
    * Constructor.
    *
    * @param cfg configuration of the loader (optional)
    */
-  public constructor(cfg: Partial<LoaderConfig> = {}) {
+  public constructor(cfg: Partial<LoaderConfig>) {
     this.setCurrentLoadingPromise()
     const config = { ...defaults, ...cfg }
-    const { loaderElement, initDelay } = config
     this.config = config
 
-    this.el = loaderElement instanceof HTMLElement
-      ? loaderElement : document.querySelector(loaderElement) as HTMLElement
+    const { config: { loaderElement, signal, initDelay } } = this
 
-    if (!this.el) throw new Error('Element not found')
+    if (loaderElement) {
+      this.el = loaderElement instanceof HTMLElement
+        ? loaderElement : document.querySelector(loaderElement) as HTMLElement
+
+      if (!this.el) throw new Error('Element not found')
+    }
+    if (!this.el && !signal) throw new Error('No loader element or signal provided')
 
     // suppress loader in a short timeframe after initializing (page load)
     this.initSuppressTimeout = setTimeout(() => this.stopSuppressLoading(), initDelay)
   }
+
 
   /**
    * Add a promise to the loader.
@@ -150,6 +165,7 @@ export default class Loader {
     return promise
   }
 
+
   /**
    * Returns a function that wraps the loader functionality around a function call.
    *
@@ -169,6 +185,7 @@ export default class Loader {
     }
   }
 
+
   /**
    * A decorator for methods that wraps loader functionality around a function call.
    * @param options options for the operation (optional)
@@ -187,6 +204,7 @@ export default class Loader {
     }
   }
 
+
   /**
    * Stops initial loader suppresion
    */
@@ -194,6 +212,7 @@ export default class Loader {
     clearTimeout(this.initSuppressTimeout as NodeJS.Timeout)
     this.initSuppressTimeout = undefined
   }
+
 
   /**
    * Create the promise for the currently shown loader.
@@ -205,13 +224,15 @@ export default class Loader {
     })
   }
 
+
   /**
    * Show or hide the loader.
    *
    * @param visible is the loader visible?
    */
   private setLoaderVisibility(visible: boolean) {
-    this.el.classList[visible ? 'add' : 'remove'](this.config.classActive)
+    if (this.el) this.el.classList[visible ? 'add' : 'remove'](this.config.classActive)
+    if (this.config.signal) this.config.signal.value = visible
     this.loaderShows = visible
 
     if (visible) {
@@ -224,6 +245,7 @@ export default class Loader {
       this.setCurrentLoadingPromise()
     }
   }
+
 
   /**
    * Wait for promise to fulfill or reject and check if the loader can hide.
@@ -253,6 +275,7 @@ export default class Loader {
       }, config.closeDelay)
     }
   }
+
 
   /**
    * Show the loader. Also adds the loader delay.
