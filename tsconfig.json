@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    // "module": "ESNext",
+    "target": "ES2019",
+    "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "declaration": true,
     "strict": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
+    "skipLibCheck": true,
     "outDir": "./dist/"
   },
   "include": [
@@ -15,7 +16,7 @@
     "vitest.config.ts"
   ],
   "exclude": [
-    "node_modules",
+    "node_modules/**",
     "dist"
   ]
 }

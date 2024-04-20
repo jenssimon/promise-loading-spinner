@@ -20,8 +20,8 @@
   ],
   "author": "Jens Simon <https://github.com/jenssimon>",
   "license": "MIT",
-  "main": "dist/loader.js",
-  "types": "dist/loader.d.ts",
+  "main": "dist/src/loader.js",
+  "types": "dist/src/loader.d.ts",
   "type": "module",
   "scripts": {
     "lint": "eslint --ext .tsx,.ts,.cts,.mts,.jsx,.js,.cjs,.mts ./",
@@ -59,8 +59,8 @@
     "vitest": "^1.5.0"
   },
   "files": [
-    "dist/loader.js",
-    "dist/loader.d.ts"
+    "dist/src/loader.js",
+    "dist/src/loader.d.ts"
   ],
   "eslintConfig": {
     "parserOptions": {
