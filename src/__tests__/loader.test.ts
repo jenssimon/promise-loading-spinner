@@ -1,9 +1,9 @@
 /**
- * @jest-environment jsdom
+ * @vitest-environment jsdom
  */
 import {
-  beforeEach, describe, expect, it, jest,
-} from '@jest/globals'
+  beforeEach, describe, expect, it, vi,
+} from 'vitest'
 
 import Loader from '../loader.js'
 
@@ -13,8 +13,10 @@ type PromiseRejecter = (reason?: unknown) => unknown;
 const promiseResolverStub: PromiseResolver = () => {}
 const promiseRejecterStub: PromiseRejecter = () => {}
 
-jest.useFakeTimers()
+// eslint-disable-next-line jest/require-hook
+vi.useFakeTimers()
 
+// eslint-disable-next-line jest/require-hook
 describe('promise-loading-spinner', () => {
   beforeEach(() => {
     document.body.innerHTML = '<div id="js-page-loader"></div><div id="alternativeElement"></div>'
@@ -30,7 +32,7 @@ describe('promise-loading-spinner', () => {
       // Loader is initialized
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // init delay expired
+      vi.runAllTimers() // init delay expired
 
       // Prepare the promise to pass into
       let promiseResolver = promiseResolverStub
@@ -43,7 +45,7 @@ describe('promise-loading-spinner', () => {
       expect(passedThroughPromise).toStrictEqual(promise) // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // delay expired
+      vi.runAllTimers() // delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
@@ -52,7 +54,7 @@ describe('promise-loading-spinner', () => {
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
-      jest.runAllTimers() // close delay expired
+      vi.runAllTimers() // close delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
@@ -65,7 +67,7 @@ describe('promise-loading-spinner', () => {
       // Loader is initialized
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // init delay expired
+      vi.runAllTimers() // init delay expired
 
       // Prepare the promise to pass into
       let promiseRejecter = promiseRejecterStub
@@ -78,7 +80,7 @@ describe('promise-loading-spinner', () => {
       expect(passedThroughPromise).toStrictEqual(promise) // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // delay expired
+      vi.runAllTimers() // delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
@@ -87,7 +89,7 @@ describe('promise-loading-spinner', () => {
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
-      jest.runAllTimers() // close delay expired
+      vi.runAllTimers() // close delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
@@ -100,7 +102,7 @@ describe('promise-loading-spinner', () => {
       // Loader is initialized
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // init delay expired
+      vi.runAllTimers() // init delay expired
 
       // Prepare the promise to pass into
       let promiseResolver = promiseResolverStub
@@ -118,7 +120,7 @@ describe('promise-loading-spinner', () => {
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // delay expired
+      vi.runAllTimers() // delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
@@ -143,9 +145,9 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
       // for the case init delay and delay timeouts are set
-      jest.runAllTimers()
+      vi.runAllTimers()
       expect(loaderElement.classList.contains('is-active')).toBe(false)
-      jest.runAllTimers()
+      vi.runAllTimers()
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
       promiseResolver('success') // promise resolves
@@ -174,15 +176,15 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
       // for the case init delay and delay timeouts are set
-      // jest.runAllTimers();
+      // vi.runAllTimers();
       /* expect(loaderElement.classList.contains('is-active')).toBe(false);
-      jest.runAllTimers();
+      vi.runAllTimers();
       expect(loaderElement.classList.contains('is-active')).toBe(false); */
 
       promiseResolver('success') // promise resolves
       await expect(passedThroughPromise).resolves.toBe('success')
 
-      jest.runAllTimers()
+      vi.runAllTimers()
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
@@ -195,7 +197,7 @@ describe('promise-loading-spinner', () => {
       // Loader is initialized
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // init delay expired
+      vi.runAllTimers() // init delay expired
 
       // Prepare the promise to pass into
       let promise1Resolver = promiseResolverStub
@@ -217,7 +219,7 @@ describe('promise-loading-spinner', () => {
       expect(passedThroughPromise2).toStrictEqual(promise1) // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // delay expired
+      vi.runAllTimers() // delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
@@ -226,14 +228,14 @@ describe('promise-loading-spinner', () => {
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
-      jest.runAllTimers() // no timer should run, just to be sure
+      vi.runAllTimers() // no timer should run, just to be sure
 
       promise2Resolver('success2') // resolve promise
       await expect(passedThroughPromise2).resolves.toBe('success2')
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
-      jest.runAllTimers() // close delay expired
+      vi.runAllTimers() // close delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
@@ -246,7 +248,7 @@ describe('promise-loading-spinner', () => {
       // Loader is initialized
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // init delay expired
+      vi.runAllTimers() // init delay expired
 
       // Prepare the promise to pass into
       let promise1Resolver = promiseResolverStub
@@ -263,7 +265,7 @@ describe('promise-loading-spinner', () => {
       expect(passedThroughPromise1).toStrictEqual(promise1) // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // delay expired
+      vi.runAllTimers() // delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
@@ -277,14 +279,14 @@ describe('promise-loading-spinner', () => {
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
-      jest.runAllTimers() // no timer should run, just to be sure
+      vi.runAllTimers() // no timer should run, just to be sure
 
       promise2Resolver('success2') // resolve promise
       await expect(passedThroughPromise2).resolves.toBe('success2')
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
-      jest.runAllTimers() // close delay expired
+      vi.runAllTimers() // close delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
@@ -297,7 +299,7 @@ describe('promise-loading-spinner', () => {
       // Loader is initialized
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // init delay expired
+      vi.runAllTimers() // init delay expired
 
       // Prepare the promise to pass into
       let promise1Resolver = promiseResolverStub
@@ -314,7 +316,7 @@ describe('promise-loading-spinner', () => {
       expect(passedThroughPromise1).toStrictEqual(promise1) // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // delay expired
+      vi.runAllTimers() // delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
@@ -328,11 +330,11 @@ describe('promise-loading-spinner', () => {
       expect(passedThroughPromise2).toStrictEqual(promise2) // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
-      jest.runAllTimers() // no timer should run, just to be sure
+      vi.runAllTimers() // no timer should run, just to be sure
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
-      jest.runAllTimers() // close delay expired
+      vi.runAllTimers() // close delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
@@ -341,7 +343,7 @@ describe('promise-loading-spinner', () => {
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
-      jest.runAllTimers() // close delay expired
+      vi.runAllTimers() // close delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
@@ -354,7 +356,7 @@ describe('promise-loading-spinner', () => {
       // Loader is initialized
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // init delay expired
+      vi.runAllTimers() // init delay expired
 
       // Prepare the promise to pass into
       let promise1Resolver = promiseResolverStub
@@ -371,18 +373,18 @@ describe('promise-loading-spinner', () => {
       expect(passedThroughPromise1).toStrictEqual(promise1) // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // delay expired
+      vi.runAllTimers() // delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
-      jest.runAllTimers() // no timer should run, just to be sure
+      vi.runAllTimers() // no timer should run, just to be sure
 
       promise1Resolver('success1') // promise resolves
       await expect(passedThroughPromise1).resolves.toBe('success1')
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
-      jest.runAllTimers() // close delay expired
+      vi.runAllTimers() // close delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
@@ -391,18 +393,18 @@ describe('promise-loading-spinner', () => {
       expect(passedThroughPromise2).toStrictEqual(promise2) // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // delay expired
+      vi.runAllTimers() // delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
-      jest.runAllTimers() // no timer should run, just to be sure
+      vi.runAllTimers() // no timer should run, just to be sure
 
       promise2Resolver('success2') // promise resolves
       await expect(passedThroughPromise2).resolves.toBe('success2')
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
-      jest.runAllTimers() // close delay expired
+      vi.runAllTimers() // close delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
@@ -421,7 +423,7 @@ describe('promise-loading-spinner', () => {
       expect(alternativeElement.classList.contains('is-active')).toBe(false)
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // init delay expired
+      vi.runAllTimers() // init delay expired
 
       // Prepare the promise to pass into
       let promiseResolver = promiseResolverStub
@@ -435,7 +437,7 @@ describe('promise-loading-spinner', () => {
       expect(alternativeElement.classList.contains('is-active')).toBe(false)
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // delay expired
+      vi.runAllTimers() // delay expired
 
       expect(alternativeElement.classList.contains('is-active')).toBe(true)
       expect(loaderElement.classList.contains('is-active')).toBe(false)
@@ -446,7 +448,7 @@ describe('promise-loading-spinner', () => {
       expect(alternativeElement.classList.contains('is-active')).toBe(true)
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // close delay expired
+      vi.runAllTimers() // close delay expired
 
       expect(alternativeElement.classList.contains('is-active')).toBe(false)
       expect(loaderElement.classList.contains('is-active')).toBe(false)
@@ -464,7 +466,7 @@ describe('promise-loading-spinner', () => {
       expect(alternativeElement.classList.contains('is-active')).toBe(false)
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // init delay expired
+      vi.runAllTimers() // init delay expired
 
       // Prepare the promise to pass into
       let promiseResolver = promiseResolverStub
@@ -478,7 +480,7 @@ describe('promise-loading-spinner', () => {
       expect(alternativeElement.classList.contains('is-active')).toBe(false)
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // delay expired
+      vi.runAllTimers() // delay expired
 
       expect(alternativeElement.classList.contains('is-active')).toBe(true)
       expect(loaderElement.classList.contains('is-active')).toBe(false)
@@ -489,7 +491,7 @@ describe('promise-loading-spinner', () => {
       expect(alternativeElement.classList.contains('is-active')).toBe(true)
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // close delay expired
+      vi.runAllTimers() // close delay expired
 
       expect(alternativeElement.classList.contains('is-active')).toBe(false)
       expect(loaderElement.classList.contains('is-active')).toBe(false)
@@ -512,7 +514,7 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false)
       expect(loaderElement.classList.contains('loading')).toBe(false)
 
-      jest.runAllTimers() // init delay expired
+      vi.runAllTimers() // init delay expired
 
       // Prepare the promise to pass into
       let promiseResolver = promiseResolverStub
@@ -526,7 +528,7 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false)
       expect(loaderElement.classList.contains('loading')).toBe(false)
 
-      jest.runAllTimers() // delay expired
+      vi.runAllTimers() // delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
       expect(loaderElement.classList.contains('loading')).toBe(true)
@@ -537,7 +539,7 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false)
       expect(loaderElement.classList.contains('loading')).toBe(true)
 
-      jest.runAllTimers() // close delay expired
+      vi.runAllTimers() // close delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
       expect(loaderElement.classList.contains('loading')).toBe(false)
@@ -553,7 +555,7 @@ describe('promise-loading-spinner', () => {
       // Loader is initialized
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // init delay expired
+      vi.runAllTimers() // init delay expired
 
       // Prepare the promise to pass into
       let promiseResolver = promiseResolverStub
@@ -563,7 +565,7 @@ describe('promise-loading-spinner', () => {
 
       const passedThroughPromise = loader.loader(promise) // call the loader
 
-      jest.runAllTimers()
+      vi.runAllTimers()
 
       expect(passedThroughPromise).toStrictEqual(promise) // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(true)
@@ -573,7 +575,7 @@ describe('promise-loading-spinner', () => {
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
-      jest.runAllTimers() // close delay expired
+      vi.runAllTimers() // close delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
@@ -602,7 +604,7 @@ describe('promise-loading-spinner', () => {
       promiseResolver('success') // promise resolves
       await expect(passedThroughPromise).resolves.toBe('success')
 
-      jest.runAllTimers() // close delay expired
+      vi.runAllTimers() // close delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
@@ -617,7 +619,7 @@ describe('promise-loading-spinner', () => {
       // Loader is initialized
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // init delay expired
+      vi.runAllTimers() // init delay expired
 
       // Prepare the promise to pass into
       let promiseResolver = promiseResolverStub
@@ -630,14 +632,14 @@ describe('promise-loading-spinner', () => {
       expect(passedThroughPromise).toStrictEqual(promise) // is the returned promise the same as the passed in?
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // delay expired
+      vi.runAllTimers() // delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
       promiseResolver('success') // promise resolves
       await expect(passedThroughPromise).resolves.toBe('success')
 
-      jest.runAllTimers()
+      vi.runAllTimers()
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
@@ -652,7 +654,7 @@ describe('promise-loading-spinner', () => {
       // Loader is initialized
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // init delay expired
+      vi.runAllTimers() // init delay expired
 
       // Prepare the promise to pass into
       let promiseResolver = promiseResolverStub
@@ -660,7 +662,7 @@ describe('promise-loading-spinner', () => {
         promiseResolver = resolve as PromiseResolver
       })
 
-      const fn = jest.fn(function (this: string) {
+      const fn = vi.fn(function (this: string) {
         expect(this).toBe('Hello')
         return promise
       })
@@ -687,7 +689,7 @@ describe('promise-loading-spinner', () => {
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // delay expired
+      vi.runAllTimers() // delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
@@ -696,7 +698,7 @@ describe('promise-loading-spinner', () => {
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
-      jest.runAllTimers() // close delay expired
+      vi.runAllTimers() // close delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
@@ -711,7 +713,7 @@ describe('promise-loading-spinner', () => {
       // Loader is initialized
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // init delay expired
+      vi.runAllTimers() // init delay expired
 
       // Prepare the promise to pass into
       let promiseResolver = promiseResolverStub
@@ -719,7 +721,7 @@ describe('promise-loading-spinner', () => {
         promiseResolver = resolve as PromiseResolver
       })
 
-      const fn = jest.fn(function (this: string, p1: string, p2: number) {
+      const fn = vi.fn(function (this: string, p1: string, p2: number) {
         expect(p1).toBe('bar')
         expect(p2).toBe(815)
         return this
@@ -757,7 +759,7 @@ describe('promise-loading-spinner', () => {
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
-      jest.runAllTimers() // delay expired
+      vi.runAllTimers() // delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
@@ -766,7 +768,7 @@ describe('promise-loading-spinner', () => {
 
       expect(loaderElement.classList.contains('is-active')).toBe(true)
 
-      jest.runAllTimers() // close delay expired
+      vi.runAllTimers() // close delay expired
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
@@ -789,7 +791,7 @@ describe('promise-loading-spinner', () => {
       promiseResolver('success')
       await expect(promise).resolves.toBe('success')
 
-      jest.runAllTimers() // init delay expired
+      vi.runAllTimers() // init delay expired
 
       let promiseResolver2 = promiseResolverStub
       const promise2 = new Promise<string>((resolve) => {
@@ -798,12 +800,12 @@ describe('promise-loading-spinner', () => {
 
       loader.loader(promise2)
 
-      jest.runAllTimers()
+      vi.runAllTimers()
 
       promiseResolver2('foo')
       await expect(promise2).resolves.toBe('foo')
 
-      jest.runAllTimers()
+      vi.runAllTimers()
 
       const loadingPromiseResult = await loadingPromise
       expect(loadingPromiseResult).toHaveLength(1)
@@ -818,7 +820,7 @@ describe('promise-loading-spinner', () => {
 
       loader.loader(promise3)
 
-      jest.runAllTimers()
+      vi.runAllTimers()
 
       let promiseResolver4 = promiseResolverStub
       const promise4 = new Promise<string>((resolve) => {
@@ -827,17 +829,17 @@ describe('promise-loading-spinner', () => {
 
       loader.loader(promise4)
 
-      jest.runAllTimers()
+      vi.runAllTimers()
 
       promiseResolver3('08')
       await expect(promise3).resolves.toBe('08')
 
-      jest.runAllTimers()
+      vi.runAllTimers()
 
       promiseResolver4('15')
       await expect(promise4).resolves.toBe('15')
 
-      jest.runAllTimers()
+      vi.runAllTimers()
 
       const loadingPromiseResult2 = await loadingPromise2
       expect(loadingPromiseResult2).toHaveLength(2)
