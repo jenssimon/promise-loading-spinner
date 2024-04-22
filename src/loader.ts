@@ -119,16 +119,17 @@ export default class Loader {
    *
    * @param cfg configuration of the loader (optional)
    */
-  public constructor(cfg: Partial<LoaderConfig>) {
+  public constructor(cfg: Partial<LoaderConfig> = {}) {
     this.setCurrentLoadingPromise()
     const config = { ...defaults, ...cfg }
     this.config = config
 
     const { config: { loaderElement, signal, initDelay } } = this
 
-    if (loaderElement) {
-      this.el = loaderElement instanceof HTMLElement
-        ? loaderElement : document.querySelector(loaderElement) as HTMLElement
+    if (loaderElement ?? !signal) {
+      const element = loaderElement ?? '#js-page-loader'
+      this.el = element instanceof HTMLElement
+        ? element : document.querySelector(element) as HTMLElement
 
       if (!this.el) throw new Error('Element not found')
     }
