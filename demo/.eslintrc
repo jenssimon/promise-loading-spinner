@@ -1,6 +1,15 @@
 {
   "root": true,
   "extends": [
-    "@jenssimon/base/frontend-react"
-  ]
+    "@jenssimon/base/frontend"
+  ],
+  "rules": {
+    "no-await-in-loop": "off",
+    "no-constant-condition": "off",
+    "no-restricted-syntax": "off",
+    "promise/prefer-await-to-then": "off",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
+    "unicorn/prefer-top-level-await": "off"
+  }
 }

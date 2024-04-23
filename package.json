@@ -24,10 +24,12 @@
   "types": "dist/src/loader.d.ts",
   "type": "module",
   "scripts": {
-    "lint": "eslint --ext .tsx,.ts,.cts,.mts,.jsx,.js,.cjs,.mts ./",
+    "lint": "run-p 'lint:*'",
+    "lint:js": "eslint --ext .js,.mjs,.cjs,.ts,.mts,.cts .",
+    "lint:css": "stylelint '**/*.css'",
     "build": "tsc",
     "predemo": "run-s build",
-    "demo": "web-dev-server --open /demo/demo.html",
+    "demo": "vite demo/ --open",
     "prepublishOnly": "yarn build",
     "test": "vitest",
     "commit": "cz",
@@ -44,18 +46,21 @@
     "@preact/signals": "^1.2.3",
     "@types/node": "20.12.7",
     "@vitest/coverage-v8": "^1.5.0",
-    "@web/dev-server": "0.4.4",
     "commitizen": "4.3.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.57.0",
     "husky": "9.0.11",
     "jsdom": "^24.0.0",
     "lint-staged": "15.2.2",
-    "npm-run-all2": "6.1.2",
+    "npm-run-all2": "^6.1.2",
     "pinst": "3.0.0",
     "preact": "^10.20.2",
     "semantic-release": "23.0.8",
+    "stylelint": "^16.4.0",
+    "stylelint-config-recess-order": "^5.0.1",
+    "stylelint-config-standard": "^36.0.0",
     "typescript": "5.4.5",
+    "vite": "^5.2.10",
     "vitest": "^1.5.0"
   },
   "files": [
@@ -92,7 +97,8 @@
     }
   },
   "lint-staged": {
-    "**/*.{js,ts}": "eslint"
+    "**/*.{js,ts}": "eslint",
+    "**/*.css": "stylelint"
   },
   "release": {
     "branches": [
