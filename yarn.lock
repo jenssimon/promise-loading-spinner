@@ -1093,17 +1093,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@preact/signals@npm:^1.2.3":
-  version: 1.2.3
-  resolution: "@preact/signals@npm:1.2.3"
-  dependencies:
-    "@preact/signals-core": "npm:^1.6.0"
-  peerDependencies:
-    preact: 10.x
-  checksum: 10c0/735be6fe6f6ff1a5a5921745e7fb5ec5e573d43a0b3ed8f24ee01b34da308ccbb8d38cbcd431f6cb4b48895a3008080be08baa505b3c18ede631b455dfe17739
-  languageName: node
-  linkType: hard
-
 "@rollup/rollup-android-arm-eabi@npm:4.15.0":
   version: 4.15.0
   resolution: "@rollup/rollup-android-arm-eabi@npm:4.15.0"
@@ -7550,13 +7539,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"preact@npm:^10.20.2":
-  version: 10.20.2
-  resolution: "preact@npm:10.20.2"
-  checksum: 10c0/e79c1e3ab0bab6a08dce157fc33a537487365a9093bcdc1a60612be8073a354e84648df9ee1eef5306b640461c99c9ef024720405e3e8219c03ed17e95de981e
-  languageName: node
-  linkType: hard
-
 "prelude-ls@npm:^1.2.1":
   version: 1.2.1
   resolution: "prelude-ls@npm:1.2.1"
@@ -7625,7 +7607,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:19.2.2"
     "@jenssimon/eslint-config-base": "npm:7.4.4"
     "@jenssimon/eslint-config-typescript": "npm:5.2.32"
-    "@preact/signals": "npm:^1.2.3"
+    "@preact/signals-core": "npm:^1.6.0"
     "@types/node": "npm:20.12.7"
     "@vitest/coverage-v8": "npm:^1.5.0"
     commitizen: "npm:4.3.0"
@@ -7636,7 +7618,6 @@ __metadata:
     lint-staged: "npm:15.2.2"
     npm-run-all2: "npm:^6.1.2"
     pinst: "npm:3.0.0"
-    preact: "npm:^10.20.2"
     semantic-release: "npm:23.0.8"
     stylelint: "npm:^16.4.0"
     stylelint-config-recess-order: "npm:^5.0.1"

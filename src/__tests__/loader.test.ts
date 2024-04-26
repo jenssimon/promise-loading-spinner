@@ -2,7 +2,7 @@ import {
   beforeEach, describe, expect, it, vi,
 } from 'vitest'
 
-import { signal } from '@preact/signals'
+import { signal } from '@preact/signals-core'
 
 import Loader from '../loader.js'
 
