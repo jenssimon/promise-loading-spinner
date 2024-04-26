@@ -135,6 +135,8 @@ export default class Loader {
     }
     if (!this.el && !signal) throw new Error('No loader element or signal provided')
 
+    if (signal?.value) signal.value = false
+
     // suppress loader in a short timeframe after initializing (page load)
     this.initSuppressTimeout = setTimeout(() => this.stopSuppressLoading(), initDelay)
   }
