@@ -657,7 +657,9 @@ describe('promise-loading-spinner', () => {
       const active = signal(false)
 
       const loader = new Loader({
-        signal: active,
+        loaderVisibilityCallback: (showLoader) => {
+          active.value = showLoader
+        },
         closeDelay: 0,
       })
 

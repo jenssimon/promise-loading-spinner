@@ -60,7 +60,10 @@ const main = async () => {
   while (true) {
     await wait(2000)
 
-    loader = new PromiseLoadingSpinner({ signal: sig, loaderElement: '#js-page-loader' })
+    loader = new PromiseLoadingSpinner({
+      loaderVisibilityCallback: (active) => { sig.value = active },
+      loaderElement: '#js-page-loader',
+    })
 
     for (const { description, steps } of showCases) {
       console.info('showCase: %s', description)

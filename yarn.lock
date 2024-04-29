@@ -619,9 +619,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-typescript@npm:5.2.32":
-  version: 5.2.32
-  resolution: "@jenssimon/eslint-config-typescript@npm:5.2.32"
+"@jenssimon/eslint-config-typescript@npm:5.2.33":
+  version: 5.2.33
+  resolution: "@jenssimon/eslint-config-typescript@npm:5.2.33"
   dependencies:
     "@typescript-eslint/eslint-plugin": "npm:^7.0.0"
     "@typescript-eslint/parser": "npm:^7.0.0"
@@ -629,7 +629,7 @@ __metadata:
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
     typescript: ">=4.0.0"
-  checksum: 10c0/5505b9ea3ca9bc5038f6bad2e610828409c105c1e25c7f5ee03c044f00ce09c292bcf3b940985a74e075e4e4dd3c13a5f24199d06203e4d40ebc8cc3117ba2b7
+  checksum: 10c0/e5fe7ef02cd8f4bed40b12fa182eb9a0fd7c8c9a814e934e1f736a3434639090f00ad5b590faf3603187bb8ffcd35ac72c530a7923b9cbd721489a69d5882c93
   languageName: node
   linkType: hard
 
@@ -1638,7 +1638,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/coverage-v8@npm:^1.5.0":
+"@vitest/coverage-v8@npm:^1.5.2":
   version: 1.5.2
   resolution: "@vitest/coverage-v8@npm:1.5.2"
   dependencies:
@@ -7606,10 +7606,10 @@ __metadata:
     "@commitlint/cli": "npm:19.3.0"
     "@commitlint/config-conventional": "npm:19.2.2"
     "@jenssimon/eslint-config-base": "npm:7.4.6"
-    "@jenssimon/eslint-config-typescript": "npm:5.2.32"
+    "@jenssimon/eslint-config-typescript": "npm:5.2.33"
     "@preact/signals-core": "npm:^1.6.0"
     "@types/node": "npm:20.12.7"
-    "@vitest/coverage-v8": "npm:^1.5.0"
+    "@vitest/coverage-v8": "npm:^1.5.2"
     commitizen: "npm:4.3.0"
     cz-conventional-changelog: "npm:3.3.0"
     eslint: "npm:8.57.0"
@@ -7624,7 +7624,7 @@ __metadata:
     stylelint-config-standard: "npm:^36.0.0"
     typescript: "npm:5.4.5"
     vite: "npm:^5.2.10"
-    vitest: "npm:^1.5.0"
+    vitest: "npm:^1.5.2"
   languageName: unknown
   linkType: soft
 
@@ -9594,7 +9594,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitest@npm:^1.5.0":
+"vitest@npm:^1.5.2":
   version: 1.5.2
   resolution: "vitest@npm:1.5.2"
   dependencies:

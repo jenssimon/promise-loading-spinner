@@ -2,7 +2,7 @@ export interface LoaderConfig {
   /**
    * Signal - TODO: Add description.
    */
-  signal: { value: boolean } | undefined
+  loaderVisibilityCallback: ((value: boolean) => void) | undefined
 
   /**
    * Time (ms) until spinner will show up to handle short operations without a spinner.
@@ -48,7 +48,7 @@ export interface LoaderCallOptions {
  * Default config.
  */
 const defaults: LoaderConfig = {
-  signal: undefined,
+  loaderVisibilityCallback: undefined,
   delay: 300,
   closeDelay: 10,
   initDelay: 1000,
@@ -124,18 +124,18 @@ export default class Loader {
     const config = { ...defaults, ...cfg }
     this.config = config
 
-    const { config: { loaderElement, signal, initDelay } } = this
+    const { config: { loaderElement, loaderVisibilityCallback, initDelay } } = this
 
-    if (loaderElement ?? !signal) {
+    if (loaderElement ?? !loaderVisibilityCallback) {
       const element = loaderElement ?? '#js-page-loader'
       this.el = element instanceof HTMLElement
         ? element : document.querySelector(element) as HTMLElement
 
       if (!this.el) throw new Error('Element not found')
     }
-    if (!this.el && !signal) throw new Error('No loader element or signal provided')
+    if (!this.el && !loaderVisibilityCallback) throw new Error('No loader element or loaderVisibilityCallback provided')
 
-    if (signal?.value) signal.value = false
+    if (loaderVisibilityCallback) loaderVisibilityCallback(this.loaderShows)
 
     // suppress loader in a short timeframe after initializing (page load)
     this.initSuppressTimeout = setTimeout(() => this.stopSuppressLoading(), initDelay)
@@ -235,7 +235,7 @@ export default class Loader {
    */
   private setLoaderVisibility(visible: boolean) {
     if (this.el) this.el.classList[visible ? 'add' : 'remove'](this.config.classActive)
-    if (this.config.signal) this.config.signal.value = visible
+    if (this.config.loaderVisibilityCallback) this.config.loaderVisibilityCallback(visible)
     this.loaderShows = visible
 
     if (visible) {
