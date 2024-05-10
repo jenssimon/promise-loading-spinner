@@ -54,7 +54,7 @@
     "lint-staged": "15.2.2",
     "npm-run-all2": "^6.1.2",
     "pinst": "3.0.0",
-    "semantic-release": "23.0.8",
+    "semantic-release": "23.1.1",
     "stylelint": "^16.4.0",
     "stylelint-config-recess-order": "^5.0.1",
     "stylelint-config-standard": "^36.0.0",
