@@ -615,9 +615,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-base@npm:7.4.13":
-  version: 7.4.13
-  resolution: "@jenssimon/eslint-config-base@npm:7.4.13"
+"@jenssimon/eslint-config-base@npm:7.4.14":
+  version: 7.4.14
+  resolution: "@jenssimon/eslint-config-base@npm:7.4.14"
   dependencies:
     eslint-config-airbnb: "npm:^19.0.4"
     eslint-config-airbnb-base: "npm:^15.0.0"
@@ -639,7 +639,7 @@ __metadata:
     eslint-plugin-wc: "npm:^2.0.4"
   peerDependencies:
     eslint: ^7.32.0 || ^8.2.0
-  checksum: 10c0/ce3b31816d1d39d325d6cdac8f60e76ab941d776728eb8ce8df38c7bca520888a55f848d86967ef2cf30dbe8d3e938a561d35f1e34e96c9cc73944d6dafe1071
+  checksum: 10c0/bb895a791e03ffde4a9d98d87f353df58a97fe0f97294c8a0fef8654680e5c54adc13b0a41c6fe619f5db86479d27be200190e074ec23801469420b7b2d25047
   languageName: node
   linkType: hard
 
@@ -1469,12 +1469,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.12.12":
-  version: 20.12.12
-  resolution: "@types/node@npm:20.12.12"
+"@types/node@npm:20.12.13":
+  version: 20.12.13
+  resolution: "@types/node@npm:20.12.13"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/f374b763c744e8f16e4f38cf6e2c0eef31781ec9228c9e43a6f267880fea420fab0a238b59f10a7cb3444e49547c5e3785787e371fc242307310995b21988812
+  checksum: 10c0/2ac92bb631dbddfb560eb3ba4eedbb1c688044a0130bc1ef032f5c0f20148ac7c9aa3c5aaa5a9787b6c4c6299847d754b96ee8c9def951481ba6628c46b683f5
   languageName: node
   linkType: hard
 
@@ -7789,10 +7789,10 @@ __metadata:
   dependencies:
     "@commitlint/cli": "npm:19.3.0"
     "@commitlint/config-conventional": "npm:19.2.2"
-    "@jenssimon/eslint-config-base": "npm:7.4.13"
+    "@jenssimon/eslint-config-base": "npm:7.4.14"
     "@jenssimon/eslint-config-typescript": "npm:5.2.36"
     "@preact/signals-core": "npm:^1.6.0"
-    "@types/node": "npm:20.12.12"
+    "@types/node": "npm:20.12.13"
     "@vitest/coverage-v8": "npm:^1.5.2"
     commitizen: "npm:4.3.0"
     cz-conventional-changelog: "npm:3.3.0"
