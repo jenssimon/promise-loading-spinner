@@ -42,7 +42,7 @@
     "@commitlint/cli": "19.3.0",
     "@commitlint/config-conventional": "19.2.2",
     "@jenssimon/eslint-config-base": "7.4.14",
-    "@jenssimon/eslint-config-typescript": "5.2.37",
+    "@jenssimon/eslint-config-typescript": "5.2.38",
     "@preact/signals-core": "^1.6.0",
     "@types/node": "20.14.1",
     "@vitest/coverage-v8": "^1.5.2",
