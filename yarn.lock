@@ -643,9 +643,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-typescript@npm:5.2.39":
-  version: 5.2.39
-  resolution: "@jenssimon/eslint-config-typescript@npm:5.2.39"
+"@jenssimon/eslint-config-typescript@npm:5.2.40":
+  version: 5.2.40
+  resolution: "@jenssimon/eslint-config-typescript@npm:5.2.40"
   dependencies:
     "@typescript-eslint/eslint-plugin": "npm:^7.0.0"
     "@typescript-eslint/parser": "npm:^7.0.0"
@@ -653,7 +653,7 @@ __metadata:
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
     typescript: ">=4.0.0"
-  checksum: 10c0/235421ce4d4316913521140c404fcb00bdd84a947fa8d749ed7228f018a7b16ab7cb92eebfd4f56d55ca6869d649d3afa5b7803e407a3e7399689ba28f9d8fcd
+  checksum: 10c0/48975b54eeac33002a66b2ec09cf44528848ec672ed1bb10246f867fe3b63528638f13d1e1777f3a933354cfa772ae9ed4305c7eb3aa37b57fb776bbf37a2b74
   languageName: node
   linkType: hard
 
@@ -1470,12 +1470,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.14.2":
-  version: 20.14.2
-  resolution: "@types/node@npm:20.14.2"
+"@types/node@npm:20.14.4":
+  version: 20.14.4
+  resolution: "@types/node@npm:20.14.4"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/2d86e5f2227aaa42212e82ea0affe72799111b888ff900916376450b02b09b963ca888b20d9c332d8d2b833ed4781987867a38eaa2e4863fa8439071468b0a6f
+  checksum: 10c0/2244be2e66e19377a491bfc279b52bc3f598c2e31d683d2388f4a16dbf6e81ad0032fde01770c4babcc73a31609e23fa0e5864dffc5830e9f457db250bd08b33
   languageName: node
   linkType: hard
 
@@ -7845,9 +7845,9 @@ __metadata:
     "@commitlint/cli": "npm:19.3.0"
     "@commitlint/config-conventional": "npm:19.2.2"
     "@jenssimon/eslint-config-base": "npm:7.4.15"
-    "@jenssimon/eslint-config-typescript": "npm:5.2.39"
+    "@jenssimon/eslint-config-typescript": "npm:5.2.40"
     "@preact/signals-core": "npm:^1.6.0"
-    "@types/node": "npm:20.14.2"
+    "@types/node": "npm:20.14.4"
     "@vitest/coverage-v8": "npm:^1.5.2"
     commitizen: "npm:4.3.0"
     cz-conventional-changelog: "npm:3.3.0"
