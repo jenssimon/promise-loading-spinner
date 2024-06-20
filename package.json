@@ -44,7 +44,7 @@
     "@jenssimon/eslint-config-base": "7.4.17",
     "@jenssimon/eslint-config-typescript": "5.2.40",
     "@preact/signals-core": "^1.6.0",
-    "@types/node": "20.14.6",
+    "@types/node": "20.14.7",
     "@vitest/coverage-v8": "^1.5.2",
     "commitizen": "4.3.0",
     "cz-conventional-changelog": "3.3.0",
@@ -58,7 +58,7 @@
     "stylelint": "^16.4.0",
     "stylelint-config-recess-order": "^5.0.1",
     "stylelint-config-standard": "^36.0.0",
-    "typescript": "5.4.5",
+    "typescript": "5.5.2",
     "vite": "^5.2.10",
     "vitest": "^1.5.2"
   },
