@@ -615,9 +615,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-base@npm:7.4.17":
-  version: 7.4.17
-  resolution: "@jenssimon/eslint-config-base@npm:7.4.17"
+"@jenssimon/eslint-config-base@npm:7.4.18":
+  version: 7.4.18
+  resolution: "@jenssimon/eslint-config-base@npm:7.4.18"
   dependencies:
     eslint-config-airbnb: "npm:^19.0.4"
     eslint-config-airbnb-base: "npm:^15.0.0"
@@ -639,13 +639,13 @@ __metadata:
     eslint-plugin-wc: "npm:^2.0.4"
   peerDependencies:
     eslint: ^7.32.0 || ^8.2.0
-  checksum: 10c0/cf942f427e795ccf3954c370df982f66762f1277645fa43f21d18f973a5f2aa586174303ed1337e6d8e599aa40a923eedecb2d162f9bec2f1b5aba80839521cb
+  checksum: 10c0/7c33e2d58252aad156ff671e8110735763d1a2959c04b3542e511ef986881ef1d1cf081747fbd6b7eb75ed1f45ee84f4ab09c9da489a2b5aefee9138a13e541e
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-typescript@npm:5.2.40":
-  version: 5.2.40
-  resolution: "@jenssimon/eslint-config-typescript@npm:5.2.40"
+"@jenssimon/eslint-config-typescript@npm:5.2.42":
+  version: 5.2.42
+  resolution: "@jenssimon/eslint-config-typescript@npm:5.2.42"
   dependencies:
     "@typescript-eslint/eslint-plugin": "npm:^7.0.0"
     "@typescript-eslint/parser": "npm:^7.0.0"
@@ -653,7 +653,7 @@ __metadata:
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
     typescript: ">=4.0.0"
-  checksum: 10c0/48975b54eeac33002a66b2ec09cf44528848ec672ed1bb10246f867fe3b63528638f13d1e1777f3a933354cfa772ae9ed4305c7eb3aa37b57fb776bbf37a2b74
+  checksum: 10c0/103893c0139021eeedaed8e14a57e83dbb7f02a7676ba4d18d294e37266b29cfd7bba9d34b693bd080c080ec4a92e8da75fcc4a8c298d355d5fc4eb3f65b11d8
   languageName: node
   linkType: hard
 
@@ -1470,12 +1470,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.14.7":
-  version: 20.14.7
-  resolution: "@types/node@npm:20.14.7"
+"@types/node@npm:20.14.9":
+  version: 20.14.9
+  resolution: "@types/node@npm:20.14.9"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/6211ffe86f769a58617e3bdca58610256021ef54bd99d2c442ee6109196cd6ee8e0bcd1cfac0e39bf4bb353f8900fa5fae540485a03816bd91ad1f86a0e18512
+  checksum: 10c0/911ffa444dc032897f4a23ed580c67903bd38ea1c5ec99b1d00fa10b83537a3adddef8e1f29710cbdd8e556a61407ed008e06537d834e48caf449ce59f87d387
   languageName: node
   linkType: hard
 
@@ -7844,10 +7844,10 @@ __metadata:
   dependencies:
     "@commitlint/cli": "npm:19.3.0"
     "@commitlint/config-conventional": "npm:19.2.2"
-    "@jenssimon/eslint-config-base": "npm:7.4.17"
-    "@jenssimon/eslint-config-typescript": "npm:5.2.40"
+    "@jenssimon/eslint-config-base": "npm:7.4.18"
+    "@jenssimon/eslint-config-typescript": "npm:5.2.42"
     "@preact/signals-core": "npm:^1.6.0"
-    "@types/node": "npm:20.14.7"
+    "@types/node": "npm:20.14.9"
     "@vitest/coverage-v8": "npm:^1.5.2"
     commitizen: "npm:4.3.0"
     cz-conventional-changelog: "npm:3.3.0"
@@ -7861,7 +7861,7 @@ __metadata:
     stylelint: "npm:^16.4.0"
     stylelint-config-recess-order: "npm:^5.0.1"
     stylelint-config-standard: "npm:^36.0.0"
-    typescript: "npm:5.5.2"
+    typescript: "npm:5.5.3"
     vite: "npm:^5.2.10"
     vitest: "npm:^1.5.2"
   languageName: unknown
@@ -9076,23 +9076,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint-config-recommended@npm:^14.0.0":
-  version: 14.0.0
-  resolution: "stylelint-config-recommended@npm:14.0.0"
+"stylelint-config-recommended@npm:^14.0.1":
+  version: 14.0.1
+  resolution: "stylelint-config-recommended@npm:14.0.1"
   peerDependencies:
-    stylelint: ^16.0.0
-  checksum: 10c0/4ad15c36e8c03291aa7bbe4b672ebfb0f46ab698e7580a0da8d29644046d102d7f31dbf00a2a6eab94b565c390c6fb0d5d528737b83ac3acf6dc2ef085a90b11
+    stylelint: ^16.1.0
+  checksum: 10c0/a0a0ecd91f4d193bbe2cc3408228f8a2d8fcb2b2578d77233f86780c9247c796a04e16aad7a91d97cb918e2de34b6a8062bab66ee017c3835d855081d94f4828
   languageName: node
   linkType: hard
 
 "stylelint-config-standard@npm:^36.0.0":
-  version: 36.0.0
-  resolution: "stylelint-config-standard@npm:36.0.0"
+  version: 36.0.1
+  resolution: "stylelint-config-standard@npm:36.0.1"
   dependencies:
-    stylelint-config-recommended: "npm:^14.0.0"
+    stylelint-config-recommended: "npm:^14.0.1"
   peerDependencies:
     stylelint: ^16.1.0
-  checksum: 10c0/1fc9adddfc5cf0a1d7a443182a0731712a3950ace72a24081b4ede2b0bb6fc1eebd003c009f1d8d06c3a64ba9b31b0ed12512db2f91c8fa549238d8341580e4b
+  checksum: 10c0/7f9b954694358e77be5110418f31335be579ce59dd952bc3c6a9449265297db3170ec520e0905769253b48b99c3109a95c71f5b985bf402e48fd6c89b5364cb2
   languageName: node
   linkType: hard
 
@@ -9600,23 +9600,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.5.2":
-  version: 5.5.2
-  resolution: "typescript@npm:5.5.2"
+"typescript@npm:5.5.3":
+  version: 5.5.3
+  resolution: "typescript@npm:5.5.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/8ca39b27b5f9bd7f32db795045933ab5247897660627251e8254180b792a395bf061ea7231947d5d7ffa5cb4cc771970fd4ef543275f9b559f08c9325cccfce3
+  checksum: 10c0/f52c71ccbc7080b034b9d3b72051d563601a4815bf3e39ded188e6ce60813f75dbedf11ad15dd4d32a12996a9ed8c7155b46c93a9b9c9bad1049766fe614bbdd
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.5.2#optional!builtin<compat/typescript>":
-  version: 5.5.2
-  resolution: "typescript@patch:typescript@npm%3A5.5.2#optional!builtin<compat/typescript>::version=5.5.2&hash=b45daf"
+"typescript@patch:typescript@npm%3A5.5.3#optional!builtin<compat/typescript>":
+  version: 5.5.3
+  resolution: "typescript@patch:typescript@npm%3A5.5.3#optional!builtin<compat/typescript>::version=5.5.3&hash=379a07"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/6721ac8933a70c252d7b640b345792e103d881811ff660355617c1836526dbb71c2044e2e77a8823fb3570b469f33276875a4cab6d3c4de4ae7d7ee1c3074ae4
+  checksum: 10c0/911c7811d61f57f07df79c4a35f56a0f426a65426a020e5fcd792f66559f399017205f5f10255329ab5a3d8c2d1f1d19530aeceffda70758a521fae1d469432e
   languageName: node
   linkType: hard
 
@@ -9799,8 +9799,8 @@ __metadata:
   linkType: hard
 
 "vite@npm:^5.0.0, vite@npm:^5.2.10":
-  version: 5.3.1
-  resolution: "vite@npm:5.3.1"
+  version: 5.3.2
+  resolution: "vite@npm:5.3.2"
   dependencies:
     esbuild: "npm:^0.21.3"
     fsevents: "npm:~2.3.3"
@@ -9834,7 +9834,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10c0/9317262c02ea2dc324dfdbc20c3c450cd89cc9a16399a41a4bf820a3a1f31cf400878c015135e355ee034853cc2399b5499899d5b1bc462d57642d71083e74b6
+  checksum: 10c0/3ed576d18c6c008ae92be68f9c79bf7556dae10978a3e8b4c4b42199424755e5c99836e6d4f81fb8b533b957d7f4e351abc60b8a93f4c4b5eb9890b5b6450926
   languageName: node
   linkType: hard
 
