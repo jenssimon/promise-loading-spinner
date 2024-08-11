@@ -39,26 +39,26 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.3.0",
+    "@commitlint/cli": "19.4.0",
     "@commitlint/config-conventional": "19.2.2",
-    "@jenssimon/eslint-config-base": "7.4.17",
-    "@jenssimon/eslint-config-typescript": "5.2.40",
+    "@jenssimon/eslint-config-base": "7.4.24",
+    "@jenssimon/eslint-config-typescript": "5.3.1",
     "@preact/signals-core": "^1.6.0",
-    "@types/node": "20.14.7",
+    "@types/node": "20.14.15",
     "@vitest/coverage-v8": "^2.0.0",
     "commitizen": "4.3.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.57.0",
-    "husky": "9.0.11",
+    "husky": "9.1.4",
     "jsdom": "^24.0.0",
-    "lint-staged": "15.2.7",
+    "lint-staged": "15.2.8",
     "npm-run-all2": "^6.1.2",
     "pinst": "3.0.0",
     "semantic-release": "24.0.0",
     "stylelint": "^16.4.0",
     "stylelint-config-recess-order": "^5.0.1",
     "stylelint-config-standard": "^36.0.0",
-    "typescript": "5.5.2",
+    "typescript": "5.5.4",
     "vite": "^5.2.10",
     "vitest": "^2.0.0"
   },
@@ -89,7 +89,7 @@
       }
     ]
   },
-  "packageManager": "yarn@4.3.0",
+  "packageManager": "yarn@4.4.0",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
