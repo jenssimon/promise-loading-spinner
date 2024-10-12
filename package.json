@@ -39,26 +39,26 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.4.0",
-    "@commitlint/config-conventional": "19.2.2",
-    "@jenssimon/eslint-config-base": "7.4.26",
-    "@jenssimon/eslint-config-typescript": "5.3.5",
+    "@commitlint/cli": "19.5.0",
+    "@commitlint/config-conventional": "19.5.0",
+    "@jenssimon/eslint-config-base": "7.4.36",
+    "@jenssimon/eslint-config-typescript": "5.3.14",
     "@preact/signals-core": "^1.6.0",
-    "@types/node": "20.16.1",
+    "@types/node": "20.16.11",
     "@vitest/coverage-v8": "^2.0.0",
-    "commitizen": "4.3.0",
+    "commitizen": "4.3.1",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "8.57.0",
-    "husky": "9.1.4",
+    "eslint": "8.57.1",
+    "husky": "9.1.6",
     "jsdom": "^25.0.0",
-    "lint-staged": "15.2.9",
+    "lint-staged": "15.2.10",
     "npm-run-all2": "^6.1.2",
     "pinst": "3.0.0",
-    "semantic-release": "24.1.0",
+    "semantic-release": "24.1.2",
     "stylelint": "^16.4.0",
     "stylelint-config-recess-order": "^5.0.1",
     "stylelint-config-standard": "^36.0.0",
-    "typescript": "5.5.4",
+    "typescript": "5.6.3",
     "vite": "^5.2.10",
     "vitest": "^2.0.0"
   },
@@ -98,7 +98,7 @@
       }
     ]
   },
-  "packageManager": "yarn@4.4.0",
+  "packageManager": "yarn@4.5.0",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
