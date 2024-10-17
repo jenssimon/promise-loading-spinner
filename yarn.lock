@@ -656,9 +656,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-base@npm:7.4.36":
-  version: 7.4.36
-  resolution: "@jenssimon/eslint-config-base@npm:7.4.36"
+"@jenssimon/eslint-config-base@npm:7.4.37":
+  version: 7.4.37
+  resolution: "@jenssimon/eslint-config-base@npm:7.4.37"
   dependencies:
     eslint-config-airbnb: "npm:^19.0.4"
     eslint-config-airbnb-base: "npm:^15.0.0"
@@ -680,13 +680,13 @@ __metadata:
     eslint-plugin-wc: "npm:^2.0.4"
   peerDependencies:
     eslint: ^7.32.0 || ^8.2.0
-  checksum: 10c0/f0174f52e3fb818fffa1ac5677b071a66e7f09ca9a8429d027ede62731655c70926f921c22ac857b8da03ce78a6d2cb6e3de35c4c870f87d52fbb03be58324d6
+  checksum: 10c0/2e8d4898093e7ee2c11660b0b125bc211a60f28b3a95ddf57722bebeb19c523eb00bedf4aa54f33342bd2c18cd6c00277441372e1c15fd02340b926a85d0431b
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-typescript@npm:5.3.14":
-  version: 5.3.14
-  resolution: "@jenssimon/eslint-config-typescript@npm:5.3.14"
+"@jenssimon/eslint-config-typescript@npm:5.3.15":
+  version: 5.3.15
+  resolution: "@jenssimon/eslint-config-typescript@npm:5.3.15"
   dependencies:
     "@stylistic/eslint-plugin-ts": "npm:^2.6.1"
     "@typescript-eslint/eslint-plugin": "npm:^8.0.0"
@@ -695,7 +695,7 @@ __metadata:
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
     typescript: ">=4.0.0"
-  checksum: 10c0/219d963edf16027f88819f7733fdf8ce7a2a9d3f20099afb76111f66790c85dbc826b11942692f9b463f48144e2ab5f92aaf83cbfdba5512ebf980ccdfde933e
+  checksum: 10c0/bc7059976abf940f50969a9cadba985c6220a40631dd9a026db89eae5aefe763de0a30008dbd7ca25729b22291fd051256fda134a084fe117c2ad85c5ea96480
   languageName: node
   linkType: hard
 
@@ -8022,8 +8022,8 @@ __metadata:
   dependencies:
     "@commitlint/cli": "npm:19.5.0"
     "@commitlint/config-conventional": "npm:19.5.0"
-    "@jenssimon/eslint-config-base": "npm:7.4.36"
-    "@jenssimon/eslint-config-typescript": "npm:5.3.14"
+    "@jenssimon/eslint-config-base": "npm:7.4.37"
+    "@jenssimon/eslint-config-typescript": "npm:5.3.15"
     "@preact/signals-core": "npm:^1.6.0"
     "@types/node": "npm:20.16.12"
     "@vitest/coverage-v8": "npm:^2.0.0"
