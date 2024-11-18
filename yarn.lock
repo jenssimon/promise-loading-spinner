@@ -692,9 +692,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-typescript@npm:5.3.21":
-  version: 5.3.21
-  resolution: "@jenssimon/eslint-config-typescript@npm:5.3.21"
+"@jenssimon/eslint-config-typescript@npm:5.3.22":
+  version: 5.3.22
+  resolution: "@jenssimon/eslint-config-typescript@npm:5.3.22"
   dependencies:
     "@stylistic/eslint-plugin-ts": "npm:^2.6.1"
     "@typescript-eslint/eslint-plugin": "npm:^8.0.0"
@@ -703,7 +703,7 @@ __metadata:
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
     typescript: ">=4.0.0"
-  checksum: 10c0/4cde25da16185c4784b2870d7c4a669fd065134eca7c1e523eb4f9e10b1a9976b8b2d745b4c8f13c0a5515939ce007ee7a75ddfa9963143660899e42ddbe93d3
+  checksum: 10c0/225a016afdb0f3c10fbc6b1d3f367c2aa639acbc506091d4ab0d9553523cd3c942e8fd8832e1cb2f77da6442bd693d2a00438b3cfcabdc38bf4ad29aea6ff7cb
   languageName: node
   linkType: hard
 
@@ -5159,12 +5159,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:9.1.6":
-  version: 9.1.6
-  resolution: "husky@npm:9.1.6"
+"husky@npm:9.1.7":
+  version: 9.1.7
+  resolution: "husky@npm:9.1.7"
   bin:
     husky: bin.js
-  checksum: 10c0/705673db4a247c1febd9c5df5f6a3519106cf0335845027bb50a15fba9b1f542cb2610932ede96fd08008f6d9f49db0f15560509861808b0031cdc0e7c798bac
+  checksum: 10c0/35bb110a71086c48906aa7cd3ed4913fb913823715359d65e32e0b964cb1e255593b0ae8014a5005c66a68e6fa66c38dcfa8056dbbdfb8b0187c0ffe7ee3a58f
   languageName: node
   linkType: hard
 
@@ -8082,14 +8082,14 @@ __metadata:
     "@commitlint/cli": "npm:19.5.0"
     "@commitlint/config-conventional": "npm:19.5.0"
     "@jenssimon/eslint-config-base": "npm:7.4.42"
-    "@jenssimon/eslint-config-typescript": "npm:5.3.21"
+    "@jenssimon/eslint-config-typescript": "npm:5.3.22"
     "@preact/signals-core": "npm:^1.6.0"
     "@types/node": "npm:22.9.0"
     "@vitest/coverage-v8": "npm:^2.0.0"
     commitizen: "npm:4.3.1"
     cz-conventional-changelog: "npm:3.3.0"
     eslint: "npm:8.57.1"
-    husky: "npm:9.1.6"
+    husky: "npm:9.1.7"
     jsdom: "npm:^25.0.0"
     lint-staged: "npm:15.2.10"
     npm-run-all2: "npm:^7.0.0"
