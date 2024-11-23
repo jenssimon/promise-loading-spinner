@@ -44,7 +44,7 @@
     "@jenssimon/eslint-config-base": "7.4.43",
     "@jenssimon/eslint-config-typescript": "5.3.23",
     "@preact/signals-core": "^1.6.0",
-    "@types/node": "22.9.1",
+    "@types/node": "22.9.2",
     "@vitest/coverage-v8": "^2.0.0",
     "commitizen": "4.3.1",
     "cz-conventional-changelog": "3.3.0",
