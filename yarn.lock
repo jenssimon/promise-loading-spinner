@@ -664,9 +664,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-base@npm:7.4.43":
-  version: 7.4.43
-  resolution: "@jenssimon/eslint-config-base@npm:7.4.43"
+"@jenssimon/eslint-config-base@npm:7.4.44":
+  version: 7.4.44
+  resolution: "@jenssimon/eslint-config-base@npm:7.4.44"
   dependencies:
     eslint-config-airbnb: "npm:^19.0.4"
     eslint-config-airbnb-base: "npm:^15.0.0"
@@ -688,7 +688,7 @@ __metadata:
     eslint-plugin-wc: "npm:^2.0.4"
   peerDependencies:
     eslint: ^7.32.0 || ^8.2.0
-  checksum: 10c0/06b7584d9f501d9f1c9ccd3f670b3e9c4df812621d9cd1c4f346317491fdce1d8664c67cebfe1e08d0bd61f79e32b973afb092d5957a884e7cae1af6efc7b878
+  checksum: 10c0/95c416c5873b4867e2e223417eb89e13cf7e86f1ad34e6388dae060be31e7ee22bf5c1672715dfa3ac976c3233e4fe1a63814654f3096479a2cda0948fb0dfa0
   languageName: node
   linkType: hard
 
@@ -8081,7 +8081,7 @@ __metadata:
   dependencies:
     "@commitlint/cli": "npm:19.6.0"
     "@commitlint/config-conventional": "npm:19.6.0"
-    "@jenssimon/eslint-config-base": "npm:7.4.43"
+    "@jenssimon/eslint-config-base": "npm:7.4.44"
     "@jenssimon/eslint-config-typescript": "npm:5.3.23"
     "@preact/signals-core": "npm:^1.6.0"
     "@types/node": "npm:22.9.3"
