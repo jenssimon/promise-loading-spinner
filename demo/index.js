@@ -57,6 +57,7 @@ const showCases = [
 
 
 const main = async () => {
+  // eslint-disable-next-line sonarjs/no-infinite-loop
   while (true) {
     await wait(2000)
 

@@ -41,7 +41,7 @@
   "devDependencies": {
     "@commitlint/cli": "19.6.0",
     "@commitlint/config-conventional": "19.6.0",
-    "@jenssimon/eslint-config-base": "7.4.45",
+    "@jenssimon/eslint-config-base": "7.5.0",
     "@jenssimon/eslint-config-typescript": "5.3.24",
     "@preact/signals-core": "^1.6.0",
     "@types/node": "22.10.1",
