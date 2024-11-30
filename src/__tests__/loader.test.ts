@@ -10,8 +10,8 @@ import Loader from '../loader.js'
 type PromiseResolver = (value?: unknown) => void;
 type PromiseRejecter = (reason?: unknown) => unknown;
 
-const promiseResolverStub: PromiseResolver = () => {}
-const promiseRejecterStub: PromiseRejecter = () => {}
+const promiseResolverStub: PromiseResolver = () => {} // eslint-disable-line sonarjs/no-empty-function
+const promiseRejecterStub: PromiseRejecter = () => {} // eslint-disable-line sonarjs/no-empty-function
 
 // eslint-disable-next-line jest/require-hook
 vi.useFakeTimers()
@@ -24,7 +24,6 @@ describe('promise-loading-spinner', () => {
 
   describe('default configuration', () => {
     it('handles a single promise (success)', async () => {
-      // eslint-disable-next-line sonarjs/no-duplicate-string
       const loaderElement = document.getElementById('js-page-loader') as HTMLElement
 
       const loader = new Loader() // Initialize the loader
@@ -646,7 +645,7 @@ describe('promise-loading-spinner', () => {
 
     it.skip('needs an element or signal', () => {
       expect(() => {
-        // eslint-disable-next-line no-new
+        // eslint-disable-next-line no-new, sonarjs/constructor-for-side-effects
         new Loader({
           closeDelay: 0,
         })

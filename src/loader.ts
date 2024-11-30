@@ -1,6 +1,6 @@
 export interface LoaderConfig {
   /**
-   * Signal - TODO: Add description.
+   * Signal
    */
   loaderVisibilityCallback: ((value: boolean) => void) | undefined
 
