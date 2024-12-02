@@ -41,11 +41,12 @@
   "devDependencies": {
     "@commitlint/cli": "19.6.0",
     "@commitlint/config-conventional": "19.6.0",
-    "@jenssimon/eslint-config-base": "7.5.0",
+    "@jenssimon/eslint-config-base": "7.6.0",
     "@jenssimon/eslint-config-typescript": "5.3.24",
     "@preact/signals-core": "^1.6.0",
     "@types/node": "22.10.1",
     "@vitest/coverage-v8": "^2.0.0",
+    "@vitest/eslint-plugin": "^1.1.14",
     "commitizen": "4.3.1",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.57.1",
@@ -71,11 +72,8 @@
       "project": "tsconfig.json"
     },
     "extends": [
-      "@jenssimon/base/frontend-react"
+      "@jenssimon/base/frontend"
     ],
-    "rules": {
-      "jest/no-deprecated-functions": "off"
-    },
     "overrides": [
       {
         "files": [
@@ -87,6 +85,20 @@
         "rules": {
           "@typescript-eslint/naming-convention": "off"
         }
+      },
+      {
+        "files": [
+          "**/*.test.*",
+          "**/*.spec.*",
+          "**/__tests__/**",
+          "**/__mocks__/**"
+        ],
+        "plugins": [
+          "@vitest"
+        ],
+        "extends": [
+          "plugin:@vitest/legacy-recommended"
+        ]
       },
       {
         "files": [

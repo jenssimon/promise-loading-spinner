@@ -13,10 +13,8 @@ type PromiseRejecter = (reason?: unknown) => unknown;
 const promiseResolverStub: PromiseResolver = () => {} // eslint-disable-line sonarjs/no-empty-function
 const promiseRejecterStub: PromiseRejecter = () => {} // eslint-disable-line sonarjs/no-empty-function
 
-// eslint-disable-next-line jest/require-hook
 vi.useFakeTimers()
 
-// eslint-disable-next-line jest/require-hook
 describe('promise-loading-spinner', () => {
   beforeEach(() => {
     document.body.innerHTML = '<div id="js-page-loader"></div><div id="alternativeElement"></div>'
