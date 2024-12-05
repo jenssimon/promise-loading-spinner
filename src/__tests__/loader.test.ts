@@ -10,8 +10,8 @@ import Loader from '../loader.js'
 type PromiseResolver = (value?: unknown) => void;
 type PromiseRejecter = (reason?: unknown) => unknown;
 
-const promiseResolverStub: PromiseResolver = () => {} // eslint-disable-line sonarjs/no-empty-function
-const promiseRejecterStub: PromiseRejecter = () => {} // eslint-disable-line sonarjs/no-empty-function
+const promiseResolverStub: PromiseResolver = () => {}
+const promiseRejecterStub: PromiseRejecter = () => {}
 
 vi.useFakeTimers()
 
