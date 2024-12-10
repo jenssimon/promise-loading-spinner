@@ -1952,9 +1952,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-base@npm:7.6.1":
-  version: 7.6.1
-  resolution: "@jenssimon/eslint-config-base@npm:7.6.1"
+"@jenssimon/eslint-config-base@npm:7.6.3":
+  version: 7.6.3
+  resolution: "@jenssimon/eslint-config-base@npm:7.6.3"
   dependencies:
     eslint-config-airbnb: "npm:^19.0.4"
     eslint-config-airbnb-base: "npm:^15.0.0"
@@ -1975,13 +1975,13 @@ __metadata:
     eslint-plugin-wc: "npm:^2.0.4"
   peerDependencies:
     eslint: ^7.32.0 || ^8.2.0
-  checksum: 10c0/8512c15009e5ad9c9b6e1bce542b2c60dca2370c3c462fdbc8d573a59819f8811007d16324ff2ec2e3df71036d3f2d14feb068749f849230e9db87e759e35eb6
+  checksum: 10c0/1fbc7805a662333eb83d229b3737fc290a775fe2e93744043972bc420d6f8950d592d8006becdb3556f98e4611431eb3542a97860ee96c76be3725746951fec1
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-typescript@npm:5.3.25":
-  version: 5.3.25
-  resolution: "@jenssimon/eslint-config-typescript@npm:5.3.25"
+"@jenssimon/eslint-config-typescript@npm:5.3.27":
+  version: 5.3.27
+  resolution: "@jenssimon/eslint-config-typescript@npm:5.3.27"
   dependencies:
     "@stylistic/eslint-plugin-ts": "npm:^2.6.1"
     "@typescript-eslint/eslint-plugin": "npm:^8.0.0"
@@ -1990,7 +1990,7 @@ __metadata:
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
     typescript: ">=4.0.0"
-  checksum: 10c0/c8283fa6516c25221b06861b01a7158da0de750ad07ae86bfe70138e71a8a5248bd4df99cc8ac85c4904de6c9ada836deeeedf4353f25ac4211239b406315d83
+  checksum: 10c0/384575682d93d4ca63a0013a129e93b4a8d25feb0b4f6c3a30b6af32e52d4db627cac56bf4f76481e9a23cf051c85add2f8e421835282872007f406183b835c9
   languageName: node
   linkType: hard
 
@@ -9325,8 +9325,8 @@ __metadata:
   dependencies:
     "@commitlint/cli": "npm:19.6.0"
     "@commitlint/config-conventional": "npm:19.6.0"
-    "@jenssimon/eslint-config-base": "npm:7.6.1"
-    "@jenssimon/eslint-config-typescript": "npm:5.3.25"
+    "@jenssimon/eslint-config-base": "npm:7.6.3"
+    "@jenssimon/eslint-config-typescript": "npm:5.3.27"
     "@preact/signals-core": "npm:^1.6.0"
     "@types/node": "npm:22.10.1"
     "@vitest/coverage-v8": "npm:^2.0.0"
@@ -11414,8 +11414,8 @@ __metadata:
   linkType: hard
 
 "vite@npm:^6.0.0":
-  version: 6.0.2
-  resolution: "vite@npm:6.0.2"
+  version: 6.0.3
+  resolution: "vite@npm:6.0.3"
   dependencies:
     esbuild: "npm:^0.24.0"
     fsevents: "npm:~2.3.3"
@@ -11461,7 +11461,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10c0/45fc609f2bc5fb5beb5a8e2cad9ad6c2edce229a922f6fc1270ea2a9d75819482edcc0f77c85b4a7abdad7eb69ce6a4f26131925d47cdc0778fc15d1bbc3b6a2
+  checksum: 10c0/764ebed14770426a638575b23a51127c630ace873999ab896b0184484d8107e7255cdf64cfb36c65c1ef1d583e44b70a1d14c0f05b89612e834a5806e3964475
   languageName: node
   linkType: hard
 
