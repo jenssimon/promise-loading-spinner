@@ -177,14 +177,14 @@ export default class Loader {
    * @returns a function that wraps the loader functionality around a function call
    */
   public wrapFunction<C, A extends never[], R>(
-    fnc: (this: C, ...args: A) => Promise<R>,
+    fnc: (this: C, ...arguments_: A) => Promise<R>,
     options?: Partial<LoaderCallOptions>,
-  ): (this: C, ...args: A) => Promise<R> {
+  ): (this: C, ...arguments_: A) => Promise<R> {
     // eslint-disable-next-line @typescript-eslint/no-this-alias, unicorn/no-this-assignment
-    const loaderCtx = this
+    const loaderContext = this
 
-    return function (this: C, ...args: A): Promise<R> {
-      return loaderCtx.loader(fnc.apply(this, args), options)
+    return function (this: C, ...arguments_: A): Promise<R> {
+      return loaderContext.loader(fnc.apply(this, arguments_), options)
     }
   }
 
@@ -195,13 +195,13 @@ export default class Loader {
    * @returns a decorator for methods that wraps loader functionality around a function call.
    */
   public decorator(options?: Partial<LoaderCallOptions>): MethodDecorator {
-    const loaderCtx = this // eslint-disable-line @typescript-eslint/no-this-alias, unicorn/no-this-assignment
+    const loaderContext = this // eslint-disable-line @typescript-eslint/no-this-alias, unicorn/no-this-assignment
 
     return function (target, propertyKey, descriptor) {
       const oldValue = descriptor.value;
       /* eslint-disable @typescript-eslint/no-explicit-any */
-      (descriptor as any).value = function (...params: never[]) {
-        return loaderCtx.loader((oldValue as any).apply(this, params), options)
+      (descriptor as any).value = function (...parameters: never[]) {
+        return loaderContext.loader((oldValue as any).apply(this, parameters), options)
       }
       /* eslint-enable @typescript-eslint/no-explicit-any */
     }

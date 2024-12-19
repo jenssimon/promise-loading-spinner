@@ -22,7 +22,7 @@ describe('promise-loading-spinner', () => {
 
   describe('default configuration', () => {
     it('handles a single promise (success)', async () => {
-      const loaderElement = document.getElementById('js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
 
       const loader = new Loader() // Initialize the loader
 
@@ -57,7 +57,7 @@ describe('promise-loading-spinner', () => {
     })
 
     it('handles a single promise (error)', async () => {
-      const loaderElement = document.getElementById('js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
 
       const loader = new Loader() // Initialize the loader
 
@@ -92,7 +92,7 @@ describe('promise-loading-spinner', () => {
     })
 
     it('handles a promise that resolves in the delay phase)', async () => {
-      const loaderElement = document.getElementById('js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
 
       const loader = new Loader() // Initialize the loader
 
@@ -123,7 +123,7 @@ describe('promise-loading-spinner', () => {
     })
 
     it('does\'t show a loader directly at page load (init delay)', async () => {
-      const loaderElement = document.getElementById('js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
 
       const loader = new Loader() // Initialize the loader
 
@@ -154,7 +154,7 @@ describe('promise-loading-spinner', () => {
     })
 
     it('forces a loader directly at page load (init delay)', async () => {
-      const loaderElement = document.getElementById('js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
 
       const loader = new Loader() // Initialize the loader
 
@@ -187,7 +187,7 @@ describe('promise-loading-spinner', () => {
     })
 
     it('processes two promises (added second in delay phase)', async () => {
-      const loaderElement = document.getElementById('js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
 
       const loader = new Loader() // Initialize the loader
 
@@ -238,7 +238,7 @@ describe('promise-loading-spinner', () => {
     })
 
     it('processes two promises (added second after delay phase)', async () => {
-      const loaderElement = document.getElementById('js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
 
       const loader = new Loader() // Initialize the loader
 
@@ -289,7 +289,7 @@ describe('promise-loading-spinner', () => {
     })
 
     it('processes two promises (added second directly after resolving first)', async () => {
-      const loaderElement = document.getElementById('js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
 
       const loader = new Loader() // Initialize the loader
 
@@ -346,7 +346,7 @@ describe('promise-loading-spinner', () => {
     })
 
     it('processes two promises (added second after close delay)', async () => {
-      const loaderElement = document.getElementById('js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
 
       const loader = new Loader() // Initialize the loader
 
@@ -409,8 +409,8 @@ describe('promise-loading-spinner', () => {
 
   describe('Configuration object', () => {
     it('uses a selector for looking up the loader element', async () => {
-      const loaderElement = document.getElementById('js-page-loader') as HTMLElement
-      const alternativeElement = document.getElementById('alternativeElement') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
+      const alternativeElement = document.querySelector('#alternativeElement') as HTMLElement
 
       const loader = new Loader({
         loaderElement: '#alternativeElement',
@@ -452,8 +452,8 @@ describe('promise-loading-spinner', () => {
     })
 
     it('uses an element instance for the loader element', async () => {
-      const loaderElement = document.getElementById('js-page-loader') as HTMLElement
-      const alternativeElement = document.getElementById('alternativeElement') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
+      const alternativeElement = document.querySelector('#alternativeElement') as HTMLElement
 
       const loader = new Loader({
         loaderElement: alternativeElement,
@@ -501,7 +501,7 @@ describe('promise-loading-spinner', () => {
     })
 
     it('uses another class name for the active class', async () => {
-      const loaderElement = document.getElementById('js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
 
       const loader = new Loader({
         classActive: 'loading',
@@ -543,7 +543,7 @@ describe('promise-loading-spinner', () => {
     })
 
     it('can disable loader delay', async () => {
-      const loaderElement = document.getElementById('js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
 
       const loader = new Loader({
         delay: 0,
@@ -578,7 +578,7 @@ describe('promise-loading-spinner', () => {
     })
 
     it('can disable the init delay', async () => {
-      const loaderElement = document.getElementById('js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
 
       const loader = new Loader({ // Initialize the loader
         initDelay: 0,
@@ -607,7 +607,7 @@ describe('promise-loading-spinner', () => {
     })
 
     it('can disable the close delay', async () => {
-      const loaderElement = document.getElementById('js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
 
       const loader = new Loader({ // Initialize the loader
         closeDelay: 0,
@@ -690,7 +690,7 @@ describe('promise-loading-spinner', () => {
 
   describe('loaderFnc', () => {
     it('can export a function wrapper', async () => {
-      const loaderElement = document.getElementById('js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
 
       const loader = new Loader() // Initialize the loader
 
@@ -705,16 +705,17 @@ describe('promise-loading-spinner', () => {
         promiseResolver = resolve as PromiseResolver
       })
 
-      const fn = vi.fn(function (this: string) {
+      // eslint-disable-next-line no-underscore-dangle
+      const function_ = vi.fn(function (this: string) {
         expect(this).toBe('Hello')
         return promise
       })
 
-      const loaderFunction = loader.wrapFunction(fn) as (this: string, first: string, second: string[], third: {
+      const loaderFunction = loader.wrapFunction(function_) as (this: string, first: string, second: string[], third: {
         foo: string
       }) => Promise<string>
 
-      expect(fn.mock.calls).toHaveLength(0)
+      expect(function_.mock.calls).toHaveLength(0)
 
       // call the loader
       const passedThroughPromise = loaderFunction.call(
@@ -726,9 +727,9 @@ describe('promise-loading-spinner', () => {
 
       expect(passedThroughPromise).toStrictEqual(promise) // is the returned promise the same as the passed in?
 
-      expect(fn.mock.calls).toHaveLength(1)
-      expect(fn.mock.calls[0]).toHaveLength(3)
-      expect(fn).toHaveBeenCalledWith('foo', ['foo', 'bar'], { foo: 'bar' })
+      expect(function_.mock.calls).toHaveLength(1)
+      expect(function_.mock.calls[0]).toHaveLength(3)
+      expect(function_).toHaveBeenCalledWith('foo', ['foo', 'bar'], { foo: 'bar' })
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
@@ -749,7 +750,7 @@ describe('promise-loading-spinner', () => {
 
   describe('decorator', () => {
     it('can export a decorator', async () => {
-      const loaderElement = document.getElementById('js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
 
       const loader = new Loader() // Initialize the loader
 
@@ -764,7 +765,8 @@ describe('promise-loading-spinner', () => {
         promiseResolver = resolve as PromiseResolver
       })
 
-      const fn = vi.fn(function (this: string, p1: string, p2: number) {
+      // eslint-disable-next-line no-underscore-dangle
+      const function_ = vi.fn(function (this: string, p1: string, p2: number) {
         expect(p1).toBe('bar')
         expect(p2).toBe(815)
         return this
@@ -781,24 +783,24 @@ describe('promise-loading-spinner', () => {
 
         @decorator()
         public test() {
-          fn.call(this, this.foo, 815)
+          function_.call(this, this.foo, 815)
           return promise
         }
       }
 
       const myTest = new TestClass()
 
-      expect(fn.mock.calls).toHaveLength(0)
+      expect(function_.mock.calls).toHaveLength(0)
 
       const passedThroughPromise = myTest.test()
 
       expect(passedThroughPromise).toBe(promise)
 
-      expect(fn.mock.calls).toHaveLength(1)
-      expect(fn.mock.calls[0]).toHaveLength(2)
-      expect(fn.mock.calls[0][0]).toBe('bar')
-      expect(fn.mock.calls[0][1]).toBe(815)
-      expect(fn.mock.results[0].value).toBe(myTest)
+      expect(function_.mock.calls).toHaveLength(1)
+      expect(function_.mock.calls[0]).toHaveLength(2)
+      expect(function_.mock.calls[0][0]).toBe('bar')
+      expect(function_.mock.calls[0][1]).toBe(815)
+      expect(function_.mock.results[0].value).toBe(myTest)
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
 
