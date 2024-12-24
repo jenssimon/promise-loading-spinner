@@ -2009,9 +2009,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-typescript@npm:5.3.29":
-  version: 5.3.29
-  resolution: "@jenssimon/eslint-config-typescript@npm:5.3.29"
+"@jenssimon/eslint-config-typescript@npm:5.3.30":
+  version: 5.3.30
+  resolution: "@jenssimon/eslint-config-typescript@npm:5.3.30"
   dependencies:
     "@stylistic/eslint-plugin-ts": "npm:^2.6.1"
     "@typescript-eslint/eslint-plugin": "npm:^8.0.0"
@@ -2020,7 +2020,7 @@ __metadata:
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
     typescript: ">=4.0.0"
-  checksum: 10c0/5343ad43ecd3eb4344a5b1fc63853a6767bfdc9363155b3ecc3dffd56a8202b89f3d263fb8e2c17bf27e8e5144ac9b4f85464e9d9cf10268d1baf22656b01d16
+  checksum: 10c0/7d4830b5f14a9d375cc85a8f839e9fc186413a256daa3dc50dd8be0827c5306d134506685c0e2e518efe5da39903fce0246b79049b7afbc9ca81599ba3d482ef
   languageName: node
   linkType: hard
 
@@ -9387,7 +9387,7 @@ __metadata:
     "@commitlint/cli": "npm:19.6.1"
     "@commitlint/config-conventional": "npm:19.6.0"
     "@jenssimon/eslint-config-base": "npm:7.6.4"
-    "@jenssimon/eslint-config-typescript": "npm:5.3.29"
+    "@jenssimon/eslint-config-typescript": "npm:5.3.30"
     "@preact/signals-core": "npm:^1.6.0"
     "@types/node": "npm:22.10.2"
     "@vitest/coverage-v8": "npm:^2.0.0"
