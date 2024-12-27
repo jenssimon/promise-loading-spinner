@@ -3106,8 +3106,8 @@ __metadata:
   linkType: hard
 
 "@vitest/eslint-plugin@npm:^1.1.14":
-  version: 1.1.20
-  resolution: "@vitest/eslint-plugin@npm:1.1.20"
+  version: 1.1.21
+  resolution: "@vitest/eslint-plugin@npm:1.1.21"
   peerDependencies:
     "@typescript-eslint/utils": ">= 8.0"
     eslint: ">= 8.57.0"
@@ -3118,7 +3118,7 @@ __metadata:
       optional: true
     vitest:
       optional: true
-  checksum: 10c0/d6ef1a55d0763fb0d85e9464d6c24bdd840c78c98c0ffe990933dc0f44dde433dbd7235cd011930908a3a5e24d8c432ad34c6b7171dffccc75e9745b8e76b159
+  checksum: 10c0/61fd397a235fb852ced2e69650214f78854e48c988d9f20a7d6f1287f9ae0b3fe53d8c833731246b7c9b079bd7a009a82ab9ef76757e74f9c3b04ad230c3c00a
   languageName: node
   linkType: hard
 
