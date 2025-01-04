@@ -25,7 +25,7 @@
   "type": "module",
   "scripts": {
     "lint": "run-p 'lint:*'",
-    "lint:js": "eslint --ext .js,.mjs,.cjs,.ts,.mts,.cts .",
+    "lint:js": "eslint .",
     "lint:css": "stylelint '**/*.css'",
     "build": "tsc",
     "predemo": "run-s build",
@@ -41,8 +41,10 @@
   "devDependencies": {
     "@commitlint/cli": "19.6.1",
     "@commitlint/config-conventional": "19.6.0",
-    "@jenssimon/eslint-config-base": "7.6.5",
-    "@jenssimon/eslint-config-typescript": "5.3.31",
+    "@eslint/compat": "^1.2.4",
+    "@eslint/eslintrc": "^3.2.0",
+    "@jenssimon/eslint-config-base": "8.0.0",
+    "@jenssimon/eslint-config-typescript": "5.3.29",
     "@preact/signals-core": "^1.6.0",
     "@types/node": "22.10.3",
     "@vitest/coverage-v8": "^2.0.0",
@@ -50,6 +52,7 @@
     "commitizen": "4.3.1",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.57.1",
+    "globals": "^15.14.0",
     "husky": "9.1.7",
     "jsdom": "^25.0.0",
     "lint-staged": "15.3.0",
@@ -67,50 +70,7 @@
     "dist/src/loader.js",
     "dist/src/loader.d.ts"
   ],
-  "eslintConfig": {
-    "parserOptions": {
-      "project": "tsconfig.json"
-    },
-    "extends": [
-      "@jenssimon/base/frontend"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "*.ts"
-        ],
-        "extends": [
-          "@jenssimon/typescript"
-        ],
-        "rules": {
-          "@typescript-eslint/naming-convention": "off"
-        }
-      },
-      {
-        "files": [
-          "**/*.test.*",
-          "**/*.spec.*",
-          "**/__tests__/**",
-          "**/__mocks__/**"
-        ],
-        "plugins": [
-          "@vitest"
-        ],
-        "extends": [
-          "plugin:@vitest/legacy-recommended"
-        ]
-      },
-      {
-        "files": [
-          "*.cjs"
-        ],
-        "rules": {
-          "import/no-commonjs": "off"
-        }
-      }
-    ]
-  },
-  "packageManager": "yarn@4.6.0",
+  "packageManager": "yarn@4.5.3",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
