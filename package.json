@@ -33,7 +33,6 @@
     "prepublishOnly": "yarn build",
     "test": "vitest",
     "commit": "cz",
-    "postinstall": "husky",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable",
     "semantic-release": "semantic-release"
