@@ -2021,9 +2021,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-base@npm:8.0.0":
-  version: 8.0.0
-  resolution: "@jenssimon/eslint-config-base@npm:8.0.0"
+"@jenssimon/eslint-config-base@npm:8.0.1":
+  version: 8.0.1
+  resolution: "@jenssimon/eslint-config-base@npm:8.0.1"
   dependencies:
     "@eslint-community/eslint-plugin-eslint-comments": "npm:^4.4.1"
     eslint-config-airbnb-base: "npm:^15.0.0"
@@ -2035,13 +2035,13 @@ __metadata:
     eslint-plugin-unicorn: "npm:^56.0.0"
   peerDependencies:
     eslint: ^7.32.0 || ^8.2.0
-  checksum: 10c0/0571b97b7b1abd704955d19308ba593caec2d277a325fe52b9bd7cac690536e1c677f2227aea1711d2365e981699d7db2883ba7ef8889bb8d86008761497f799
+  checksum: 10c0/b7b1cb8c8b02fead8c2b64fc4813a8f3b346435a093cec9c232b630fc3edfbbb6ebe1285b592157110a4d7c5ccf06677125aafa705d3e3ae6a92a229206db12e
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-typescript@npm:5.3.29":
-  version: 5.3.29
-  resolution: "@jenssimon/eslint-config-typescript@npm:5.3.29"
+"@jenssimon/eslint-config-typescript@npm:5.3.33":
+  version: 5.3.33
+  resolution: "@jenssimon/eslint-config-typescript@npm:5.3.33"
   dependencies:
     "@stylistic/eslint-plugin-ts": "npm:^2.6.1"
     "@typescript-eslint/eslint-plugin": "npm:^8.0.0"
@@ -2050,7 +2050,7 @@ __metadata:
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
     typescript: ">=4.0.0"
-  checksum: 10c0/5343ad43ecd3eb4344a5b1fc63853a6767bfdc9363155b3ecc3dffd56a8202b89f3d263fb8e2c17bf27e8e5144ac9b4f85464e9d9cf10268d1baf22656b01d16
+  checksum: 10c0/02f7a65a8e23994278d0e0beb5feb7eb362cb1236f042ca345a2a6017ab62e7090a40400be6fde613a1c8459d90666b022560e92b80b3b20560c7a1fab473333
   languageName: node
   linkType: hard
 
@@ -2877,21 +2877,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:22.10.5":
   version: 22.10.5
   resolution: "@types/node@npm:22.10.5"
   dependencies:
     undici-types: "npm:~6.20.0"
   checksum: 10c0/6a0e7d1fe6a86ef6ee19c3c6af4c15542e61aea2f4cee655b6252efb356795f1f228bc8299921e82924e80ff8eca29b74d9dd0dd5cc1a90983f892f740b480df
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:22.10.3":
-  version: 22.10.3
-  resolution: "@types/node@npm:22.10.3"
-  dependencies:
-    undici-types: "npm:~6.20.0"
-  checksum: 10c0/0471a73c8672c803b1f2b912c2c466d00a217186933e8ff38ec7779b4a3f88a0eea3b513a59f2abf9de17cc8bbca688a3c6643c6513ac8dd1c3e45d25fab93b1
   languageName: node
   linkType: hard
 
@@ -6377,16 +6368,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"import-from-esm@npm:^1.3.1":
-  version: 1.3.4
-  resolution: "import-from-esm@npm:1.3.4"
-  dependencies:
-    debug: "npm:^4.3.4"
-    import-meta-resolve: "npm:^4.0.0"
-  checksum: 10c0/fcd42ead421892e1d9dbc90e510f45c7d3b58887c35077cf2318e4aa39b52c07c06e2b54efd16dfe8e712421439c23794d18a5e8956cca237fc90790ed8e2241
-  languageName: node
-  linkType: hard
-
 "import-from-esm@npm:^2.0.0":
   version: 2.0.0
   resolution: "import-from-esm@npm:2.0.0"
@@ -9158,10 +9139,10 @@ __metadata:
     "@commitlint/config-conventional": "npm:19.6.0"
     "@eslint/compat": "npm:^1.2.4"
     "@eslint/eslintrc": "npm:^3.2.0"
-    "@jenssimon/eslint-config-base": "npm:8.0.0"
-    "@jenssimon/eslint-config-typescript": "npm:5.3.29"
+    "@jenssimon/eslint-config-base": "npm:8.0.1"
+    "@jenssimon/eslint-config-typescript": "npm:5.3.33"
     "@preact/signals-core": "npm:^1.6.0"
-    "@types/node": "npm:22.10.3"
+    "@types/node": "npm:22.10.5"
     "@vitest/coverage-v8": "npm:^2.0.0"
     "@vitest/eslint-plugin": "npm:^1.1.14"
     commitizen: "npm:4.3.1"
@@ -9173,11 +9154,11 @@ __metadata:
     lint-staged: "npm:15.3.0"
     npm-run-all2: "npm:^7.0.0"
     pinst: "npm:3.0.0"
-    semantic-release: "npm:24.2.0"
+    semantic-release: "npm:24.2.1"
     stylelint: "npm:^16.4.0"
     stylelint-config-recess-order: "npm:^5.0.1"
     stylelint-config-standard: "npm:^37.0.0"
-    typescript: "npm:5.7.2"
+    typescript: "npm:5.7.3"
     vite: "npm:^6.0.0"
     vitest: "npm:^2.0.0"
   languageName: unknown
@@ -9793,9 +9774,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semantic-release@npm:24.2.0":
-  version: 24.2.0
-  resolution: "semantic-release@npm:24.2.0"
+"semantic-release@npm:24.2.1":
+  version: 24.2.1
+  resolution: "semantic-release@npm:24.2.1"
   dependencies:
     "@semantic-release/commit-analyzer": "npm:^13.0.0-beta.1"
     "@semantic-release/error": "npm:^4.0.0"
@@ -9813,7 +9794,7 @@ __metadata:
     git-log-parser: "npm:^1.2.0"
     hook-std: "npm:^3.0.0"
     hosted-git-info: "npm:^8.0.0"
-    import-from-esm: "npm:^1.3.1"
+    import-from-esm: "npm:^2.0.0"
     lodash-es: "npm:^4.17.21"
     marked: "npm:^12.0.0"
     marked-terminal: "npm:^7.0.0"
@@ -9828,7 +9809,7 @@ __metadata:
     yargs: "npm:^17.5.1"
   bin:
     semantic-release: bin/semantic-release.js
-  checksum: 10c0/c4594d862366c372a78700f1bde5791abb15c5348da4427295661ab87989d53e071d956d8cac44b84e7720d8775d0eead686941699056c4d8346458e964c7eb8
+  checksum: 10c0/c27b187e84b3410e1fd3c9c8d92fad7b4905e6d8719c75f03e684d1ca1d1bf2c843e4e12a0cf54cd6292608af3c50ac17ff9e383add2619dbd0d643a77424ae4
   languageName: node
   linkType: hard
 
@@ -10952,17 +10933,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.7.2":
-  version: 5.7.2
-  resolution: "typescript@npm:5.7.2"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 10c0/a873118b5201b2ef332127ef5c63fb9d9c155e6fdbe211cbd9d8e65877283797cca76546bad742eea36ed7efbe3424a30376818f79c7318512064e8625d61622
-  languageName: node
-  linkType: hard
-
-"typescript@npm:^5":
+"typescript@npm:5.7.3, typescript@npm:^5":
   version: 5.7.3
   resolution: "typescript@npm:5.7.3"
   bin:
@@ -10972,17 +10943,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.7.2#optional!builtin<compat/typescript>":
-  version: 5.7.2
-  resolution: "typescript@patch:typescript@npm%3A5.7.2#optional!builtin<compat/typescript>::version=5.7.2&hash=5786d5"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 10c0/f3b8082c9d1d1629a215245c9087df56cb784f9fb6f27b5d55577a20e68afe2a889c040aacff6d27e35be165ecf9dca66e694c42eb9a50b3b2c451b36b5675cb
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@npm%3A^5#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A5.7.3#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5#optional!builtin<compat/typescript>":
   version: 5.7.3
   resolution: "typescript@patch:typescript@npm%3A5.7.3#optional!builtin<compat/typescript>::version=5.7.3&hash=5786d5"
   bin:
