@@ -43,7 +43,7 @@
     "@eslint/compat": "^1.2.4",
     "@eslint/eslintrc": "^3.2.0",
     "@jenssimon/eslint-config-base": "8.0.1",
-    "@jenssimon/eslint-config-typescript": "5.3.33",
+    "@jenssimon/eslint-config-typescript": "5.3.34",
     "@preact/signals-core": "^1.6.0",
     "@types/node": "22.10.5",
     "@vitest/coverage-v8": "^2.0.0",
