@@ -46,7 +46,7 @@
     "@jenssimon/eslint-config-typescript": "5.3.34",
     "@preact/signals-core": "^1.6.0",
     "@types/node": "22.10.5",
-    "@vitest/coverage-v8": "^2.0.0",
+    "@vitest/coverage-v8": "^3.0.0",
     "@vitest/eslint-plugin": "^1.1.14",
     "commitizen": "4.3.1",
     "cz-conventional-changelog": "3.3.0",
@@ -63,7 +63,7 @@
     "stylelint-config-standard": "^37.0.0",
     "typescript": "5.7.3",
     "vite": "^6.0.0",
-    "vitest": "^2.0.0"
+    "vitest": "^3.0.0"
   },
   "files": [
     "dist/src/loader.js",
