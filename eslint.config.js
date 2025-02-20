@@ -1,6 +1,9 @@
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+import tseslint from 'typescript-eslint'
+import vitest from '@vitest/eslint-plugin'
+
 import globals from 'globals'
 
 import { FlatCompat } from '@eslint/eslintrc'
@@ -16,7 +19,7 @@ const compat = new FlatCompat({
 })
 
 
-export default [
+export default tseslint.config(
   {
     ignores: [
       '.yarn/',
@@ -28,46 +31,38 @@ export default [
   },
 
   ...fixupConfigRules(compat.config({
-    parserOptions: {
-      project: 'tsconfig.json',
-    },
     extends: [
       '@jenssimon/base',
     ],
-    overrides: [
-      {
-        files: [
-          '*.ts',
-        ],
-        extends: [
-          '@jenssimon/typescript',
-        ],
-        rules: {
-          '@typescript-eslint/naming-convention': 'off',
-        },
-      },
-      {
-        files: [
-          '**/*.test.*',
-          '**/*.spec.*',
-          '**/__tests__/**',
-          '**/__mocks__/**',
-        ],
-        plugins: [
-          '@vitest',
-        ],
-        extends: [
-          'plugin:@vitest/legacy-recommended',
-        ],
-      },
-    ],
-  })).map((rule) => ({
-    files: [
-      '**/*.js',
-      '**/*.ts',
-    ],
-    ...rule,
   })),
+
+  tseslint.configs.recommendedTypeChecked,
+  tseslint.configs.stylisticTypeChecked,
+  {
+    languageOptions: {
+      parserOptions: {
+        projectService: {
+          allowDefaultProject: [
+            '*.js',
+            'demo/*.js',
+          ],
+        },
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
+
+  {
+    files: [
+      'src/loader.ts',
+      'src/__tests__/loader.test.ts',
+      'demo/index.js',
+    ],
+    rules: {
+      'no-void': 'off',
+      'sonarjs/void-use': 'off',
+    },
+  },
 
   {
     files: [
@@ -84,6 +79,26 @@ export default [
       'no-restricted-syntax': 'off',
       'promise/prefer-await-to-then': 'off',
       'unicorn/prefer-top-level-await': 'off',
+      '@typescript-eslint/no-unsafe-argument': 'off',
+      '@typescript-eslint/no-unsafe-assignment': 'off',
+      '@typescript-eslint/no-unsafe-call': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/no-unsafe-return': 'off',
     },
   },
-]
+
+  {
+    files: [
+      '**/*.test.*',
+      '**/*.spec.*',
+      '**/__tests__/**',
+      '**/__mocks__/**',
+    ],
+    plugins: {
+      vitest,
+    },
+    rules: {
+      ...vitest.configs.recommended.rules,
+    },
+  },
+)

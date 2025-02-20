@@ -12,8 +12,6 @@
   },
   "include": [
     "src/**/*",
-    "commitlint.config.js",
-    "stylelint.config.js",
     "vitest.config.ts"
   ],
   "exclude": [

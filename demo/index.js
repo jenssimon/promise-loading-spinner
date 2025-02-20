@@ -73,7 +73,7 @@ const main = async () => {
   }
 }
 
-main()
+void main()
 
 effect(() => {
   console.debug('show loader: %o', sig.value)

@@ -100,7 +100,7 @@ export default class Loader {
    * Resolver function used to resolve the currentLoadingPromise promise after the loader get hidden.
    */
   private loaderShownResolver?: (
-    value?: Promise<unknown>[] | PromiseLike<Promise<unknown>[]> | undefined
+    value?: Promise<unknown>[] | PromiseLike<Promise<unknown>[]>
   ) => void | undefined
 
   /**
@@ -129,7 +129,7 @@ export default class Loader {
     if (loaderElement ?? !loaderVisibilityCallback) {
       const element = loaderElement ?? '#js-page-loader'
       this.el = element instanceof HTMLElement
-        ? element : document.querySelector(element) as HTMLElement
+        ? element : document.querySelector(element)!
 
       if (!this.el) throw new Error('Element not found')
     }
@@ -163,7 +163,7 @@ export default class Loader {
         this.showLoader(skipDelays)
       }
 
-      this.handlePromise(promise)
+      void this.handlePromise(promise)
     }
     return promise
   }
@@ -195,16 +195,26 @@ export default class Loader {
    * @returns a decorator for methods that wraps loader functionality around a function call.
    */
   public decorator(options?: Partial<LoaderCallOptions>): MethodDecorator {
-    const loaderContext = this // eslint-disable-line @typescript-eslint/no-this-alias, unicorn/no-this-assignment
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    /* eslint-disable @typescript-eslint/no-this-alias */
+    /* eslint-disable @typescript-eslint/no-unsafe-argument */
+    /* eslint-disable @typescript-eslint/no-unsafe-call */
+    /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+    /* eslint-disable unicorn/no-this-assignment */
+    const loaderContext = this
 
     return function (target, propertyKey, descriptor) {
       const oldValue = descriptor.value;
-      /* eslint-disable @typescript-eslint/no-explicit-any */
       (descriptor as any).value = function (...parameters: never[]) {
         return loaderContext.loader((oldValue as any).apply(this, parameters), options)
       }
-      /* eslint-enable @typescript-eslint/no-explicit-any */
     }
+    /* eslint-enable @typescript-eslint/no-explicit-any */
+    /* eslint-enable @typescript-eslint/no-this-alias */
+    /* eslint-enable @typescript-eslint/no-unsafe-argument */
+    /* eslint-enable @typescript-eslint/no-unsafe-call */
+    /* eslint-enable @typescript-eslint/no-unsafe-member-access */
+    /* eslint-enable unicorn/no-this-assignment */
   }
 
 
@@ -212,7 +222,7 @@ export default class Loader {
    * Stops initial loader suppresion
    */
   private stopSuppressLoading() {
-    clearTimeout(this.initSuppressTimeout as NodeJS.Timeout)
+    clearTimeout(this.initSuppressTimeout)
     this.initSuppressTimeout = undefined
   }
 
@@ -223,7 +233,7 @@ export default class Loader {
   private setCurrentLoadingPromise() {
     this.currentLoadingPromise = new Promise((resolve) => {
       this.loaderShownResolver = resolve as (
-        value?: Promise<unknown>[] | PromiseLike<Promise<unknown>[]> | undefined) => void
+        value?: Promise<unknown>[] | PromiseLike<Promise<unknown>[]>) => void
     })
   }
 
@@ -268,7 +278,7 @@ export default class Loader {
       clearTimeout(timeout)
       this.timeout = undefined
     }
-    loaderPromises.splice(loaderPromises.indexOf(promise), 1)
+    void loaderPromises.splice(loaderPromises.indexOf(promise), 1)
     if (loaderPromises.length === 0) {
       // The last operation has finished. Show loader a bit longer so there is no flickering when an operation
       // starts shortly after.

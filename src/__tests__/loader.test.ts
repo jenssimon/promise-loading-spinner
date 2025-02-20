@@ -10,19 +10,25 @@ import Loader from '../loader.js'
 type PromiseResolver = (value?: unknown) => void;
 type PromiseRejecter = (reason?: unknown) => unknown;
 
-const promiseResolverStub: PromiseResolver = () => {}
-const promiseRejecterStub: PromiseRejecter = () => {}
+
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+const emptyFnc = () => {}
+
+const promiseResolverStub: PromiseResolver = emptyFnc
+const promiseRejecterStub: PromiseRejecter = emptyFnc
 
 vi.useFakeTimers()
+
 
 describe('promise-loading-spinner', () => {
   beforeEach(() => {
     document.body.innerHTML = '<div id="js-page-loader"></div><div id="alternativeElement"></div>'
   })
 
+
   describe('default configuration', () => {
     it('handles a single promise (success)', async () => {
-      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader')!
 
       const loader = new Loader() // Initialize the loader
 
@@ -56,8 +62,9 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
 
+
     it('handles a single promise (error)', async () => {
-      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader')!
 
       const loader = new Loader() // Initialize the loader
 
@@ -91,8 +98,9 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
 
+
     it('handles a promise that resolves in the delay phase)', async () => {
-      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader')!
 
       const loader = new Loader() // Initialize the loader
 
@@ -122,8 +130,9 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
 
+
     it('does\'t show a loader directly at page load (init delay)', async () => {
-      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader')!
 
       const loader = new Loader() // Initialize the loader
 
@@ -153,8 +162,9 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
 
+
     it('forces a loader directly at page load (init delay)', async () => {
-      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader')!
 
       const loader = new Loader() // Initialize the loader
 
@@ -186,8 +196,9 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
 
+
     it('processes two promises (added second in delay phase)', async () => {
-      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader')!
 
       const loader = new Loader() // Initialize the loader
 
@@ -237,8 +248,9 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
 
+
     it('processes two promises (added second after delay phase)', async () => {
-      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader')!
 
       const loader = new Loader() // Initialize the loader
 
@@ -287,9 +299,10 @@ describe('promise-loading-spinner', () => {
 
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
+
 
     it('processes two promises (added second directly after resolving first)', async () => {
-      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader')!
 
       const loader = new Loader() // Initialize the loader
 
@@ -345,8 +358,9 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
 
+
     it('processes two promises (added second after close delay)', async () => {
-      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader')!
 
       const loader = new Loader() // Initialize the loader
 
@@ -407,10 +421,11 @@ describe('promise-loading-spinner', () => {
     })
   })
 
+
   describe('Configuration object', () => {
     it('uses a selector for looking up the loader element', async () => {
-      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
-      const alternativeElement = document.querySelector('#alternativeElement') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader')!
+      const alternativeElement = document.querySelector('#alternativeElement')!
 
       const loader = new Loader({
         loaderElement: '#alternativeElement',
@@ -451,12 +466,13 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
 
+
     it('uses an element instance for the loader element', async () => {
-      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
-      const alternativeElement = document.querySelector('#alternativeElement') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader')!
+      const alternativeElement = document.querySelector('#alternativeElement')!
 
       const loader = new Loader({
-        loaderElement: alternativeElement,
+        loaderElement: alternativeElement as HTMLElement,
       }) // Initialize the loader
 
       // Loader is initialized
@@ -494,14 +510,16 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
 
+
     it('throws an error if the selector returns no result', () => {
       expect(() => new Loader({
         loaderElement: '.foo',
       })).toThrow('Element not found')
     })
 
+
     it('uses another class name for the active class', async () => {
-      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader')!
 
       const loader = new Loader({
         classActive: 'loading',
@@ -542,8 +560,9 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('loading')).toBe(false)
     })
 
+
     it('can disable loader delay', async () => {
-      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader')!
 
       const loader = new Loader({
         delay: 0,
@@ -577,8 +596,9 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
 
+
     it('can disable the init delay', async () => {
-      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader')!
 
       const loader = new Loader({ // Initialize the loader
         initDelay: 0,
@@ -606,8 +626,9 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
 
+
     it('can disable the close delay', async () => {
-      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader')!
 
       const loader = new Loader({ // Initialize the loader
         closeDelay: 0,
@@ -641,6 +662,7 @@ describe('promise-loading-spinner', () => {
       expect(loaderElement.classList.contains('is-active')).toBe(false)
     })
 
+
     it.skip('needs an element or signal', () => {
       expect(() => {
         // eslint-disable-next-line no-new, sonarjs/constructor-for-side-effects
@@ -649,6 +671,7 @@ describe('promise-loading-spinner', () => {
         })
       }).toThrow('No loader element or signal provided')
     })
+
 
     it('handles a signal', async () => {
       const active = signal(false)
@@ -688,9 +711,10 @@ describe('promise-loading-spinner', () => {
     })
   })
 
+
   describe('loaderFnc', () => {
     it('can export a function wrapper', async () => {
-      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader')!
 
       const loader = new Loader() // Initialize the loader
 
@@ -748,9 +772,10 @@ describe('promise-loading-spinner', () => {
     })
   })
 
+
   describe('decorator', () => {
     it('can export a decorator', async () => {
-      const loaderElement = document.querySelector('#js-page-loader') as HTMLElement
+      const loaderElement = document.querySelector('#js-page-loader')!
 
       const loader = new Loader() // Initialize the loader
 
@@ -819,6 +844,7 @@ describe('promise-loading-spinner', () => {
     })
   })
 
+
   describe('currentLoadingPromise', () => {
     it('returns a promise for the currently shown loader', async () => {
       const loader = new Loader({ // Initialize the loader
@@ -833,7 +859,7 @@ describe('promise-loading-spinner', () => {
         promiseResolver = resolve as PromiseResolver
       })
 
-      loader.loader(promise)
+      void loader.loader(promise)
 
       promiseResolver('success')
       await expect(promise).resolves.toBe('success')
@@ -845,7 +871,7 @@ describe('promise-loading-spinner', () => {
         promiseResolver2 = resolve as PromiseResolver
       })
 
-      loader.loader(promise2)
+      void loader.loader(promise2)
 
       vi.runAllTimers()
 
@@ -865,7 +891,7 @@ describe('promise-loading-spinner', () => {
         promiseResolver3 = resolve as PromiseResolver
       })
 
-      loader.loader(promise3)
+      void loader.loader(promise3)
 
       vi.runAllTimers()
 
@@ -874,7 +900,7 @@ describe('promise-loading-spinner', () => {
         promiseResolver4 = resolve as PromiseResolver
       })
 
-      loader.loader(promise4)
+      void loader.loader(promise4)
 
       vi.runAllTimers()
 
