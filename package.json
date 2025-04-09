@@ -69,7 +69,7 @@
     "dist/src/loader.js",
     "dist/src/loader.d.ts"
   ],
-  "packageManager": "yarn@4.8.1",
+  "packageManager": "yarn@4.9.0",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
