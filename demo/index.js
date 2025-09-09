@@ -1,6 +1,6 @@
 import { effect, signal } from '@preact/signals-core'
 
-import PromiseLoadingSpinner from '../dist/src/loader.js'
+import Loader from '../dist/src/loader.js'
 
 
 const green = document.querySelector('.section-green')
@@ -12,7 +12,11 @@ const CLASS_WORKING = 'is-working'
 let loader
 const sig = signal(true)
 
-const wait = (time) => new Promise((resolve) => { setTimeout(() => { resolve() }, time) })
+const wait = (time) => new Promise((resolve) => {
+  setTimeout(() => {
+    resolve()
+  }, time)
+})
 
 const work = (section, time) => {
   const workPromise = loader.loader(wait(time))
@@ -60,8 +64,10 @@ const main = async () => {
   while (true) {
     await wait(2000)
 
-    loader = new PromiseLoadingSpinner({
-      loaderVisibilityCallback: (active) => { sig.value = active },
+    loader = new Loader({
+      loaderVisibilityCallback: (active) => {
+        sig.value = active
+      },
       loaderElement: '#js-page-loader',
     })
 

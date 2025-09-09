@@ -1,23 +1,9 @@
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
-
 import { defineConfig } from 'eslint/config'
+import { configs } from '@jenssimon/eslint-config-base'
 import tseslint from 'typescript-eslint'
 import vitest from '@vitest/eslint-plugin'
 
 import globals from 'globals'
-
-import { FlatCompat } from '@eslint/eslintrc'
-import { fixupConfigRules } from '@eslint/compat'
-
-
-// mimic CommonJS variables -- not needed if using CommonJS
-const __filename = fileURLToPath(import.meta.url) // eslint-disable-line no-underscore-dangle
-const __dirname = path.dirname(__filename) // eslint-disable-line no-underscore-dangle
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-})
 
 
 export default defineConfig(
@@ -31,11 +17,7 @@ export default defineConfig(
     ],
   },
 
-  ...fixupConfigRules(compat.config({
-    extends: [
-      '@jenssimon/base',
-    ],
-  })),
+  configs.base,
 
   tseslint.configs.recommendedTypeChecked,
   tseslint.configs.stylisticTypeChecked,
@@ -76,6 +58,7 @@ export default defineConfig(
     },
     rules: {
       'no-await-in-loop': 'off',
+      'no-console': 'off',
       'no-constant-condition': 'off',
       'no-restricted-syntax': 'off',
       'promise/prefer-await-to-then': 'off',

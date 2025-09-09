@@ -40,8 +40,6 @@
   "devDependencies": {
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
-    "@eslint/compat": "^1.2.4",
-    "@eslint/eslintrc": "^3.2.0",
     "@jenssimon/eslint-config-base": "9.0.0",
     "@preact/signals-core": "^1.6.0",
     "@types/node": "22.18.1",

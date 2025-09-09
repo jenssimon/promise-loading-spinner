@@ -7,8 +7,8 @@ import { signal } from '@preact/signals-core'
 import Loader from '../loader.js'
 
 
-type PromiseResolver = (value?: unknown) => void;
-type PromiseRejecter = (reason?: unknown) => unknown;
+type PromiseResolver = (value?: unknown) => void
+type PromiseRejecter = (reason?: unknown) => unknown
 
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -800,11 +800,7 @@ describe('promise-loading-spinner', () => {
       const decorator = loader.decorator.bind(loader)
 
       class TestClass {
-        private foo: string
-
-        public constructor() {
-          this.foo = 'bar'
-        }
+        private foo = 'bar'
 
         @decorator()
         public test() {

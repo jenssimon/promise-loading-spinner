@@ -244,7 +244,7 @@ export default class Loader {
    * @param visible is the loader visible?
    */
   private setLoaderVisibility(visible: boolean) {
-    if (this.el) this.el.classList[visible ? 'add' : 'remove'](this.config.classActive)
+    if (this.el) this.el.classList.toggle(this.config.classActive, visible)
     if (this.config.loaderVisibilityCallback) this.config.loaderVisibilityCallback(visible)
     this.loaderShows = visible
 
@@ -253,7 +253,7 @@ export default class Loader {
     } else {
       /* istanbul ignore else */
       if (this.loaderShownResolver) {
-        this.loaderShownResolver(this.promisesForShownLoader.splice(0, this.promisesForShownLoader.length))
+        this.loaderShownResolver(this.promisesForShownLoader.splice(0))
       }
       this.setCurrentLoadingPromise()
     }
