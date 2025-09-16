@@ -40,9 +40,9 @@
   "devDependencies": {
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
-    "@jenssimon/eslint-config-base": "9.0.4",
+    "@jenssimon/eslint-config-base": "9.0.5",
     "@preact/signals-core": "^1.6.0",
-    "@types/node": "22.18.3",
+    "@types/node": "22.18.4",
     "@vitest/coverage-v8": "^3.0.0",
     "@vitest/eslint-plugin": "^1.1.14",
     "commitizen": "4.3.1",
