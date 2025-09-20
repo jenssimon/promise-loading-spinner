@@ -796,9 +796,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-base@npm:9.0.6":
-  version: 9.0.6
-  resolution: "@jenssimon/eslint-config-base@npm:9.0.6"
+"@jenssimon/eslint-config-base@npm:9.0.7":
+  version: 9.0.7
+  resolution: "@jenssimon/eslint-config-base@npm:9.0.7"
   dependencies:
     "@eslint-community/eslint-plugin-eslint-comments": "npm:^4.4.1"
     "@eslint/js": "npm:^9.35.0"
@@ -813,7 +813,7 @@ __metadata:
     eslint-plugin-unicorn: "npm:^61.0.2"
   peerDependencies:
     eslint: ">= 9"
-  checksum: 10c0/e51ee57d6a46a04e81a8a5947c8a9fe4f39228a6c343a632893766c729df5e47f49380d00ca76ebde98a86db18825fcb240535da9c96b2f9082901b771c2cc4f
+  checksum: 10c0/fa90012dc10507c0a9dfd00badab02ee1b915f89fd1c495f473012a8f6ec912163a16e541bb3b8215d2ce90e10b8146d3d763458b5b2e1aaabf463810b1dd063
   languageName: node
   linkType: hard
 
@@ -7852,7 +7852,7 @@ __metadata:
   dependencies:
     "@commitlint/cli": "npm:19.8.1"
     "@commitlint/config-conventional": "npm:19.8.1"
-    "@jenssimon/eslint-config-base": "npm:9.0.6"
+    "@jenssimon/eslint-config-base": "npm:9.0.7"
     "@preact/signals-core": "npm:^1.6.0"
     "@types/node": "npm:22.18.6"
     "@vitest/coverage-v8": "npm:^3.0.0"
