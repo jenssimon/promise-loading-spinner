@@ -16,7 +16,7 @@ See this [Codepen](https://codepen.io/jenssimon/pen/NJmmJe).
 ## Install
 
 ```sh
-$ yarn add promise-loading-spinner
+yarn add promise-loading-spinner
 ```
 
 ## Usage
