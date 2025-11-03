@@ -2,34 +2,34 @@ export interface LoaderConfig {
   /**
    * Signal
    */
-  loaderVisibilityCallback: ((value: boolean) => void) | undefined
+  loaderVisibilityCallback: ((value: boolean) => void) | undefined;
 
   /**
    * Time (ms) until spinner will show up to handle short operations without a spinner.
    */
-  delay: number
+  delay: number;
 
   /**
    * Time (ms) to wait until last promise is resolved to enable multiple operations in a sequence
    * without a "flickering" spinner.
    */
-  closeDelay: number
+  closeDelay: number;
 
   /**
    * Delay (ms) after loader initialization to suppress spinners on page load.
    */
-  initDelay: number
+  initDelay: number;
 
   /**
    * The element which represents the spinner.
    * Can be used with an element or a selector string.
    */
-  loaderElement?: HTMLElement | string
+  loaderElement?: HTMLElement | string;
 
   /**
    * Class name used to show the spinner.
    */
-  classActive: string
+  classActive: string;
 }
 
 
@@ -40,7 +40,7 @@ export interface LoaderCallOptions {
   /**
    * Skip all delays (initDelay, delay).
    */
-  skipDelays: boolean
+  skipDelays: boolean;
 }
 
 
@@ -100,7 +100,7 @@ export default class Loader {
    * Resolver function used to resolve the currentLoadingPromise promise after the loader get hidden.
    */
   private loaderShownResolver?: (
-    value?: Promise<unknown>[] | PromiseLike<Promise<unknown>[]>
+    value?: Promise<unknown>[] | PromiseLike<Promise<unknown>[]>,
   ) => void | undefined
 
   /**
@@ -195,11 +195,9 @@ export default class Loader {
    * @returns a decorator for methods that wraps loader functionality around a function call.
    */
   public decorator(options?: Partial<LoaderCallOptions>): MethodDecorator {
-    /* eslint-disable @typescript-eslint/no-explicit-any */
     /* eslint-disable @typescript-eslint/no-this-alias */
-    /* eslint-disable @typescript-eslint/no-unsafe-argument */
-    /* eslint-disable @typescript-eslint/no-unsafe-call */
-    /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+
+
     /* eslint-disable unicorn/no-this-assignment */
     const loaderContext = this
 
@@ -209,11 +207,10 @@ export default class Loader {
         return loaderContext.loader((oldValue as any).apply(this, parameters), options)
       }
     }
-    /* eslint-enable @typescript-eslint/no-explicit-any */
+
     /* eslint-enable @typescript-eslint/no-this-alias */
-    /* eslint-enable @typescript-eslint/no-unsafe-argument */
-    /* eslint-enable @typescript-eslint/no-unsafe-call */
-    /* eslint-enable @typescript-eslint/no-unsafe-member-access */
+
+
     /* eslint-enable unicorn/no-this-assignment */
   }
 
