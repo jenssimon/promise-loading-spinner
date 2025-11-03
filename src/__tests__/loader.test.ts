@@ -11,7 +11,6 @@ type PromiseResolver = (value?: unknown) => void
 type PromiseRejecter = (reason?: unknown) => unknown
 
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 const emptyFnc = () => {}
 
 const promiseResolverStub: PromiseResolver = emptyFnc
@@ -729,14 +728,14 @@ describe('promise-loading-spinner', () => {
         promiseResolver = resolve as PromiseResolver
       })
 
-      // eslint-disable-next-line no-underscore-dangle
+      // eslint-disable-next-line no-underscore-dangle, @typescript-eslint/naming-convention
       const function_ = vi.fn(function (this: string) {
         expect(this).toBe('Hello')
         return promise
       })
 
       const loaderFunction = loader.wrapFunction(function_) as (this: string, first: string, second: string[], third: {
-        foo: string
+        foo: string;
       }) => Promise<string>
 
       expect(function_.mock.calls).toHaveLength(0)
@@ -790,7 +789,7 @@ describe('promise-loading-spinner', () => {
         promiseResolver = resolve as PromiseResolver
       })
 
-      // eslint-disable-next-line no-underscore-dangle
+      // eslint-disable-next-line no-underscore-dangle, @typescript-eslint/naming-convention
       const function_ = vi.fn(function (this: string, p1: string, p2: number) {
         expect(p1).toBe('bar')
         expect(p2).toBe(815)
