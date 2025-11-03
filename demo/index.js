@@ -1,6 +1,7 @@
 // eslint-disable-next-line import-x/no-extraneous-dependencies
 import { effect, signal } from '@preact/signals-core'
 
+// eslint-disable-next-line import-x/no-unresolved
 import Loader from '../dist/src/loader.js'
 
 
