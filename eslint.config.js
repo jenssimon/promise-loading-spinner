@@ -55,6 +55,9 @@ export default defineConfig(
         tsconfigRootDir: import.meta.dirname,
       },
     },
+    rules: {
+      'import-x/no-unresolved': 'off',
+    },
   },
 
   {
