@@ -2163,8 +2163,8 @@ __metadata:
   linkType: hard
 
 "@vitest/eslint-plugin@npm:^1.1.14":
-  version: 1.4.0
-  resolution: "@vitest/eslint-plugin@npm:1.4.0"
+  version: 1.4.1
+  resolution: "@vitest/eslint-plugin@npm:1.4.1"
   dependencies:
     "@typescript-eslint/scope-manager": "npm:^8.46.1"
     "@typescript-eslint/utils": "npm:^8.46.1"
@@ -2177,7 +2177,7 @@ __metadata:
       optional: true
     vitest:
       optional: true
-  checksum: 10c0/6958ce071d4118560c126077e2aae7b628a3dd26bf586511ed168ec833f5aaf3981cc43ba8783b1b0db5f8517e7d8ed4e7b54b616b4beee43a4bc957d2b1a076
+  checksum: 10c0/93906a6ff8a8da192803a7ecb16c7abba13749537e0d20016e58b9cdb5ee79697fdb33a8027e70935159a54be23acbd1b37de93e00bee78d2ec5b4b62dd30008
   languageName: node
   linkType: hard
 
@@ -8641,8 +8641,8 @@ __metadata:
   linkType: hard
 
 "vite@npm:^6.0.0 || ^7.0.0, vite@npm:^7.0.0":
-  version: 7.1.12
-  resolution: "vite@npm:7.1.12"
+  version: 7.2.0
+  resolution: "vite@npm:7.2.0"
   dependencies:
     esbuild: "npm:^0.25.0"
     fdir: "npm:^6.5.0"
@@ -8691,7 +8691,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10c0/cef4d4b4a84e663e09b858964af36e916892ac8540068df42a05ced637ceeae5e9ef71c72d54f3cfc1f3c254af16634230e221b6e2327c2a66d794bb49203262
+  checksum: 10c0/ab2579dffa1bc3dd169a9360499827920d83218b2e9b512c6e2c5220d58306abd238e0c87b4292a40b0b48de3323bda2ac418f6df8dcc3459d6cdb148b287619
   languageName: node
   linkType: hard
 
