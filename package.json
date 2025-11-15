@@ -41,7 +41,7 @@
     "@commitlint/cli": "20.1.0",
     "@commitlint/config-conventional": "20.0.0",
     "@eslint-community/eslint-plugin-eslint-comments": "^4.5.0",
-    "@eslint/compat": "^1.4.1",
+    "@eslint/compat": "^2.0.0",
     "@eslint/js": "^9.39.0",
     "@jenssimon/eslint-config-base": "10.0.2",
     "@preact/signals-core": "^1.6.0",
