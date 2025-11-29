@@ -2186,8 +2186,8 @@ __metadata:
   linkType: hard
 
 "@vitest/eslint-plugin@npm:^1.1.14":
-  version: 1.5.0
-  resolution: "@vitest/eslint-plugin@npm:1.5.0"
+  version: 1.5.1
+  resolution: "@vitest/eslint-plugin@npm:1.5.1"
   dependencies:
     "@typescript-eslint/scope-manager": "npm:^8.46.1"
     "@typescript-eslint/utils": "npm:^8.46.1"
@@ -2200,7 +2200,7 @@ __metadata:
       optional: true
     vitest:
       optional: true
-  checksum: 10c0/d672566c95438ade40b5837feeabe1b1e1d5a4e05b4a67d426f250eea3ec00b682266f726617233ebc428c687f23dd10305a0e201ae579a917b6aab58d18f73e
+  checksum: 10c0/f2158f254e42387d1bbab3190cf83bbc7251d8a74fe786bd893b20b60d4ab889264204ba25f5487f2d3dab8e0b8cd0233be61da56150a04077a9be7d8ac5356d
   languageName: node
   linkType: hard
 
@@ -3628,13 +3628,13 @@ __metadata:
   linkType: hard
 
 "eslint-config-airbnb-extended@npm:^2.3.2":
-  version: 2.3.2
-  resolution: "eslint-config-airbnb-extended@npm:2.3.2"
+  version: 2.3.3
+  resolution: "eslint-config-airbnb-extended@npm:2.3.3"
   dependencies:
     confusing-browser-globals: "npm:^1.0.11"
-    globals: "npm:^16.4.0"
+    globals: "npm:^16.5.0"
   peerDependencies:
-    "@next/eslint-plugin-next": ^15.0.0
+    "@next/eslint-plugin-next": ^15.0.0 || ^16.0.0
     "@stylistic/eslint-plugin": ^3.0.0
     "@types/eslint-plugin-jsx-a11y": ^6.0.0
     eslint: ^9.0.0
@@ -3671,7 +3671,7 @@ __metadata:
       optional: true
     typescript-eslint:
       optional: true
-  checksum: 10c0/850318d9c95331eb3c9c0bdc9c9f50082e4eb122fa22106b642d97b94ea98018b83d93d431207981140798b1ae1da192b70900792ec8843b99d780af00ee70d4
+  checksum: 10c0/0c3aea6e2e565919ec33dac0921b3264fcfa3779a0a264d8ec5cd5b3d835ea4f3676101500b4f62a50cfa548cf0e3c46e4992f6239edc0cd1b38143489cbfdf0
   languageName: node
   linkType: hard
 
@@ -4542,7 +4542,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globals@npm:^16.0.0, globals@npm:^16.4.0":
+"globals@npm:^16.0.0, globals@npm:^16.4.0, globals@npm:^16.5.0":
   version: 16.5.0
   resolution: "globals@npm:16.5.0"
   checksum: 10c0/615241dae7851c8012f5aa0223005b1ed6607713d6813de0741768bd4ddc39353117648f1a7086b4b0fa45eae733f1c0a0fe369aa4e543bb63f8de8990178ea9
