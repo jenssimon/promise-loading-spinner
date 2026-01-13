@@ -46,7 +46,7 @@
     "@jenssimon/eslint-config-base": "10.0.2",
     "@preact/signals-core": "^1.6.0",
     "@stylistic/eslint-plugin": "^5.5.0",
-    "@types/node": "24.10.7",
+    "@types/node": "24.10.8",
     "@vitest/coverage-v8": "^4.0.0",
     "@vitest/eslint-plugin": "^1.1.14",
     "commitizen": "4.3.1",
