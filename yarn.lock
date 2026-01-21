@@ -9899,12 +9899,12 @@ __metadata:
   linkType: hard
 
 "stylelint-config-recess-order@npm:^7.0.0":
-  version: 7.5.0
-  resolution: "stylelint-config-recess-order@npm:7.5.0"
+  version: 7.6.0
+  resolution: "stylelint-config-recess-order@npm:7.6.0"
   peerDependencies:
     stylelint: ^16.18.0 || ^17.0.0
     stylelint-order: ^7.0.0
-  checksum: 10c0/49b591a3677e72ab961f6c59295505e7bdd7d7a6d1417bec18af4c1c187648fbc612a0cab1046c68c3172fe69c0364b55eb850207697a8a9dc764200394ad197
+  checksum: 10c0/a973cdeb29463b9103a2cc968a56dea8743fc2d698e06b5e41f0755376d8b80cec31b609e681480108932454be7b3b39674cc65b9554a083c44b6d7b626c77f0
   languageName: node
   linkType: hard
 
