@@ -1911,12 +1911,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:24.10.11":
-  version: 24.10.11
-  resolution: "@types/node@npm:24.10.11"
+"@types/node@npm:24.10.12":
+  version: 24.10.12
+  resolution: "@types/node@npm:24.10.12"
   dependencies:
     undici-types: "npm:~7.16.0"
-  checksum: 10c0/2578baa9443d62b0f13444b7965790912eca6d25c205e594cfa96689fa9bc6a676d2d4d7024a95a92e42e4be52133e5608ece2ef86edb12ee110c8b52f603a35
+  checksum: 10c0/fa39b88c8d82a2cec41544bee3426c4b78a13cc3c5ccf6fcb6c9528a68466ffcc73772833c612c7bb7e5fe1bc8e38002d1d543152e43b20b0600096cf6f210d1
   languageName: node
   linkType: hard
 
@@ -8133,7 +8133,7 @@ __metadata:
     "@eslint/js": "npm:^9.39.0"
     "@jenssimon/eslint-config-base": "npm:10.1.0"
     "@preact/signals-core": "npm:^1.6.0"
-    "@types/node": "npm:24.10.11"
+    "@types/node": "npm:24.10.12"
     "@vitest/coverage-v8": "npm:^4.0.0"
     "@vitest/eslint-plugin": "npm:^1.1.14"
     commitizen: "npm:4.3.1"
@@ -9371,12 +9371,12 @@ __metadata:
   linkType: hard
 
 "stylelint-config-recess-order@npm:^7.0.0":
-  version: 7.6.0
-  resolution: "stylelint-config-recess-order@npm:7.6.0"
+  version: 7.6.1
+  resolution: "stylelint-config-recess-order@npm:7.6.1"
   peerDependencies:
     stylelint: ^16.18.0 || ^17.0.0
     stylelint-order: ^7.0.0
-  checksum: 10c0/a973cdeb29463b9103a2cc968a56dea8743fc2d698e06b5e41f0755376d8b80cec31b609e681480108932454be7b3b39674cc65b9554a083c44b6d7b626c77f0
+  checksum: 10c0/ea6e6a3db1f9ee542aafbfa6ecd1344b61a8972f125dbb7c0c681bfe3a8c59e98150a330d0e29d746d7aa3a7e51cfa85cf6717098b49abe255926e1b0a2d1fd0
   languageName: node
   linkType: hard
 
