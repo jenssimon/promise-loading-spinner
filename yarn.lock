@@ -1513,9 +1513,9 @@ __metadata:
   linkType: hard
 
 "@preact/signals-core@npm:^1.6.0":
-  version: 1.13.0
-  resolution: "@preact/signals-core@npm:1.13.0"
-  checksum: 10c0/25f536b90f5dbd116e037a27b51f5ca69914a957b5fa3c1d8af2857d145257fdb106e86cb6e1d5d22bc6feb1215d4448bf208482d2349f832720548bc788ca08
+  version: 1.14.0
+  resolution: "@preact/signals-core@npm:1.14.0"
+  checksum: 10c0/b9d39899bd24fae59c8b1a70d940dedb8f952d2e530b3cdc52c79de2df1f096b347fce6a52ed6cfd6f98dfe710741abe9f509ee746789023ff1dbde90152016d
   languageName: node
   linkType: hard
 
