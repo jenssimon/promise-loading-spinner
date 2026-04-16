@@ -42,7 +42,7 @@
     "@commitlint/config-conventional": "20.5.0",
     "@eslint/compat": "^2.0.0",
     "@eslint/js": "^10.0.0",
-    "@jenssimon/eslint-config-base": "10.2.2",
+    "@jenssimon/eslint-config-base": "10.2.3",
     "@preact/signals-core": "^1.6.0",
     "@types/node": "24.12.2",
     "@vitest/coverage-v8": "^4.0.0",
@@ -70,7 +70,7 @@
     "dist/src/loader.js",
     "dist/src/loader.d.ts"
   ],
-  "packageManager": "yarn@4.13.0",
+  "packageManager": "yarn@4.14.0",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
