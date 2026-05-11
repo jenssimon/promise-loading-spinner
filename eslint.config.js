@@ -1,7 +1,7 @@
 import path from 'node:path'
 
 import { defineConfig } from 'eslint/config'
-import { includeIgnoreFile } from '@eslint/compat'
+import { includeIgnoreFile } from '@eslint/config-helpers'
 import js from '@eslint/js'
 import { configs, plugins } from 'eslint-config-airbnb-extended'
 import { configs as eslintConfigs } from '@jenssimon/eslint-config-base'
