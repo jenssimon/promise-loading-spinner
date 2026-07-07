@@ -74,6 +74,7 @@ describe('promise-loading-spinner', () => {
 
       // Prepare the promise to pass into
       let promiseRejecter = promiseRejecterStub
+      // eslint-disable-next-line unicorn/prefer-promise-with-resolvers
       const promise = new Promise<string>((resolve, reject) => {
         promiseRejecter = reject
       })
@@ -730,6 +731,7 @@ describe('promise-loading-spinner', () => {
 
       // eslint-disable-next-line no-underscore-dangle, @typescript-eslint/naming-convention
       const function_ = vi.fn(function (this: string) {
+        // eslint-disable-next-line unicorn/no-this-outside-of-class
         expect(this).toBe('Hello')
         return promise
       })
@@ -793,6 +795,7 @@ describe('promise-loading-spinner', () => {
       const function_ = vi.fn(function (this: string, p1: string, p2: number) {
         expect(p1).toBe('bar')
         expect(p2).toBe(815)
+        // eslint-disable-next-line unicorn/no-this-outside-of-class
         return this
       })
 
@@ -854,7 +857,7 @@ describe('promise-loading-spinner', () => {
         promiseResolver = resolve as PromiseResolver
       })
 
-      void loader.loader(promise)
+      loader.loader(promise)
 
       promiseResolver('success')
       await expect(promise).resolves.toBe('success')
@@ -866,7 +869,7 @@ describe('promise-loading-spinner', () => {
         promiseResolver2 = resolve as PromiseResolver
       })
 
-      void loader.loader(promise2)
+      loader.loader(promise2)
 
       vi.runAllTimers()
 
@@ -886,7 +889,7 @@ describe('promise-loading-spinner', () => {
         promiseResolver3 = resolve as PromiseResolver
       })
 
-      void loader.loader(promise3)
+      loader.loader(promise3)
 
       vi.runAllTimers()
 
@@ -895,7 +898,7 @@ describe('promise-loading-spinner', () => {
         promiseResolver4 = resolve as PromiseResolver
       })
 
-      void loader.loader(promise4)
+      loader.loader(promise4)
 
       vi.runAllTimers()
 
