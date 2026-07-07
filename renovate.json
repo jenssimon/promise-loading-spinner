@@ -17,7 +17,9 @@
         "digest"
       ],
       "automerge": true,
-      "automergeType": "branch"
+      "automergeType": "branch",
+      "minimumReleaseAge": "1 days",
+      "internalChecksFilter": "strict"
     }
   ]
 }
