@@ -2,7 +2,7 @@ export interface LoaderConfig {
   /**
    * Signal
    */
-  loaderVisibilityCallback: ((value: boolean) => void) | undefined,
+  loaderVisibilityCallback: ((isVisible: boolean) => void) | undefined,
 
   /**
    * Time (ms) until spinner will show up to handle short operations without a spinner.
@@ -32,7 +32,6 @@ export interface LoaderConfig {
   classActive: string,
 }
 
-
 /**
  * Call options for the public API functions that add a promise.
  */
@@ -42,7 +41,6 @@ export interface LoaderCallOptions {
    */
   skipDelays: boolean,
 }
-
 
 /**
  * Default config.
@@ -55,7 +53,6 @@ const defaults: LoaderConfig = {
   loaderElement: undefined,
   classActive: 'is-active',
 }
-
 
 /**
  * Advanced handling of loaders/spinners based on one or multiple Promises.
@@ -92,11 +89,6 @@ export default class Loader {
   private closingTimeout: NodeJS.Timeout | undefined
 
   /**
-   * Is the loader currently shown?
-   */
-  protected loaderShows = false
-
-  /**
    * Resolver function used to resolve the currentLoadingPromise promise after the loader get hidden.
    */
   private loaderShownResolver?: (
@@ -109,20 +101,24 @@ export default class Loader {
   private promisesForShownLoader: Promise<unknown>[] = []
 
   /**
+   * Is the loader currently shown?
+   */
+  protected loaderShows = false
+
+  /**
    * A promise that resolves after the loader get hidden.
    */
   public currentLoadingPromise: Promise<Promise<unknown>[]> = Promise.resolve([])
 
-
   /**
    * Constructor.
    *
-   * @param cfg configuration of the loader (optional)
+   * @param config configuration of the loader (optional)
    */
-  public constructor(cfg: Partial<LoaderConfig> = {}) {
+  public constructor(config: Partial<LoaderConfig> = {}) {
     this.setCurrentLoadingPromise()
-    const config = { ...defaults, ...cfg }
-    this.config = config
+    const configMerged = { ...defaults, ...config }
+    this.config = configMerged
 
     const { config: { loaderElement, loaderVisibilityCallback, initDelay } } = this
 
@@ -141,80 +137,6 @@ export default class Loader {
     this.initSuppressTimeout = setTimeout(() => this.stopSuppressLoading(), initDelay)
   }
 
-
-  /**
-   * Add a promise to the loader.
-   *
-   * @param promise a promise
-   * @param options options for this promise (optional)
-   * @returns the used promise
-   */
-  public loader<T>(promise: Promise<T>, options?: Partial<LoaderCallOptions>): Promise<T> {
-    const skipDelays = options?.skipDelays ?? false
-    if ((!this.initSuppressTimeout || skipDelays)) {
-      if (this.initSuppressTimeout && skipDelays) this.stopSuppressLoading()
-
-      const isFirstLoader = this.loaderPromises.length === 0
-
-      this.loaderPromises.push(promise)
-      if (this.loaderShows) this.promisesForShownLoader.push(promise)
-
-      if (isFirstLoader) { // Only the first loader needs to initialize the show functionality
-        this.showLoader(skipDelays)
-      }
-
-      void this.handlePromise(promise)
-    }
-    return promise
-  }
-
-
-  /**
-   * Returns a function that wraps the loader functionality around a function call.
-   *
-   * @param fnc A function performing some async operation
-   * @param options options for the operation (optional)
-   * @returns a function that wraps the loader functionality around a function call
-   */
-  public wrapFunction<C, A extends never[], R>(
-    fnc: (this: C, ...arguments_: A) => Promise<R>,
-    options?: Partial<LoaderCallOptions>,
-  ): (this: C, ...arguments_: A) => Promise<R> {
-    // eslint-disable-next-line @typescript-eslint/no-this-alias, unicorn/no-this-assignment
-    const loaderContext = this
-
-    return function (this: C, ...arguments_: A): Promise<R> {
-      return loaderContext.loader(fnc.apply(this, arguments_), options)
-    }
-  }
-
-
-  /**
-   * A decorator for methods that wraps loader functionality around a function call.
-   * @param options options for the operation (optional)
-   * @returns a decorator for methods that wraps loader functionality around a function call.
-   */
-  public decorator(options?: Partial<LoaderCallOptions>): MethodDecorator {
-    /* eslint-disable @typescript-eslint/no-this-alias */
-
-
-    /* eslint-disable unicorn/no-this-assignment */
-    const loaderContext = this
-
-    return function (target, propertyKey, descriptor) {
-      const oldValue = descriptor.value;
-      (descriptor as any).value = function (...parameters: never[]) {
-        return loaderContext.loader((oldValue as any).apply(this, parameters), options)
-      }
-    }
-
-    /* eslint-enable @typescript-eslint/no-this-alias */
-
-
-    /* eslint-enable unicorn/no-this-assignment */
-  }
-
-
   /**
    * Stops initial loader suppresion
    */
@@ -222,7 +144,6 @@ export default class Loader {
     clearTimeout(this.initSuppressTimeout)
     this.initSuppressTimeout = undefined
   }
-
 
   /**
    * Create the promise for the currently shown loader.
@@ -234,28 +155,27 @@ export default class Loader {
     })
   }
 
-
   /**
    * Show or hide the loader.
    *
-   * @param visible is the loader visible?
+   * @param isVisible is the loader visible?
    */
-  private setLoaderVisibility(visible: boolean) {
-    if (this.el) this.el.classList.toggle(this.config.classActive, visible)
-    if (this.config.loaderVisibilityCallback) this.config.loaderVisibilityCallback(visible)
-    this.loaderShows = visible
+  private setLoaderVisibility(isVisible: boolean) {
+    if (this.el) this.el.classList.toggle(this.config.classActive, isVisible)
+    if (this.config.loaderVisibilityCallback) this.config.loaderVisibilityCallback(isVisible)
+    this.loaderShows = isVisible
 
-    if (visible) {
+    if (isVisible) {
       this.promisesForShownLoader.push(...this.loaderPromises)
     } else {
       /* istanbul ignore else */
       if (this.loaderShownResolver) {
+        // eslint-disable-next-line unicorn/no-unnecessary-splice
         this.loaderShownResolver(this.promisesForShownLoader.splice(0))
       }
       this.setCurrentLoadingPromise()
     }
   }
-
 
   /**
    * Wait for promise to fulfill or reject and check if the loader can hide.
@@ -286,12 +206,12 @@ export default class Loader {
     }
   }
 
-
   /**
    * Show the loader. Also adds the loader delay.
    *
    * @param skipDelays skip delays?
    */
+  // eslint-disable-next-line unicorn/consistent-boolean-name
   private showLoader(skipDelays: boolean) {
     if (this.closingTimeout) {
       // Another operation finished shortly before. To avoid flickering the loader closes later.
@@ -307,5 +227,72 @@ export default class Loader {
         this.timeout = undefined
       }, this.config.delay)
     }
+  }
+
+  /**
+   * Add a promise to the loader.
+   *
+   * @param promise a promise
+   * @param options options for this promise (optional)
+   * @returns the used promise
+   */
+  public loader<T>(promise: Promise<T>, options?: Partial<LoaderCallOptions>): Promise<T> {
+    const isSkipDelays = options?.skipDelays ?? false
+    if ((!this.initSuppressTimeout || isSkipDelays)) {
+      if (this.initSuppressTimeout && isSkipDelays) this.stopSuppressLoading()
+
+      const isFirstLoader = this.loaderPromises.length === 0
+
+      this.loaderPromises.push(promise)
+      if (this.loaderShows) this.promisesForShownLoader.push(promise)
+
+      if (isFirstLoader) { // Only the first loader needs to initialize the show functionality
+        this.showLoader(isSkipDelays)
+      }
+
+      void this.handlePromise(promise)
+    }
+    return promise
+  }
+
+  /**
+   * Returns a function that wraps the loader functionality around a function call.
+   *
+   * @param fnc A function performing some async operation
+   * @param options options for the operation (optional)
+   * @returns a function that wraps the loader functionality around a function call
+   */
+  public wrapFunction<C, A extends never[], R>(
+    fnc: (this: C, ...arguments_: A) => Promise<R>,
+    options?: Partial<LoaderCallOptions>,
+  ): (this: C, ...arguments_: A) => Promise<R> {
+    // eslint-disable-next-line @typescript-eslint/no-this-alias, unicorn/no-this-assignment
+    const loaderContext = this
+
+    return function (this: C, ...arguments_: A): Promise<R> {
+      // eslint-disable-next-line unicorn/no-this-outside-of-class
+      return loaderContext.loader(fnc.apply(this, arguments_), options)
+    }
+  }
+
+  /**
+   * A decorator for methods that wraps loader functionality around a function call.
+   * @param options options for the operation (optional)
+   * @returns a decorator for methods that wraps loader functionality around a function call.
+   */
+  public decorator(options?: Partial<LoaderCallOptions>): MethodDecorator {
+    /* eslint-disable @typescript-eslint/no-this-alias */
+    /* eslint-disable unicorn/no-this-assignment */
+    const loaderContext = this
+
+    return function (target, propertyKey, descriptor) {
+      const oldValue = descriptor.value;
+      (descriptor as any).value = function (...parameters: never[]) {
+        // eslint-disable-next-line unicorn/no-this-outside-of-class
+        return loaderContext.loader((oldValue as any).apply(this, parameters), options)
+      }
+    }
+    /* eslint-enable @typescript-eslint/no-this-alias */
+    /* eslint-enable unicorn/no-this-assignment */
   }
 }

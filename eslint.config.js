@@ -87,6 +87,8 @@ export default defineConfig(
       'no-constant-condition': 'off',
       'no-restricted-syntax': 'off',
       'promise/prefer-await-to-then': 'off',
+      'unicorn/prefer-await': 'off',
+      'unicorn/no-top-level-assignment-in-function': 'off',
       'unicorn/prefer-top-level-await': 'off',
       '@typescript-eslint/no-unsafe-argument': 'off',
       '@typescript-eslint/no-unsafe-assignment': 'off',
