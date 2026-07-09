@@ -65,7 +65,7 @@
     "dist/src/loader.js",
     "dist/src/loader.d.ts"
   ],
-  "packageManager": "yarn@4.17.0",
+  "packageManager": "yarn@4.17.1",
   "release": {
     "branches": [
       "main"
