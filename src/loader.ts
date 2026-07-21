@@ -129,7 +129,7 @@ export default class Loader {
 
       if (!this.el) throw new Error('Element not found')
     }
-    if (!this.el && !loaderVisibilityCallback) throw new Error('No loader element or loaderVisibilityCallback provided')
+    if (!loaderVisibilityCallback && !this.el) throw new Error('No loader element or loaderVisibilityCallback provided')
 
     if (loaderVisibilityCallback) loaderVisibilityCallback(this.loaderShows)
 
@@ -238,8 +238,8 @@ export default class Loader {
    */
   public loader<T>(promise: Promise<T>, options?: Partial<LoaderCallOptions>): Promise<T> {
     const isSkipDelays = options?.skipDelays ?? false
-    if ((!this.initSuppressTimeout || isSkipDelays)) {
-      if (this.initSuppressTimeout && isSkipDelays) this.stopSuppressLoading()
+    if (isSkipDelays || !this.initSuppressTimeout) {
+      if (isSkipDelays && this.initSuppressTimeout) this.stopSuppressLoading()
 
       const isFirstLoader = this.loaderPromises.length === 0
 
