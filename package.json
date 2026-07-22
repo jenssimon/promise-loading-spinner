@@ -37,7 +37,7 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "@eslint/config-helpers": "^0.6.0",
+    "@eslint/config-helpers": "^0.7.0",
     "@eslint/js": "^10.0.0",
     "@jenssimon/eslint-config-base": "10.2.7",
     "@preact/signals-core": "^1.6.0",
