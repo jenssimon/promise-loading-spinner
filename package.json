@@ -43,7 +43,7 @@
     "@preact/signals-core": "^1.6.0",
     "@types/node": "24.13.3",
     "@typescript/native": "npm:typescript@^7.0.2",
-    "@vitest/coverage-v8": "^4.0.0",
+    "@vitest/coverage-v8": "^5.0.0",
     "@vitest/eslint-plugin": "^1.1.14",
     "eslint": "^10.0.0",
     "eslint-config-airbnb-extended": "^3.0.0",
@@ -60,7 +60,7 @@
     "stylelint-order": "^8.0.0",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
     "vite": "^8.0.0",
-    "vitest": "^4.0.0"
+    "vitest": "^5.0.0"
   },
   "files": [
     "dist/src/loader.js",
