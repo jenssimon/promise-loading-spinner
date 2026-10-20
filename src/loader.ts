@@ -1,50 +1,50 @@
 export interface LoaderConfig {
   /**
-   * Signal
-   */
+  Signal
+  */
   loaderVisibilityCallback: ((isVisible: boolean) => void) | undefined,
 
   /**
-   * Time (ms) until spinner will show up to handle short operations without a spinner.
-   */
+  Time (ms) until spinner will show up to handle short operations without a spinner.
+  */
   delay: number,
 
   /**
-   * Time (ms) to wait until last promise is resolved to enable multiple operations in a sequence
-   * without a "flickering" spinner.
-   */
+  Time (ms) to wait until last promise is resolved to enable multiple operations in a sequence
+  without a "flickering" spinner.
+  */
   closeDelay: number,
 
   /**
-   * Delay (ms) after loader initialization to suppress spinners on page load.
-   */
+  Delay (ms) after loader initialization to suppress spinners on page load.
+  */
   initDelay: number,
 
   /**
-   * The element which represents the spinner.
-   * Can be used with an element or a selector string.
-   */
+  The element which represents the spinner.
+  Can be used with an element or a selector string.
+  */
   loaderElement?: HTMLElement | string,
 
   /**
-   * Class name used to show the spinner.
-   */
+  Class name used to show the spinner.
+  */
   classActive: string,
 }
 
 /**
- * Call options for the public API functions that add a promise.
- */
+Call options for the public API functions that add a promise.
+*/
 export interface LoaderCallOptions {
   /**
-   * Skip all delays (initDelay, delay).
-   */
+  Skip all delays (initDelay, delay).
+  */
   skipDelays: boolean,
 }
 
 /**
- * Default config.
- */
+Default config.
+*/
 const defaults: LoaderConfig = {
   loaderVisibilityCallback: undefined,
   delay: 300,
@@ -55,66 +55,66 @@ const defaults: LoaderConfig = {
 }
 
 /**
- * Advanced handling of loaders/spinners based on one or multiple Promises.
- */
+Advanced handling of loaders/spinners based on one or multiple Promises.
+*/
 export default class Loader {
   /**
-   * Contains all promises that aren't settled.
-   */
+  Contains all promises that aren't settled.
+  */
   private loaderPromises: Promise<unknown>[] = []
 
   /**
-   * The configuration of the loader.
-   */
+  The configuration of the loader.
+  */
   private config: LoaderConfig
 
   /**
-   * The attached DOM element which represents the loader.
-   */
+  The attached DOM element which represents the loader.
+  */
   private el?: HTMLElement
 
   /**
-   * The timeout handle for the initial suppression of the loader.
-   */
+  The timeout handle for the initial suppression of the loader.
+  */
   private initSuppressTimeout: NodeJS.Timeout | undefined
 
   /**
-   * The timeout handle for the delay before showing the loader.
-   */
+  The timeout handle for the delay before showing the loader.
+  */
   private timeout: NodeJS.Timeout | undefined
 
   /**
-   * The timeout handle for the closing delay.
-   */
+  The timeout handle for the closing delay.
+  */
   private closingTimeout: NodeJS.Timeout | undefined
 
   /**
-   * Resolver function used to resolve the currentLoadingPromise promise after the loader get hidden.
-   */
+  Resolver function used to resolve the currentLoadingPromise promise after the loader get hidden.
+  */
   private loaderShownResolver?: (
     value?: Promise<unknown>[] | PromiseLike<Promise<unknown>[]>,
   ) => void | undefined
 
   /**
-   * The promises for which the loader currently shows up.
-   */
+  The promises for which the loader currently shows up.
+  */
   private promisesForShownLoader: Promise<unknown>[] = []
 
   /**
-   * Is the loader currently shown?
-   */
+  Is the loader currently shown?
+  */
   protected loaderShows = false
 
   /**
-   * A promise that resolves after the loader get hidden.
-   */
+  A promise that resolves after the loader get hidden.
+  */
   public currentLoadingPromise: Promise<Promise<unknown>[]> = Promise.resolve([])
 
   /**
-   * Constructor.
-   *
-   * @param config configuration of the loader (optional)
-   */
+  Constructor.
+
+  @param config configuration of the loader (optional)
+  */
   public constructor(config: Partial<LoaderConfig> = {}) {
     this.setCurrentLoadingPromise()
     const configMerged = { ...defaults, ...config }
@@ -138,16 +138,16 @@ export default class Loader {
   }
 
   /**
-   * Stops initial loader suppresion
-   */
+  Stops initial loader suppresion
+  */
   private stopSuppressLoading() {
     clearTimeout(this.initSuppressTimeout)
     this.initSuppressTimeout = undefined
   }
 
   /**
-   * Create the promise for the currently shown loader.
-   */
+  Create the promise for the currently shown loader.
+  */
   private setCurrentLoadingPromise() {
     this.currentLoadingPromise = new Promise((resolve) => {
       this.loaderShownResolver = resolve as (
@@ -156,10 +156,10 @@ export default class Loader {
   }
 
   /**
-   * Show or hide the loader.
-   *
-   * @param isVisible is the loader visible?
-   */
+  Show or hide the loader.
+
+  @param isVisible is the loader visible?
+  */
   private setLoaderVisibility(isVisible: boolean) {
     if (this.el) this.el.classList.toggle(this.config.classActive, isVisible)
     if (this.config.loaderVisibilityCallback) this.config.loaderVisibilityCallback(isVisible)
@@ -170,7 +170,6 @@ export default class Loader {
     } else {
       /* istanbul ignore else */
       if (this.loaderShownResolver) {
-        // eslint-disable-next-line unicorn/no-unnecessary-splice
         this.loaderShownResolver(this.promisesForShownLoader.splice(0))
       }
       this.setCurrentLoadingPromise()
@@ -178,10 +177,10 @@ export default class Loader {
   }
 
   /**
-   * Wait for promise to fulfill or reject and check if the loader can hide.
-   *
-   * @param promise the promise to process
-   */
+  Wait for promise to fulfill or reject and check if the loader can hide.
+
+  @param promise the promise to process
+  */
   private async handlePromise<T>(promise: Promise<T>) {
     try {
       await promise
@@ -207,10 +206,10 @@ export default class Loader {
   }
 
   /**
-   * Show the loader. Also adds the loader delay.
-   *
-   * @param skipDelays skip delays?
-   */
+  Show the loader. Also adds the loader delay.
+
+  @param skipDelays skip delays?
+  */
   // eslint-disable-next-line unicorn/consistent-boolean-name
   private showLoader(skipDelays: boolean) {
     if (this.closingTimeout) {
@@ -230,12 +229,12 @@ export default class Loader {
   }
 
   /**
-   * Add a promise to the loader.
-   *
-   * @param promise a promise
-   * @param options options for this promise (optional)
-   * @returns the used promise
-   */
+  Add a promise to the loader.
+
+  @param promise a promise
+  @param options options for this promise (optional)
+  @returns the used promise
+  */
   public loader<T>(promise: Promise<T>, options?: Partial<LoaderCallOptions>): Promise<T> {
     const isSkipDelays = options?.skipDelays ?? false
     if (isSkipDelays || !this.initSuppressTimeout) {
@@ -256,12 +255,12 @@ export default class Loader {
   }
 
   /**
-   * Returns a function that wraps the loader functionality around a function call.
-   *
-   * @param fnc A function performing some async operation
-   * @param options options for the operation (optional)
-   * @returns a function that wraps the loader functionality around a function call
-   */
+  Returns a function that wraps the loader functionality around a function call.
+
+  @param fnc A function performing some async operation
+  @param options options for the operation (optional)
+  @returns a function that wraps the loader functionality around a function call
+  */
   public wrapFunction<C, A extends never[], R>(
     fnc: (this: C, ...arguments_: A) => Promise<R>,
     options?: Partial<LoaderCallOptions>,
@@ -270,16 +269,15 @@ export default class Loader {
     const loaderContext = this
 
     return function (this: C, ...arguments_: A): Promise<R> {
-      // eslint-disable-next-line unicorn/no-this-outside-of-class
       return loaderContext.loader(fnc.apply(this, arguments_), options)
     }
   }
 
   /**
-   * A decorator for methods that wraps loader functionality around a function call.
-   * @param options options for the operation (optional)
-   * @returns a decorator for methods that wraps loader functionality around a function call.
-   */
+  A decorator for methods that wraps loader functionality around a function call.
+  @param options options for the operation (optional)
+  @returns a decorator for methods that wraps loader functionality around a function call.
+  */
   public decorator(options?: Partial<LoaderCallOptions>): MethodDecorator {
     /* eslint-disable @typescript-eslint/no-this-alias */
     /* eslint-disable unicorn/no-this-assignment */

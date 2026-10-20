@@ -1,7 +1,6 @@
 import path from 'node:path'
 
-import { defineConfig } from 'eslint/config'
-import { includeIgnoreFile } from '@eslint/config-helpers'
+import { defineConfig, includeIgnoreFile } from 'eslint/config'
 import js from '@eslint/js'
 import { configs, plugins } from 'eslint-config-airbnb-extended'
 import { configs as eslintConfigs } from '@jenssimon/eslint-config-base'
@@ -110,6 +109,12 @@ export default defineConfig(
     },
     rules: {
       ...vitest.configs.recommended.rules,
+    },
+  },
+  {
+    files: ['eslint.config.js'],
+    rules: {
+      'unicorn/no-top-level-side-effects': 'off',
     },
   },
 )

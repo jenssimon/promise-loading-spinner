@@ -663,6 +663,7 @@ describe('promise-loading-spinner', () => {
     })
 
 
+    // eslint-disable-next-line vitest/no-disabled-tests
     it.skip('needs an element or signal', () => {
       expect(() => {
         // eslint-disable-next-line no-new, sonarjs/constructor-for-side-effects
@@ -731,7 +732,6 @@ describe('promise-loading-spinner', () => {
 
       // eslint-disable-next-line no-underscore-dangle, @typescript-eslint/naming-convention
       const function_ = vi.fn(function (this: string) {
-        // eslint-disable-next-line unicorn/no-this-outside-of-class
         expect(this).toBe('Hello')
         return promise
       })
@@ -795,7 +795,6 @@ describe('promise-loading-spinner', () => {
       const function_ = vi.fn(function (this: string, p1: string, p2: number) {
         expect(p1).toBe('bar')
         expect(p2).toBe(815)
-        // eslint-disable-next-line unicorn/no-this-outside-of-class
         return this
       })
 
