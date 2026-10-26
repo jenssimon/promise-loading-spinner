@@ -587,18 +587,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-base@npm:10.2.15":
-  version: 10.2.15
-  resolution: "@jenssimon/eslint-config-base@npm:10.2.15"
+"@jenssimon/eslint-config-base@npm:10.2.16":
+  version: 10.2.16
+  resolution: "@jenssimon/eslint-config-base@npm:10.2.16"
   dependencies:
     "@eslint-community/eslint-plugin-eslint-comments": "npm:^4.6.0"
     eslint-plugin-promise: "npm:^7.2.1"
     eslint-plugin-sonarjs: "npm:^4.0.0"
-    eslint-plugin-unicorn: "npm:^78.0.0"
+    eslint-plugin-unicorn: "npm:^79.0.0"
   peerDependencies:
     eslint: ">= 9"
     eslint-config-airbnb-extended: ">= 3"
-  checksum: 10c0/9070c78889ff6da0c56c647fdb7f2308f0adbdaaf91ffaf8a6c145291ea0d3288e5f8b3791f7ff6ba55476e72ba8f6f2dd1f523d3cb45559cbc1b34aaf7c3aac
+  checksum: 10c0/e3f202bf72db56230bbd7fd3f0bf71bbe1dbaf66cb77daa7f2a081d0fc03bc3f9f582b1592ddcfdf1f14a0271f884e095438be099b9a8c87beaee0009917490b
   languageName: node
   linkType: hard
 
@@ -3935,9 +3935,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-unicorn@npm:^78.0.0":
-  version: 78.0.0
-  resolution: "eslint-plugin-unicorn@npm:78.0.0"
+"eslint-plugin-unicorn@npm:^79.0.0":
+  version: 79.0.0
+  resolution: "eslint-plugin-unicorn@npm:79.0.0"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.10.1"
     "@eslint/css-tree": "npm:^4.1.1"
@@ -3967,7 +3967,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/9d9fd5f73b2b7b8816e3cf886d81086512550fb989fa22d8cf25201ca8f36270190ce3826a2430dbaa45ea45e6e1de965b697d7b32d9900b9cf71ca2b376e6f9
+  checksum: 10c0/0500ca6e90d38e8fa0285ac08b12e2e6dbb5a416645dd31b6f62e64a80651e6ee4c939f30dd69275f316e4c722ced39d49d14d36177f9d4778853bd7cd797885
   languageName: node
   linkType: hard
 
@@ -7587,7 +7587,7 @@ __metadata:
   resolution: "promise-loading-spinner@workspace:."
   dependencies:
     "@eslint/js": "npm:^10.0.0"
-    "@jenssimon/eslint-config-base": "npm:10.2.15"
+    "@jenssimon/eslint-config-base": "npm:10.2.16"
     "@preact/signals-core": "npm:^1.6.0"
     "@types/node": "npm:24.19.2"
     "@typescript/native": "npm:typescript@^7.0.2"
