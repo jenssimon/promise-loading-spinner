@@ -117,4 +117,22 @@ export default defineConfig(
       'unicorn/no-top-level-side-effects': 'off',
     },
   },
+  {
+    rules: {
+      'import-x/extensions': [
+        'error',
+        {
+          ignorePackages: true,
+          pattern: {
+            js: 'always',
+            jsx: 'always',
+            mjs: 'always',
+            mjsx: 'always',
+            ts: 'never',
+            tsx: 'never',
+          },
+        },
+      ],
+    },
+  },
 )
