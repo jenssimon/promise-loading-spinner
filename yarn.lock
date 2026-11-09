@@ -510,9 +510,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jenssimon/eslint-config-base@npm:10.2.16":
-  version: 10.2.16
-  resolution: "@jenssimon/eslint-config-base@npm:10.2.16"
+"@jenssimon/eslint-config-base@npm:10.2.17":
+  version: 10.2.17
+  resolution: "@jenssimon/eslint-config-base@npm:10.2.17"
   dependencies:
     "@eslint-community/eslint-plugin-eslint-comments": "npm:^4.6.0"
     eslint-plugin-promise: "npm:^7.2.1"
@@ -521,7 +521,7 @@ __metadata:
   peerDependencies:
     eslint: ">= 9"
     eslint-config-airbnb-extended: ">= 3"
-  checksum: 10c0/e3f202bf72db56230bbd7fd3f0bf71bbe1dbaf66cb77daa7f2a081d0fc03bc3f9f582b1592ddcfdf1f14a0271f884e095438be099b9a8c87beaee0009917490b
+  checksum: 10c0/595fa5e7140f32381a4c5441f65432dca339833f630ba21fc97ca2c2caac4fd2015edd6b5147a30c95b32e1567d7bdfa918fa7daa62d2919ac0af7e9b67cbac4
   languageName: node
   linkType: hard
 
@@ -7328,7 +7328,7 @@ __metadata:
   resolution: "promise-loading-spinner@workspace:."
   dependencies:
     "@eslint/js": "npm:^10.0.0"
-    "@jenssimon/eslint-config-base": "npm:10.2.16"
+    "@jenssimon/eslint-config-base": "npm:10.2.17"
     "@preact/signals-core": "npm:^1.6.0"
     "@types/node": "npm:26.6.6"
     "@typescript/native": "npm:typescript@^7.0.2"
