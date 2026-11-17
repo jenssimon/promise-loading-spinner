@@ -7223,7 +7223,7 @@ __metadata:
     lint-staged: "npm:17.6.1"
     npm-run-all2: "npm:^9.0.0"
     pinst: "npm:3.0.0"
-    semantic-release: "npm:26.0.0"
+    semantic-release: "npm:26.0.1"
     stylelint: "npm:^18.0.0"
     stylelint-config-recess-order: "npm:^7.0.0"
     stylelint-config-standard: "npm:^41.0.0"
@@ -7693,9 +7693,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semantic-release@npm:26.0.0":
-  version: 26.0.0
-  resolution: "semantic-release@npm:26.0.0"
+"semantic-release@npm:26.0.1":
+  version: 26.0.1
+  resolution: "semantic-release@npm:26.0.1"
   dependencies:
     "@semantic-release/commit-analyzer": "npm:^14.0.0-beta.4"
     "@semantic-release/core": "npm:^1.0.0-beta.13"
@@ -7703,7 +7703,7 @@ __metadata:
     "@semantic-release/npm": "npm:^14.0.0-beta.2"
     "@semantic-release/release-notes-generator": "npm:^15.0.0-beta.3"
     debug: "npm:^4.0.0"
-    execa: "npm:^9.0.0"
+    execa: "npm:^10.0.0"
     find-versions: "npm:^6.0.0"
     lodash-es: "npm:^4.17.21"
     marked: "npm:^15.0.0"
@@ -7712,7 +7712,7 @@ __metadata:
     yargs: "npm:^18.0.0"
   bin:
     semantic-release: bin/semantic-release.js
-  checksum: 10c0/d55e04ac2e782b5a4746e149617fa2dbbec033922449530a90b626b826c6dab80ec3310dc990e595d74346badc74b344b1256ff34c0d0a63babaa0b8c32e9565
+  checksum: 10c0/e67275c662adc0009921332e7d58adc85525990c54caf518937ea559cad8684bc500fc907cfbf24e1aad679706e6eea494c3029f1b000c925f9ca71c39cd5edc
   languageName: node
   linkType: hard
 
